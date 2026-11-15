@@ -1,61 +1,46 @@
-# Producto a testear: Kit Ritual de cuarzo rosa (Bellamor)
+# Plan: traer 3 productos de Once, testearlos online y quedarse con el ganador
 
-**Decisión (15/11/2026):** piedra gua sha + rodillo de cuarzo rosa, en cajita. Para mujeres de 25 a 55. Sin químicos, sin pilas y chico.
+Actualizado 15/11/2026. Para mujeres de 25 a 55. Sin químicos, sin pilas, chicos y que entren en un sobre.
 
-Reemplaza al Set Regalo de acero, que queda de reserva (no resolvía un problema).
+## Lista para Once
 
-## Por qué este
+| # | Producto | Oferta | Pagar como máximo | Anuncios activos afuera |
+| --- | --- | --- | --- | --- |
+| 1 | Corrector de juanetes de silicona (candidato estrella) | Pack 2 pares | $7.000 el pack | 1.120 EE.UU. · 1.613 en español |
+| 2 | Cepillo desenredante | Grande + mini de cartera | $7.000 el combo | 1.101 EE.UU. (con ruido) · 109 en español |
+| 3 | Kit gua sha + rodillo de cuarzo rosa | Kit en cajita | $7.000 el kit | 365 EE.UU. · 530 en español |
+| 4 (opcional) | Medias de silicona para talones | 2 pares | $7.000 | 378 EE.UU. · 254 en español (con ruido) |
 
-- **Resuelve algo que ella siente:** "me veo cansada, hinchada y no tengo un rato para mí".
-- **Pasa tu regla de la Biblioteca de anuncios** (anuncios activos, 15/11/2026):
-  - "gua sha stone", EE.UU.: ~365
-  - "gua sha" en México, España, Colombia, Chile, Argentina y Perú: ~530
-- **Es una piedra:** sin ingredientes ni enchufe. Es menor riesgo con ANMAT mientras no prometas resultados de salud.
+Traé 2 ofertas de cada uno: una para filmar y una para vender. Los conteos son por palabra clave y aproximados.
 
-## Lo que NO hay que decir (para que Meta no te bloquee y nadie reclame)
+## Cuentas por venta (online, envío gratis)
+
+| | |
+| --- | --- |
+| Precio de la oferta | $29.900 |
+| Producto (máximo) | −$7.000 |
+| Envío | −$8.000 |
+| Comisión de cobro (~7%) | −$2.100 |
+| Te queda antes de publicidad | ~$12.800 |
+
+## Plata (USD 50 ≈ $75.000)
+
+- Productos: hasta $42.000
+- Publicidad: ~$27.000 (3 productos x 3 días x $3.000)
+- Reserva: ~$6.000
+
+## Cómo se elige el ganador
+
+1. Un anuncio por producto, mismo presupuesto ($3.000 por día, 3 días), mujeres de 25 a 55, todo el país.
+2. El anuncio lleva a WhatsApp, cobrás con link de Mercado Pago y despachás por Correo.
+3. A los 3 días: el que trajo más mensajes y ventas es el ganador. Los otros se apagan.
+4. Al ganador le ponés capital: más stock y más publicidad.
+
+## Lo que no hay que decir
 
 - ❌ "¿Tu marido ya no te mira?" Meta rechaza anuncios que señalan defectos de la persona.
-- ❌ "Borra arrugas", "rejuvenece 10 años", "drenaje linfático".
-- ✅ "Tu rato del día", "piedra fría que relaja", "sin cremas ni químicos", "para vos, de vos".
-
-## Ideas para testear (en orden)
-
-| Producto | Anuncios afuera | Qué hacemos |
-| --- | --- | --- |
-| Kit Ritual cuarzo rosa | 365 EE.UU. · 530 en español | Testear 1° |
-| Corrector de juanetes (silicona) | 1.120 EE.UU. · 122 en español | Testear 2° |
-| Set de acero (pulsera + aros) | 776 EE.UU. · 789 en español | Reserva |
-| Funda de satén | ~686 EE.UU. (dudoso) | Reserva |
-| Rulero sin calor | 42 EE.UU. | Descartado |
-
-Los conteos son por palabra clave y aproximados.
-
-## Números (a confirmar con precios reales)
-
-| Concepto | Monto |
-| --- | --- |
-| Presupuesto (USD 50 a ~$1.500) | ~$75.000 |
-| 3 a 5 kits | ~$35.000 |
-| Cajitas y moños | ~$5.000 |
-| Publicidad (6 días x $5.000) | $30.000 |
-| Reserva | ~$5.000 |
-| Meta: costo por kit | $7.000 o menos |
-| Precio de venta a probar | $22.900 |
-
-En Mercado Libre se ven kits parecidos a $21.000–26.500 (búsqueda web, a confirmar con capturas).
-
-## Los 10 pasos
-
-1. Elegir producto (hecho).
-2. Pedir precios a 3 mayoristas.
-3. Comprar 3 a 5 kits + cajitas.
-4. Fotos y videos con el celu, con luz de ventana.
-5. Instagram Bellamor: 3 posteos + historias.
-6. Mercado Libre: portada con fondo blanco, sin texto.
-7. Anuncio: $5.000 por día, 6 días, mujeres de 25 a 55.
-8. Responder por WhatsApp en menos de 1 hora.
-9. Anotar cada venta y cada gasto en la planilla.
-10. A los 7 días: si vendiste 2 o más, comprá más. Si no, cambiá la foto o el gancho.
+- ❌ "Cura", "corrige", "rejuvenece", "borra arrugas".
+- ✅ "Alivia", "protege", "relaja", "tu rato del día", "sin químicos".
 
 ## Links
 
