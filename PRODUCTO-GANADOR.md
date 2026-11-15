@@ -1,52 +1,63 @@
-# Producto ganador: Set Regalo Bellamor
+# Producto a testear: Kit Ritual de cuarzo rosa (Bellamor)
 
-**Decisión (15/11/2026):** set de pulsera + aros de acero quirúrgico, en cajita con moño, para mujeres de 40+ que regalan (Navidad, Reyes) o se regalan.
+**Decisión (15/11/2026):** piedra gua sha + rodillo de cuarzo rosa, en cajita. Para mujeres de 25 a 55. Sin químicos, sin pilas y chico.
 
-## Por qué este y no otro
+Reemplaza al Set Regalo de acero, que queda de reserva (no resolvía un problema).
 
-- Tu propio estudio de mercado ya lo marcaba como recomendación número 1.
-- Se compra en mayoristas de Argentina: no hay que importar ni pagar el avión (~$31.500 por pedido).
-- Pesa casi nada, no se rompe, no necesita ANMAT ni ENACOM.
-- Faltan 5 semanas para Navidad.
+## Por qué este
 
-## Validación en la Biblioteca de anuncios de Meta (15/11/2026)
+- **Resuelve algo que ella siente:** "me veo cansada, hinchada y no tengo un rato para mí".
+- **Pasa tu regla de la Biblioteca de anuncios** (anuncios activos, 15/11/2026):
+  - "gua sha stone", EE.UU.: ~365
+  - "gua sha" en México, España, Colombia, Chile, Argentina y Perú: ~530
+- **Es una piedra:** sin ingredientes ni enchufe. Es menor riesgo con ANMAT mientras no prometas resultados de salud.
 
-Regla: más de 300–400 anuncios activos afuera, chico y no eléctrico.
+## Lo que NO hay que decir (para que Meta no te bloquee y nadie reclame)
 
-| Búsqueda (anuncios activos) | Países | Anuncios |
+- ❌ "¿Tu marido ya no te mira?" Meta rechaza anuncios que señalan defectos de la persona.
+- ❌ "Borra arrugas", "rejuvenece 10 años", "drenaje linfático".
+- ✅ "Tu rato del día", "piedra fría que relaja", "sin cremas ni químicos", "para vos, de vos".
+
+## Ideas para testear (en orden)
+
+| Producto | Anuncios afuera | Qué hacemos |
 | --- | --- | --- |
-| "tarnish free stainless steel bracelet" | EE.UU. | ~776 |
-| "pulsera acero inoxidable" | México, España, Colombia, Chile | ~789 |
-| "satin pillowcase" | EE.UU. | ~686 (con ruido) |
-| "heatless curling rod" | EE.UU. | ~42 (descartado) |
+| Kit Ritual cuarzo rosa | 365 EE.UU. · 530 en español | Testear 1° |
+| Corrector de juanetes (silicona) | 1.120 EE.UU. · 122 en español | Testear 2° |
+| Set de acero (pulsera + aros) | 776 EE.UU. · 789 en español | Reserva |
+| Funda de satén | ~686 EE.UU. (dudoso) | Reserva |
+| Rulero sin calor | 42 EE.UU. | Descartado |
 
-Los conteos son por palabra clave y aproximados. Casi todos los anuncios que vimos se crearon en los últimos días.
+Los conteos son por palabra clave y aproximados.
 
-## Números (estimados, confirmalos al comprar)
+## Números (a confirmar con precios reales)
 
 | Concepto | Monto |
 | --- | --- |
 | Presupuesto (USD 50 a ~$1.500) | ~$75.000 |
-| Mercadería: 6 pulseras + 6 pares de aros + 6 cajitas | ~$41.000 |
-| Publicidad en Instagram ($5.000/día x 6 días) | ~$30.000 |
-| Reserva | ~$4.000 |
-| Costo por set | ~$6.900 |
-| Precio de venta | $19.900 |
-| Ganancia por set (antes de publicidad) | ~$13.000 |
+| 3 a 5 kits | ~$35.000 |
+| Cajitas y moños | ~$5.000 |
+| Publicidad (6 días x $5.000) | $30.000 |
+| Reserva | ~$5.000 |
+| Meta: costo por kit | $7.000 o menos |
+| Precio de venta a probar | $22.900 |
 
-Referencia de mercado: en Mercado Libre hay pulseras de acero solas a $12.500–$18.000 y packs mayoristas de 6 pares de aros a ~$15.400.
+En Mercado Libre se ven kits parecidos a $21.000–26.500 (búsqueda web, a confirmar con capturas).
 
-## Plan
+## Los 10 pasos
 
-1. Comprar en mayorista.
-2. Sacar fotos con el celu, al lado de una ventana.
-3. Publicar en Instagram, estados de WhatsApp y Marketplace.
-4. Anunciar $5.000 por día, 6 días, a mujeres de 35 a 60.
-5. Anotar cada venta en la planilla.
+1. Elegir producto (hecho).
+2. Pedir precios a 3 mayoristas.
+3. Comprar 3 a 5 kits + cajitas.
+4. Fotos y videos con el celu, con luz de ventana.
+5. Instagram Bellamor: 3 posteos + historias.
+6. Mercado Libre: portada con fondo blanco, sin texto.
+7. Anuncio: $5.000 por día, 6 días, mujeres de 25 a 55.
+8. Responder por WhatsApp en menos de 1 hora.
+9. Anotar cada venta y cada gasto en la planilla.
+10. A los 7 días: si vendiste 2 o más, comprá más. Si no, cambiá la foto o el gancho.
 
 ## Links
 
 - Cerebro visual: https://claude.ai/artifact/X75cPMvhyb3NZx13PbkiSW
 - Planilla de stock y ventas: https://claude.ai/artifact/VXZzKjHDukxbhon8dhcw9L
-- Estudio de mercado: https://claude.ai/artifact/VKpvof7NrfxjNZR981Ua4C
-- Productos livianos: https://claude.ai/artifact/8FhdaexFF8BQ1mVUFHxrNE
