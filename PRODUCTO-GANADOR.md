@@ -9,6 +9,19 @@
 - Pesa casi nada, no se rompe, no necesita ANMAT ni ENACOM.
 - Faltan 5 semanas para Navidad.
 
+## Validación en la Biblioteca de anuncios de Meta (15/11/2026)
+
+Regla: más de 300–400 anuncios activos afuera, chico y no eléctrico.
+
+| Búsqueda (anuncios activos) | Países | Anuncios |
+| --- | --- | --- |
+| "tarnish free stainless steel bracelet" | EE.UU. | ~776 |
+| "pulsera acero inoxidable" | México, España, Colombia, Chile | ~789 |
+| "satin pillowcase" | EE.UU. | ~686 (con ruido) |
+| "heatless curling rod" | EE.UU. | ~42 (descartado) |
+
+Los conteos son por palabra clave y aproximados. Casi todos los anuncios que vimos se crearon en los últimos días.
+
 ## Números (estimados, confirmalos al comprar)
 
 | Concepto | Monto |
