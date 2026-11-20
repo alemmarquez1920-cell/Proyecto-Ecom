@@ -68,3 +68,66 @@ Ojo: el corrector de juanetes del plan del 15/11 ya tiene 303 anuncios activos e
 2. Mismo buscador, país EE.UU., "pelvic floor trainer": mirá los videos del aparato.
 3. Google Trends: "pelvic floor trainer", EE.UU., últimos 5 años. Fijate si noviembre 2026 está igual o arriba de noviembre 2025.
 4. En Once pedí "ejercitador de muslos tipo mariposa" o "thigh master". Pagá como máximo $12.000.
+
+---
+
+# Segunda búsqueda (20/11/2026, mañana): guante exfoliante "sin dolor"
+
+**Decisión de Alexis:** el ejercitador de piso pélvico queda descartado porque es íntimo. Nuevo filtro: nada íntimo.
+
+Ahora con Google Trends habilitado (entorno "Alameda productos").
+
+## Producto
+
+Guante redondo de goma blanda con microtextura y tira para los dedos ("No-Pain Exfoliating Bath Scrubber Glove"). Saca la piel muerta en la ducha: se ven los "rollitos". Dolor que resuelve: piel áspera, piel de gallina, puntitos negros en las piernas, granitos en la espalda. Llega el verano y se muestran las piernas.
+
+## Google (últimos 3 meses, EE.UU., subida de búsquedas)
+
+| Búsqueda | Subida |
+| --- | --- |
+| viral silicone body scrubber | +1.279.450% |
+| african net sponge | +363.950% |
+| how to use korean exfoliating mitt | +262.600% |
+| viral body scrubber (categoría Belleza) | +263.500% |
+
+## Google (curva de 5 años, valor de noviembre)
+
+| Búsqueda | País | nov-2024 | nov-2025 | nov-2026 |
+| --- | --- | --- | --- | --- |
+| exfoliante corporal | Argentina | 40 | 61 | 70 (pico de 5 años) |
+| exfoliating glove | Australia | 24 | 31 | 33 |
+| exfoliating glove | Reino Unido | 0 | 8 | 18 |
+| exfoliating glove | EE.UU. | 20 | 19 | 18 |
+
+## Biblioteca de anuncios (activos)
+
+| País | Palabra | Activos | Detalle |
+| --- | --- | --- | --- |
+| EE.UU. | exfoliating glove | 1.045 | 7 tiendas con el mismo guante, anuncios creados el 19 y 20/11 |
+| EE.UU. | body scrubber | 1.320 | Una tienda: "3,155 sold in last 24 hours" |
+| Australia | exfoliating glove | 942 | Mismas tiendas |
+| Reino Unido | exfoliating glove | 219 | |
+| México | guante exfoliante | 129 | |
+| Colombia | guante exfoliante | 20 | Neilux: pack x4 a 89.900 COP (~USD 22) |
+| Argentina | guante exfoliante | 7 | 1 tienda: Shop Cosmética ("Dejá la esponja, 2x1") |
+| Argentina | esponja exfoliante | 7 | Derma PRO y Shop Cosmética |
+
+No llega a 300 en Reino Unido, México ni Colombia.
+
+## Precio y proveedor
+
+- EE.UU.: packs de 2, 4 y 8 a USD 9–23 en Walmart y Amazon.
+- Argentina: hay guantes y esponjas de silicona en Mercado Libre (tiendas lamadridstoremeli y arish_dr). O sea, hay importadores, pero casi nadie lo anuncia en Meta.
+- Once: no encontré mayorista online. Pedí "guante exfoliante de silicona" o "esponja de silicona para baño".
+
+## Cuentas (precio del proveedor sin confirmar)
+
+| | |
+| --- | --- |
+| Pack x3 | $29.900 |
+| Producto (máximo) | −$7.000 |
+| Envío | −$8.000 |
+| Comisión (~7%) | −$2.100 |
+| Te queda antes de publicidad | ~$12.800 |
+
+Entra en un sobre. Sin pila, sin crema: no necesita ANMAT ni certificación eléctrica. No vender con exfoliante en crema.
