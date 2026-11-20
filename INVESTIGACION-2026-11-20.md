@@ -1,0 +1,70 @@
+# Búsqueda de producto con hueco en Argentina (20/11/2026)
+
+Fuente principal: Biblioteca de anuncios de Meta, anuncios **activos** por palabra clave y país, consultados el 20/11/2026.
+Los conteos incluyen ruido: notas tipo "consejo de médico", apps, clínicas y algunas novelas. Por eso abajo se aclara qué parte es el producto.
+
+## Recomendación: ejercitador de piso pélvico y muslos (tipo mariposa, sin contador)
+
+Se aprieta entre los muslos mirando la tele. Dolor que resuelve: pérdidas de orina al toser o reír, posparto, muslos y glúteos flojos.
+
+| País | Palabra buscada | Anuncios activos | Qué hay adentro |
+| --- | --- | --- | --- |
+| EE.UU. | pelvic floor trainer | 1.134 | De 10 revisados: 3 del aparato, el resto notas sobre pérdidas, fajas y apps |
+| EE.UU. | hip trainer | 1.763 | Mismo aparato con otro nombre, más ruido |
+| Reino Unido | pelvic floor trainer | 543 | Mayoría avisos de pérdidas de orina (valida el dolor) |
+| Reino Unido | kegel trainer | 85 | Marca Kallon, en libras |
+| Australia | pelvic floor trainer | 399 | Fajas, apps y tiendas |
+| México | suelo pélvico | 660 | El aparato: Elite Market Mx, Ruah, Luce & Vita. Resto: urólogos y apps |
+| Colombia | suelo pélvico | 634 | El aparato: tienda "Paga al Recibir" ("+1.000 personas han comprado") |
+| Argentina | ejercitador pélvico | 10 | Los 10 son de un solo vendedor: Luneva (FemFit Pro) |
+| Argentina | piso pélvico | 160 | Apps de pilates y clínicas. Ninguna tienda del aparato |
+| Argentina | pérdidas de orina | 151 | UroControl, UltraDries, clínicas: el dolor ya se publicita, el aparato no |
+
+Fechas de los anuncios del aparato revisados: creados entre el 10 y el 20/11/2026 (EE.UU., México, Colombia). Luneva en Argentina: 22/10/2026.
+Versiones: hay de resorte simple, con contador digital, con giro 360° y "2026 upgraded".
+
+### Qué no cumple del pedido
+
+- **300 anuncios en México y Colombia con el nombre exacto del producto:** no lo cumple. Con "ejercitador pélvico" da 17 en México y 45 en Colombia. Llega a 600+ solo con "suelo pélvico", que mezcla clínicas y apps. Ningún producto de los revisados pasó 300 con su nombre exacto en español.
+- **Google Trends:** la red de esta sesión bloquea trends.google.com. Dato indirecto: "Pelvic Floor Workout" tiene 165.000 búsquedas por mes y creció 22% en un año, estable, sin pico de temporada ([risingtrends.co](https://www.risingtrends.co/trends/fitness-trends-2026)).
+- **Once:** no encontré un mayorista online que lo tenga. Hay que preguntar en persona.
+- **Ticket:** en EE.UU. se vende de USD 10 a 35 ([Walmart](https://www.walmart.com/ip/17504023592)). Queda debajo de USD 50. Para subir el ticket: pack de 2 o aparato + bandas elásticas.
+- **Tamaño:** unos 30 cm. No entra en un sobre, va en caja chica.
+
+### Cuentas (precio en Once sin confirmar)
+
+| | |
+| --- | --- |
+| Precio de venta | $39.900 |
+| Producto (máximo a pagar) | −$12.000 |
+| Envío | −$8.000 |
+| Comisión (~7%) | −$2.800 |
+| Te queda antes de publicidad | ~$17.100 |
+
+### Cuidados
+
+- Solo el modelo externo (se aprieta con los muslos). Nada que se introduzca, nada con electrodos: eso entra en ANMAT.
+- Mejor sin contador digital, así no lleva pila.
+- En el anuncio no preguntar "¿Tenés pérdidas?". Meta rechaza avisos que señalan algo personal de quien lo ve. Usar: "Tonificá piso pélvico y muslos en 10 minutos, mirando la tele".
+
+## Descartados porque ya corren en Argentina
+
+| Producto | Argentina | México | Colombia | Quién vende en AR |
+| --- | --- | --- | --- | --- |
+| Cepillo linfático facial | 248 | 40 | 92 | Nuda y Uniderma, en pesos, con Black Friday |
+| Fascitis plantar | 402 | 923 | 483 | BALOX ("+130.000 pies sin dolor") |
+| Juanetes | 303 | 382 | — | Varias tiendas |
+| Separador de dedos | 126 | 13 | — | Alinura arg |
+| Ronquidos | 546 | 1.182 | 632 | CerviSleep |
+| Maderoterapia | 469 | 970 | — | Centros de estética |
+| Gua sha | 56 | 163 | 108 | Poco en todos lados |
+| Ventosas faciales | 0 | 157 | 3 | Sin validar en Colombia; en México son clínicas |
+
+Ojo: el corrector de juanetes del plan del 15/11 ya tiene 303 anuncios activos en Argentina.
+
+## Para validar vos (5 minutos)
+
+1. Biblioteca de anuncios, país Argentina, "ejercitador pélvico": tienen que ser pocos y de Luneva.
+2. Mismo buscador, país EE.UU., "pelvic floor trainer": mirá los videos del aparato.
+3. Google Trends: "pelvic floor trainer", EE.UU., últimos 5 años. Fijate si noviembre 2026 está igual o arriba de noviembre 2025.
+4. En Once pedí "ejercitador de muslos tipo mariposa" o "thigh master". Pagá como máximo $12.000.
