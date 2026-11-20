@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* Marca Alameda: solo estos tres colores. */
+@theme {
+  --color-fondo: #fcffff;
+  --color-azul: #09318d;
+  --color-rosa: #eed2e2;
+
+  --font-titulo: var(--font-dm-serif), Georgia, "Times New Roman", serif;
+  --font-texto: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-azul);
+  font-family: var(--font-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-azul);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Aparición suave al hacer scroll. Sin JavaScript, todo se ve igual. */
+.reveal-pendiente {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.reveal-listo {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+/* Lugar reservado para fotos reales que todavía no se subieron */
+.lugar-foto {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-rosa) 0 14px,
+    var(--color-fondo) 14px 28px
+  );
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal-pendiente,
+  .reveal-listo {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
