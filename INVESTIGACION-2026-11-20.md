@@ -131,3 +131,37 @@ No llega a 300 en Reino Unido, México ni Colombia.
 | Te queda antes de publicidad | ~$12.800 |
 
 Entra en un sobre. Sin pila, sin crema: no necesita ANMAT ni certificación eléctrica. No vender con exfoliante en crema.
+
+---
+
+# Tercera búsqueda: Francia y España (20/11/2026, tarde)
+
+Método: Google Trends (búsquedas que suben en los últimos 3 meses, y en el verano europeo de mayo a agosto 2026) más Biblioteca de anuncios por producto. La herramienta de la Biblioteca no filtra por fecha ni por alcance: la fecha la saqué de los anuncios de muestra.
+
+## Lista de productos con potencial
+
+| # | Producto | Señal afuera | Argentina | Veredicto |
+| --- | --- | --- | --- | --- |
+| 1 | Guante exfoliante "sin dolor" (redondo, con tira) | Francia 289 anuncios (lanzado 20/11), España 10 (19/11), EE.UU. 1.045, Australia 942. Verano Francia: "peau de fraise jambes" +23.550%, "gommage jambes poils incarnés" +23.150% | 7 anuncios. "Exfoliante corporal" en pico de 5 años en Google | Testear ya |
+| 2 | Guante coreano de exfoliación (el de los "rollitos") | EE.UU.: "how to use korean exfoliating mitt" +262.600% | Sin anuncios propios | Sumarlo al 1 como kit |
+| 3 | Cepillo de ducha de silicona suave | Francia 100 anuncios, mismas tiendas del guante. EE.UU.: "body scrubber" 1.320 | Ruido, sin dato limpio | Sumarlo al kit |
+| 4 | Esponja africana (red larga para la espalda) | EE.UU.: "african net sponge" +363.950% | 0 anuncios | Agregado al kit, a probar |
+| 5 | Calzas o medias anticelulitis | Francia: "collant anti cellulite" +21.050% | Sin medir | Dudoso: talles y devoluciones; las medias son de invierno |
+| 6 | Algo para piernas cansadas (rodillo frío o gua sha corporal) | Verano España: "gel frío piernas cansadas", "drenaje linfático en piernas" | Sin medir | Idea para enero, falta validar anuncios |
+| 7 | Separadores de dedos | España: +250% | 126 anuncios (Alinura arg) | Ya hay competencia |
+| 8 | Pulsera que tapa el sensor de glucosa | 2 tiendas de testeo en Francia y España | 0 tiendas | Nicho chico |
+
+## Descartados
+
+- Ejercitador de piso pélvico: íntimo (decisión de Alexis).
+- Cepillo linfático facial: 248 anuncios en Argentina.
+- Ventosas faciales: Francia 24, España 2. Sin movimiento.
+- Parches antiarrugas: en Francia son marcas de cosmética.
+- Bandas antirroce de muslos: España 3. En Argentina ya está "Perla".
+- Kit extractor de puntos negros: señal débil.
+- Cremas, sérums, máscaras: llevan ANMAT.
+- Carillas de silicona, protector anti-ronquidos, DAFO: dentales o médicos.
+
+## Recomendación
+
+Kit "piel de seda" para el verano: guante "sin dolor" + guante coreano (+ esponja africana si sale barata). Así sube el ticket sin cambiar el producto central.
