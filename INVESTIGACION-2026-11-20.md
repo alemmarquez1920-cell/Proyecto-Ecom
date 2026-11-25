@@ -165,3 +165,26 @@ Método: Google Trends (búsquedas que suben en los últimos 3 meses, y en el ve
 ## Recomendación
 
 Kit "piel de seda" para el verano: guante "sin dolor" + guante coreano (+ esponja africana si sale barata). Así sube el ticket sin cambiar el producto central.
+
+---
+
+# Cuarta búsqueda (25/11/2026): producto mecánico de Once, valor percibido alto
+
+**Decisión de Alexis:** la depiladora IPL queda en pausa. Sin verificaciones (ANMAT) no es escalable y trae reclamos.
+**Filtro nuevo:** mecánico (sin enchufe ni pilas), fácil de conseguir en Once, valor percibido alto, que llame la atención, vendible a casi todo CABA (clase baja, media y alta), ticket medio. Sigue vigente: nada íntimo.
+
+Biblioteca de anuncios de Meta, anuncios **activos** por palabra clave, 25/11/2026. Los conteos tienen ruido.
+
+| Candidato | Argentina | EE.UU. | México | Qué hay adentro | Veredicto |
+| --- | --- | --- | --- | --- | --- |
+| Rulos / ondas sin calor | 29 ("rulos sin calor") | 664 ("heatless curls") | 95 (ruido) | EE.UU.: tiendas del producto (Morning Gleam a USD 17,99, Kitsch). AR: casi todo peluquerías | **Elegido**: hueco en Meta, landing ya hecha |
+| Picador de verduras manual | 22 | 166 | 10 | AR: tiendas de pago al recibir (Dreams Lift, Kargot) | Ya lo corren en AR |
+| Quita pelos de mascotas | 42 | 1.547 (ruido) | 14 | AR: Patitas Go (PetRoll), Cat Shop | Ya lo corren en AR |
+| Organizador de heladera | 42 (ruido) | 941 (ruido) | 11 (ruido) | AR: "Kit Alacena" de Tienda Más Metros | Señal sucia |
+| Organizador de maquillaje giratorio | 1 | 24 | 10 | Poco en todos lados | Sin validar afuera |
+| Barra de pilates | 49 | 910 | 45 | Casi todo estudios de pilates | Señal sucia |
+| Alfombra de acupresión | 0 | 254 (ruido) | 0 | Notas de shiatsu, anillos | Sin validar |
+| Set matero | 224 | — | — | Stanley, mates, combos | Saturado |
+
+Mercado Libre: hay varios vendedores con kits de ondas sin calor + funda + cofia de satén. No competir por precio: vender el regalo armado (caja + tarjeta) y el video de la transformación.
+Once: no encontré mayorista online de rulos sin calor. Hay que preguntar en persona en locales de accesorios para el pelo.
