@@ -1,0 +1,37 @@
+/* Estilos de base solo para /kit-depilacion. Los colores son los de la tarjeta de uso impresa. */
+
+.kd {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1a1d1b;
+  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Títulos en Space Grotesk. Le gana a la regla general de globals.css (DM Serif del Kit Ondas). */
+.kd :where(h1, h2, h3) {
+  font-family: var(--font-space), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.kd .titulo-texto {
+  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.kd :focus-visible {
+  outline: 3px solid #1e5b46;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Lugar reservado de las fotos que faltan, en los colores del kit */
+.kd .lugar-foto {
+  background-image: repeating-linear-gradient(135deg, #eaf3ee 0 14px, #ffffff 14px 28px);
+}
+.kd .lugar-foto > span {
+  background: #ffffff;
+  color: #1a1d1b;
+}

@@ -1,0 +1,19 @@
+Kit Depilación en Casa: poné acá tus fotos y videos REALES con estos nombres exactos.
+Nada generado con IA. Sin fotos de antes y después hasta tener fotos propias reales.
+
+hero.mp4          video vertical 4:5 para la portada, en loop, sin sonido, menos de 4 MB
+hero-poster.jpg   primer cuadro del video (4:5). Se ve primero; el video arranca cuando la página terminó de cargar
+kit.jpg           el kit completo de arriba, fondo claro, foto cuadrada (los puntos numerados van encima)
+caja.jpg          la caja cerrada, para el cierre de la página
+ipl-uso.jpg       usando la depiladora IPL en la pierna o el brazo, con los anteojos puestos
+facial-uso.jpg    usando la depiladora facial en el bozo o las cejas
+rodillo-uso.jpg   pasando el rodillo de hielo sobre la piel
+paso-1.jpg        rasurando la zona con la maquinita
+paso-2.jpg        enchufando el cargador y encendiendo (luz verde)
+paso-3.jpg        tocando el botón para elegir el nivel
+paso-4.jpg        la ventana apoyada sobre la piel (luz roja)
+paso-5.jpg        disparando un destello y avanzando
+paso-6.jpg        pasando el rodillo de hielo (que se vea que viene en el kit)
+data-fiscal.jpg   el QR de Data Fiscal (ARCA), para el pie de página
+
+Fotos con luz natural. Mientras falte un archivo, la página muestra un lugar reservado con su nombre.

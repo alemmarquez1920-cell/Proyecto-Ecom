@@ -10,6 +10,18 @@
   --font-texto: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
+/* Kit Depilación (/kit-depilacion): identidad de la tarjeta de uso impresa. */
+@theme {
+  --color-verde: #1e5b46;
+  --color-verde-oscuro: #143f31;
+  --color-verde-suave: #eaf3ee;
+  --color-tinta: #1a1d1b;
+  --color-gris: #454d48;
+  --color-linea: #b9c7bf;
+
+  --font-display: var(--font-space), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
