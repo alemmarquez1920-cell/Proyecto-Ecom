@@ -1,0 +1,1201 @@
+<title>Kit Depilación en Casa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Depiladora IPL de 5 niveles, depiladora facial y rodillo de hielo. En una caja, con guía impresa paso a paso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: ficha de producto editorial. Texto en columna angosta, piezas visuales grandes al costado,
+   bandas que alternan blanco y rosa. El rojo pasión aparece solo en botones y en los datos que deciden la compra. */
+:root {
+  color-scheme: light;
+  --blanco: #ffffff;
+  --rosa: #fbe7ea;
+  --rosa-linea: #efccd3;
+  --piel: #f3d7c6;
+  --piel-honda: #e6bba2;
+  --rojo: #c1121f;
+  --rojo-oscuro: #94101a;
+  --tinta: #2b1418;
+  --tinta-2: #6b4a50;
+  --sombra-foto: rgba(43, 20, 24, 0.16);
+
+  --f-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --f-texto: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-dato: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--blanco);
+  color: var(--tinta);
+  font-family: var(--f-texto);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; line-height: 1.04; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
+p { margin: 0; text-wrap: pretty; }
+ul, ol { margin: 0; padding: 0; }
+a { color: inherit; }
+em { font-style: italic; }
+:focus-visible { outline: 3px solid var(--rojo); outline-offset: 3px; border-radius: 6px; }
+.sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+.ancho {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 768px) {
+  .ancho { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); }
+}
+.banda { padding-block: 72px; }
+.banda--rosa { background: var(--rosa); }
+@media (min-width: 768px) { .banda { padding-block: 112px; } }
+
+.rotulo { font-family: var(--f-dato); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-2); }
+.h2 { font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.5rem); }
+.h3 { font-size: 1.5rem; }
+.bajada { font-size: 1.125rem; color: var(--tinta-2); max-width: 34em; }
+.cabeza { display: grid; gap: 16px; margin-bottom: 40px; max-width: 760px; }
+@media (min-width: 768px) { .cabeza { margin-bottom: 56px; } }
+
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 54px; padding: 0 30px; border-radius: 12px;
+  background: var(--rojo); color: var(--blanco);
+  font-family: var(--f-texto); font-size: 17px; font-weight: 600; text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.boton:hover { background: var(--rojo-oscuro); }
+.boton svg { width: 18px; height: 18px; }
+.enlace { color: var(--rojo); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+
+/* Lugar reservado para fotos reales: se reemplaza por <img> cuando estén */
+.foto {
+  position: relative; display: flex; align-items: flex-end;
+  max-width: 100%; margin: 0;
+  background: var(--piel); border-radius: 14px; overflow: hidden;
+}
+.foto::before { content: ""; position: absolute; inset: 10px; border: 1px solid var(--sombra-foto); border-radius: 8px; pointer-events: none; }
+.foto figcaption { position: relative; margin: 20px; font-family: var(--f-dato); font-size: 11.5px; line-height: 1.5; color: var(--tinta); max-width: 30em; }
+.foto figcaption b { display: block; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* Aviso de vista previa */
+.aviso { background: var(--tinta); color: var(--blanco); font-size: 14px; }
+.aviso .ancho { padding-block: 10px; }
+.aviso details summary { cursor: pointer; font-weight: 600; }
+.aviso ul { margin-top: 8px; padding-left: 20px; columns: 1; column-gap: 32px; }
+@media (min-width: 768px) { .aviso ul { columns: 2; } }
+.aviso li { break-inside: avoid; margin-bottom: 2px; }
+
+/* Barra de condiciones */
+.condiciones { background: var(--rosa); font-size: 13px; font-weight: 500; }
+.condiciones ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 20px; padding-block: 9px; text-align: center; }
+
+/* Encabezado */
+.encabezado .ancho { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+.marca { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-display); font-size: 28px; line-height: 1; text-decoration: none; color: var(--tinta); }
+.marca svg { width: 15px; height: 19px; }
+.encabezado__ayuda { font-size: 14px; color: var(--tinta-2); text-align: right; }
+.encabezado__ayuda b { color: var(--tinta); font-weight: 600; }
+
+/* Portada */
+.portada .ancho { display: grid; gap: 40px; padding-block: 24px 72px; }
+@media (min-width: 900px) { .portada .ancho { grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 72px; align-items: center; padding-block: 40px 112px; } }
+.portada h1 { font-size: clamp(2.875rem, 1.9rem + 4.4vw, 5rem); margin-top: 14px; }
+.portada h1 em { color: var(--rojo); }
+.portada .bajada { margin-top: 20px; }
+.precio { margin-top: 28px; display: grid; gap: 6px; }
+.precio__monto { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.precio__valor { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+.precio__anterior { font-size: 1.125rem; color: var(--tinta-2); }
+.precio__detalle { font-size: 14.5px; color: var(--tinta-2); }
+.precio__detalle b { color: var(--tinta); font-weight: 600; }
+.acciones { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+@media (max-width: 599px) { .acciones .boton { width: 100%; } .acciones .enlace { width: 100%; text-align: center; } }
+.respaldo { margin-top: 28px; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; border-top: 1px solid var(--rosa-linea); padding-top: 20px; font-size: 14px; }
+.respaldo b { display: block; font-weight: 600; }
+.respaldo span { color: var(--tinta-2); }
+
+.portada__visual { position: relative; }
+.portada__visual .foto { aspect-ratio: 4 / 5; width: 100%; align-items: flex-start; }
+.ficha {
+  position: relative; margin: -56px 16px 0; padding: 18px 20px;
+  background: var(--blanco); border-radius: 12px; box-shadow: 0 12px 32px -18px var(--sombra-foto), 0 0 0 1px var(--rosa-linea);
+  font-family: var(--f-dato); font-size: 12px; line-height: 1.5;
+}
+@media (min-width: 900px) { .ficha { position: absolute; left: -48px; bottom: 40px; margin: 0; width: 290px; } }
+.ficha dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 10px 0 0; }
+.ficha dt { color: var(--tinta-2); }
+.ficha dd { margin: 0; color: var(--tinta); }
+
+/* Para quién */
+.paraquien { display: grid; gap: 20px; }
+@media (min-width: 768px) { .paraquien { grid-template-columns: 1fr 1fr; gap: 24px; } }
+.lista-si, .lista-no { list-style: none; display: grid; gap: 14px; }
+.columna { padding: 28px; border-radius: 16px; background: var(--blanco); }
+.columna--no { background: transparent; border: 1px solid var(--rosa-linea); }
+.columna h3 { font-size: 1.625rem; margin-bottom: 18px; }
+.lista-si li, .lista-no li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+.marca-si, .marca-no { width: 22px; height: 22px; margin-top: 1px; }
+
+/* Test ¿Es para vos? */
+.test { display: grid; gap: 40px; }
+@media (min-width: 900px) { .test { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 64px; align-items: start; } }
+.test form { display: grid; gap: 32px; }
+.test fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.test legend { font-weight: 600; font-size: 1.0625rem; margin-bottom: 12px; padding: 0; }
+.opciones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.opcion {
+  position: relative; display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 10px 14px;
+  border: 1.5px solid var(--rosa-linea); border-radius: 12px; background: var(--blanco); cursor: pointer;
+  font-weight: 500; line-height: 1.2; transition: border-color 0.15s ease;
+}
+.opcion:hover { border-color: var(--piel-honda); }
+.opcion:has(input:checked) { border-color: var(--rojo); box-shadow: inset 0 0 0 1px var(--rojo); }
+.opcion:has(input:focus-visible) { outline: 3px solid var(--rojo); outline-offset: 2px; }
+.opcion input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.muestra { width: 28px; height: 28px; flex: none; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(43, 20, 24, 0.14); }
+.resultado { border-radius: 16px; padding: 28px; background: var(--blanco); min-height: 220px; }
+.resultado[data-estado="falta"] { border: 1.5px dashed var(--piel-honda); background: transparent; }
+.resultado[data-estado="si"] { box-shadow: 0 0 0 2px var(--rojo); }
+.resultado[data-estado="no"] { box-shadow: 0 0 0 2px var(--tinta); }
+.resultado__titulo { font-family: var(--f-display); font-size: 2.25rem; line-height: 1; }
+.resultado[data-estado="si"] .resultado__titulo { color: var(--rojo); }
+.resultado__niveles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+.resultado__niveles div { background: var(--rosa); border-radius: 10px; padding: 14px 16px; }
+.resultado__niveles dt { font-size: 13px; color: var(--tinta-2); }
+.resultado__niveles dd { margin: 2px 0 0; font-size: 1.625rem; font-weight: 700; }
+.resultado p { margin-top: 14px; }
+.resultado .boton { margin-top: 20px; width: 100%; }
+.nota { font-size: 14px; color: var(--tinta-2); }
+
+/* Gráfico de niveles (small multiples: cuerpo y rostro, escala 1 a 5) */
+.grafico { margin-top: 56px; }
+.grafico__cabeza { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; margin-bottom: 20px; }
+.grafico__cabeza h3 { font-size: 1.625rem; }
+.niveles { display: grid; grid-template-columns: minmax(92px, 0.8fr) minmax(0, 1fr) minmax(0, 1fr); gap: 0 14px; align-items: center; font-size: 14px; }
+@media (min-width: 768px) { .niveles { gap: 0 28px; } }
+.niveles__panel { font-weight: 600; padding-bottom: 10px; }
+.niveles__tono { display: flex; align-items: center; gap: 10px; padding-block: 8px; min-height: 52px; line-height: 1.2; }
+.niveles__tono .muestra { width: 20px; height: 20px; }
+.niveles__fila-sel { background: var(--rosa); }
+.niveles__tono.niveles__fila-sel { font-weight: 700; }
+.pista { position: relative; height: 52px; display: grid; grid-template-columns: repeat(5, 1fr); }
+.pista > i { border-left: 1px solid var(--rosa-linea); }
+.pista > i:last-child { border-right: 1px solid var(--rosa-linea); }
+.barra {
+  position: absolute; top: 50%; height: 16px; transform: translateY(-50%);
+  background: var(--rojo); border-radius: 4px; border: 0; padding: 0; cursor: default;
+}
+.barra:hover, .barra:focus-visible { background: var(--rojo-oscuro); }
+.pista__no { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.pista__no span { background: var(--blanco); border: 1px solid var(--rosa-linea); border-radius: 6px; padding: 2px 8px; font-family: var(--f-dato); font-size: 11.5px; color: var(--tinta-2); white-space: nowrap; }
+.eje { display: grid; grid-template-columns: repeat(5, 1fr); font-family: var(--f-dato); font-size: 11.5px; color: var(--tinta-2); text-align: center; font-variant-numeric: tabular-nums; padding-top: 6px; border-top: 1px solid var(--rosa-linea); }
+.tabla-ver { margin-top: 20px; font-size: 14px; }
+.tabla-ver summary { cursor: pointer; color: var(--tinta-2); font-weight: 500; }
+.tabla { width: 100%; border-collapse: collapse; margin-top: 12px; font-variant-numeric: tabular-nums; }
+.tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rosa-linea); }
+.tabla th { font-weight: 600; }
+.desborde { overflow-x: auto; }
+
+.tooltip {
+  position: fixed; z-index: 60; pointer-events: none; max-width: 240px;
+  background: var(--tinta); color: var(--blanco); border-radius: 8px; padding: 8px 12px;
+  font-size: 13px; line-height: 1.35; box-shadow: 0 8px 24px -10px rgba(43, 20, 24, 0.5);
+}
+.tooltip strong { display: block; font-size: 15px; }
+.tooltip span { color: var(--piel); }
+
+/* Qué trae */
+.trae { display: grid; gap: 40px; }
+@media (min-width: 900px) { .trae { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: start; } }
+.trae .foto { aspect-ratio: 1 / 1; width: 100%; }
+.trae h3 { font-size: 1.375rem; margin-bottom: 4px; }
+.piezas { list-style: none; counter-reset: pieza; display: grid; }
+.piezas li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding-block: 16px; border-bottom: 1px solid var(--rosa-linea); }
+.piezas li:first-child { border-top: 1px solid var(--rosa-linea); }
+.piezas li::before { counter-increment: pieza; content: counter(pieza); font-family: var(--f-display); font-size: 1.75rem; line-height: 1; color: var(--rojo); }
+.piezas b { display: block; font-weight: 600; }
+.piezas span { color: var(--tinta-2); }
+.piezas--extra li::before { color: var(--tinta-2); font-size: 1.25rem; }
+.grupo + .grupo { margin-top: 36px; }
+.grupo > .rotulo { display: block; margin-bottom: 12px; }
+
+/* Cómo se usa */
+.prueba {
+  display: grid; gap: 20px; align-items: center; margin-bottom: 56px;
+  background: var(--rosa); border-radius: 16px; padding: 28px;
+}
+@media (min-width: 768px) { .prueba { grid-template-columns: auto 1fr; gap: 36px; padding: 36px 40px; } }
+.prueba__reloj { display: flex; align-items: baseline; gap: 6px; font-family: var(--f-display); font-size: 4.5rem; line-height: 0.9; color: var(--rojo); }
+.prueba__reloj small { font-family: var(--f-dato); font-size: 13px; color: var(--tinta-2); }
+.prueba h3 { font-size: 1.75rem; margin-bottom: 8px; }
+.prueba dl { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 14px 0 0; font-size: 14px; }
+.prueba dt { color: var(--tinta-2); font-family: var(--f-dato); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; }
+.prueba dd { margin: 0; font-weight: 600; }
+.pasos { list-style: none; display: grid; gap: 40px; }
+@media (min-width: 700px) { .pasos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 32px; } }
+@media (min-width: 1024px) { .pasos { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.paso .foto { aspect-ratio: 3 / 2; width: 100%; background: var(--rosa); }
+.paso__fila { display: grid; grid-template-columns: 44px 1fr; gap: 12px; margin-top: 18px; }
+.paso__num { font-family: var(--f-display); font-size: 2.75rem; line-height: 0.85; color: var(--rojo); }
+.paso h3 { font-size: 1.375rem; margin-bottom: 6px; }
+
+/* Calendario */
+.calendario { list-style: none; display: flex; flex-direction: column; gap: 40px; }
+@media (min-width: 900px) { .calendario { flex-direction: row; gap: 64px; } }
+.tramo { position: relative; display: flex; gap: 20px; }
+@media (min-width: 900px) { .tramo { flex-direction: column; } }
+.tramo__linea { position: absolute; left: 15px; top: 16px; bottom: -56px; width: 2px; background: var(--rosa-linea); }
+@media (min-width: 900px) { .tramo__linea { left: 16px; right: -80px; top: 15px; bottom: auto; width: auto; height: 2px; } }
+.tramo__cola { position: absolute; left: 15px; top: 32px; height: 36px; border-left: 2px dotted var(--piel-honda); }
+@media (min-width: 900px) { .tramo__cola { left: 32px; top: 15px; height: 0; width: 72px; border-left: 0; border-top: 2px dotted var(--piel-honda); } }
+.puntos { position: relative; list-style: none; display: flex; flex-direction: column; gap: calc(var(--semanas) * 8px); }
+@media (min-width: 900px) { .puntos { flex-direction: row; gap: calc(var(--semanas) * 12px); } }
+.punto { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 600; box-shadow: 0 0 0 4px var(--rosa); background: var(--rojo); color: var(--blanco); font-variant-numeric: tabular-nums; }
+.punto--b { background: var(--blanco); color: var(--rojo); box-shadow: 0 0 0 4px var(--rosa), inset 0 0 0 2px var(--rojo); }
+.punto--m { flex: none; background: var(--blanco); color: var(--tinta-2); box-shadow: 0 0 0 4px var(--rosa), inset 0 0 0 2px var(--piel-honda); }
+.tramo h3 { font-size: 1.5rem; }
+.tramo p { color: var(--tinta-2); margin-top: 4px; }
+.duracion { margin-top: 48px; display: inline-flex; flex-wrap: wrap; gap: 4px 10px; background: var(--blanco); border-radius: 12px; padding: 14px 20px; font-size: 15px; }
+
+/* Cuentas */
+.cuentas { display: grid; gap: 32px; }
+@media (min-width: 900px) { .cuentas { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; } }
+.controles { display: grid; gap: 20px; }
+.campo { display: grid; gap: 8px; }
+.campo label { font-weight: 600; }
+.campo small { color: var(--tinta-2); font-size: 13.5px; }
+.entrada { display: flex; align-items: center; border: 1.5px solid var(--rosa-linea); border-radius: 12px; background: var(--blanco); min-height: 54px; padding-inline: 16px; }
+.entrada:focus-within { border-color: var(--rojo); }
+.entrada span { color: var(--tinta-2); font-weight: 600; }
+.entrada input, .entrada select { flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 17px; color: var(--tinta); padding: 12px 8px; outline: none; }
+.entrada select { padding-left: 0; cursor: pointer; }
+.total { padding: 22px 24px; border-radius: 14px; background: var(--rosa); display: grid; gap: 6px; }
+.total__valor { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+.total p { color: var(--tinta-2); font-size: 15px; }
+.lienzo { background: var(--blanco); border: 1px solid var(--rosa-linea); border-radius: 16px; padding: 20px 16px 12px; min-width: 0; }
+.lienzo__cabeza { display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between; align-items: baseline; padding: 0 4px 10px; }
+.lienzo__cabeza h3 { font-size: 1.375rem; }
+.leyenda { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; font-size: 13px; color: var(--tinta-2); }
+.leyenda li { display: inline-flex; align-items: center; gap: 8px; }
+.leyenda i { display: inline-block; width: 16px; height: 2px; background: var(--rojo); }
+.leyenda i.ref { height: 2px; background: var(--tinta); }
+#grafico-gasto { width: 100%; display: block; touch-action: pan-y; }
+#grafico-gasto:focus-visible { outline-offset: 4px; }
+.aclaracion { margin-top: 16px; font-size: 13.5px; color: var(--tinta-2); }
+
+/* Otras piezas */
+.dos { display: grid; gap: 48px; }
+@media (min-width: 768px) { .dos { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.dos .foto { aspect-ratio: 4 / 3; width: 100%; }
+.dos h3 { font-size: 1.75rem; margin: 20px 0 8px; }
+.dos ul { list-style: none; display: grid; gap: 6px; margin-top: 12px; font-family: var(--f-dato); font-size: 12.5px; color: var(--tinta-2); }
+
+/* Seguridad */
+.seguridad { display: grid; gap: 24px; }
+@media (min-width: 900px) { .seguridad { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; align-items: start; } }
+.seguridad .foto { aspect-ratio: 4 / 3; width: 100%; background: var(--blanco); }
+.cuidados { display: grid; gap: 16px; }
+.cuidados section { background: var(--rosa); border-radius: 16px; padding: 26px 28px; }
+.cuidados h3 { font-size: 1.5rem; margin-bottom: 12px; }
+.cuidados ul { padding-left: 20px; display: grid; gap: 8px; }
+.cuidados li::marker { color: var(--rojo); }
+.porque { margin-top: 20px; font-size: 15px; color: var(--tinta-2); max-width: 40em; }
+
+/* Quién está detrás + prueba social */
+.detras { display: grid; gap: 40px; }
+@media (min-width: 900px) { .detras { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: start; } }
+.carta { background: var(--piel); border-radius: 4px 4px 4px 4px; padding: 36px 32px 32px; position: relative; }
+.carta p { font-family: var(--f-display); font-size: 1.375rem; line-height: 1.35; }
+.carta p + p { margin-top: 16px; }
+.carta .firma { font-family: var(--f-texto); font-size: 15px; margin-top: 24px; }
+.carta .firma b { display: block; font-size: 17px; }
+.completar { background: var(--blanco); border-radius: 4px; padding: 0 4px; font-family: var(--f-dato); font-size: 0.8em; color: var(--rojo-oscuro); }
+.hechos { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 24px; }
+.hechos li { border-top: 2px solid var(--tinta); padding-top: 12px; }
+.hechos b { display: block; font-family: var(--f-display); font-size: 1.625rem; line-height: 1.1; font-weight: 400; }
+.hechos span { display: block; margin-top: 6px; font-size: 14.5px; color: var(--tinta-2); }
+.opiniones { margin-top: 64px; }
+.opiniones__lista { list-style: none; display: grid; gap: 16px; margin-top: 20px; }
+@media (min-width: 768px) { .opiniones__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.hueco { border: 1.5px dashed var(--piel-honda); border-radius: 14px; padding: 22px; display: grid; gap: 10px; min-height: 180px; align-content: start; }
+.hueco .rotulo { color: var(--rojo-oscuro); }
+.hueco p { color: var(--tinta-2); font-size: 14.5px; }
+
+/* Garantía */
+.garantias { list-style: none; display: grid; gap: 16px; }
+@media (min-width: 768px) { .garantias { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.garantias li { border: 1px solid var(--rosa-linea); border-radius: 16px; padding: 26px; display: grid; gap: 8px; align-content: start; }
+.garantias b { font-family: var(--f-display); font-size: 3.25rem; line-height: 0.95; font-weight: 400; color: var(--rojo); }
+.garantias strong { font-size: 1.0625rem; }
+.garantias span { color: var(--tinta-2); font-size: 15px; }
+
+/* Preguntas */
+.preguntas { max-width: 820px; }
+.preguntas details { border-bottom: 1px solid var(--rosa-linea); }
+.preguntas details:first-of-type { border-top: 1px solid var(--rosa-linea); }
+.preguntas summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 60px; padding-block: 14px; font-size: 1.0625rem; font-weight: 600; }
+.preguntas summary::-webkit-details-marker { display: none; }
+.preguntas summary::after { content: "+"; font-family: var(--f-display); font-size: 1.75rem; line-height: 1; color: var(--rojo); transition: transform 0.2s ease; }
+.preguntas details[open] summary::after { transform: rotate(45deg); }
+.preguntas details p { padding-bottom: 20px; color: var(--tinta-2); max-width: 40em; }
+
+/* Cierre */
+.cierre { display: grid; gap: 40px; }
+@media (min-width: 900px) { .cierre { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: center; } }
+.cierre .foto { aspect-ratio: 5 / 4; width: 100%; }
+.cierre h2 { font-size: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem); }
+.cierre .boton { margin-top: 24px; }
+
+/* Pie */
+.pie { background: var(--rosa); padding-block: 56px 128px; font-size: 15px; }
+@media (min-width: 768px) { .pie { padding-block: 72px; } }
+.pie .ancho { display: grid; gap: 40px; }
+@media (min-width: 900px) { .pie .ancho { grid-template-columns: 1.4fr 1fr auto; gap: 64px; } }
+.pie p { color: var(--tinta-2); max-width: 32em; margin-top: 12px; }
+.pie nav ul { list-style: none; display: grid; gap: 4px; margin-top: 16px; }
+.pie nav a { display: inline-flex; min-height: 40px; align-items: center; text-underline-offset: 4px; }
+.arrepentimiento { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 12px; border: 1.5px solid var(--tinta); font-weight: 600; text-decoration: none; background: var(--blanco); }
+.arrepentimiento:hover { border-color: var(--rojo); color: var(--rojo); }
+.qr { width: 88px; aspect-ratio: 8 / 11; border: 1.5px dashed var(--piel-honda); border-radius: 8px; display: grid; place-items: center; text-align: center; font-family: var(--f-dato); font-size: 10.5px; line-height: 1.35; padding: 6px; background: var(--blanco); text-decoration: none; }
+
+/* Barra de compra fija (celular) */
+.barra-compra {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+  background: var(--blanco); border-top: 1px solid var(--rosa-linea);
+  box-shadow: 0 -12px 28px -20px rgba(43, 20, 24, 0.45);
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  transform: translateY(110%); transition: transform 0.25s ease;
+}
+.barra-compra.visible { transform: none; }
+.barra-compra .ancho { padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.barra-compra p { font-size: 12.5px; color: var(--tinta-2); line-height: 1.3; }
+.barra-compra p b { display: block; font-size: 1.375rem; color: var(--tinta); letter-spacing: -0.01em; }
+.barra-compra .boton { min-height: 50px; padding: 0 24px; }
+@media (min-width: 900px) { .barra-compra { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+
+<!-- Aviso de vista previa (sacarlo al publicar) -->
+<div class="aviso" role="note">
+  <div class="ancho">
+    <details>
+      <summary>Vista previa. No publicar en anuncios: falta confirmar ANMAT y hay datos en [completar] (tocá para ver).</summary>
+      <ul id="lista-pendientes"></ul>
+    </details>
+  </div>
+</div>
+
+<div class="condiciones">
+  <ul class="ancho">
+    <li>Envío gratis desde $60.000</li>
+    <li>10% OFF por transferencia</li>
+    <li>Despacho en 24 h hábiles</li>
+  </ul>
+</div>
+
+<header class="encabezado">
+  <div class="ancho">
+    <a class="marca" href="#arriba" aria-label="Alameda, inicio">
+      <svg viewBox="0 0 18 22" aria-hidden="true"><path d="M9 1 C14 6 16 10 16 14 A7 7 0 0 1 2 14 C2 10 4 6 9 1 Z" fill="#c1121f"/><path d="M9 8 V19" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/></svg>
+      alameda
+    </a>
+    <p class="encabezado__ayuda">¿Dudas antes de comprar?<br><b>WhatsApp <span data-whatsapp>[completar]</span></b></p>
+  </div>
+</header>
+
+<main id="arriba">
+  <!-- Portada -->
+  <section class="portada" aria-labelledby="t-portada">
+    <div class="ancho">
+      <div>
+        <p class="rotulo">Kit Depilación en Casa · 3 piezas</p>
+        <h1 id="t-portada">Depilate en casa, <em>a tu ritmo.</em></h1>
+        <p class="bajada">Depiladora IPL de 5 niveles, depiladora facial y rodillo de hielo. En una caja, con una guía impresa paso a paso.</p>
+
+        <div class="precio">
+          <p class="precio__monto">
+            <span class="precio__valor" data-precio>$[completar]</span>
+            <s class="precio__anterior" data-precio-anterior hidden></s>
+          </p>
+          <p class="precio__detalle">Precio final. <b data-precio-transf>$[completar]</b> por transferencia (10% OFF). Cuotas con Mercado Pago.</p>
+        </div>
+
+        <div class="acciones">
+          <a class="boton" id="comprar-portada" data-comprar href="#comprar">Comprar el kit</a>
+          <a class="enlace" href="#es-para-vos">¿Me sirve? Hacé el test</a>
+        </div>
+
+        <ul class="respaldo">
+          <li><b>Envío gratis</b><span>desde $60.000</span></li>
+          <li><b>Despacho</b><span>en 24 h hábiles</span></li>
+          <li><b>Garantía legal</b><span>6 meses</span></li>
+          <li><b>Arrepentimiento</b><span>10 días corridos</span></li>
+        </ul>
+      </div>
+
+      <div class="portada__visual">
+        <figure class="foto">
+          <figcaption><b>Foto real · hero-poster.jpg</b>El kit y la depiladora en uso, con luz natural. Acá va el video de 4:5 cuando esté.</figcaption>
+        </figure>
+        <aside class="ficha" aria-label="Ficha del kit">
+          <span class="rotulo">Ficha</span>
+          <dl>
+            <dt>Luz</dt><dd>IPL, 5 niveles</dd>
+            <dt>Zonas</dt><dd>Cuerpo y rostro</dd>
+            <dt>Facial</dt><dd>USB, 2 cabezales</dd>
+            <dt>Rodillo</dt><dd>Va al freezer</dd>
+            <dt>Guía</dt><dd>Tarjeta impresa</dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para quién es -->
+  <section class="banda banda--rosa" aria-labelledby="t-paraquien">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Antes que nada</p>
+        <h2 class="h2" id="t-paraquien">Te decimos para quién es, y para quién no.</h2>
+      </div>
+      <div class="paraquien">
+        <div class="columna">
+          <h3>Es para vos si</h3>
+          <ul class="lista-si">
+            <li><svg class="marca-si" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#c1121f"/><path d="M6.5 11.3l3 3 6-6.3" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tenés vello castaño u oscuro.</span></li>
+            <li><svg class="marca-si" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#c1121f"/><path d="M6.5 11.3l3 3 6-6.3" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Querés hacerlo en casa, el día y a la hora que puedas.</span></li>
+            <li><svg class="marca-si" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#c1121f"/><path d="M6.5 11.3l3 3 6-6.3" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Hoy usás cera, maquinita o vas a un centro, y querés otra opción.</span></li>
+            <li><svg class="marca-si" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#c1121f"/><path d="M6.5 11.3l3 3 6-6.3" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Te tomás el tiempo de seguir el calendario de sesiones.</span></li>
+          </ul>
+        </div>
+        <div class="columna columna--no">
+          <h3>No es para vos si</h3>
+          <ul class="lista-no">
+            <li><svg class="marca-no" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10.25" fill="none" stroke="#2b1418" stroke-width="1.5"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#2b1418" stroke-width="1.6" stroke-linecap="round"/></svg><span>Tu vello es rubio claro, pelirrojo, blanco o gris.</span></li>
+            <li><svg class="marca-no" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10.25" fill="none" stroke="#2b1418" stroke-width="1.5"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#2b1418" stroke-width="1.6" stroke-linecap="round"/></svg><span>Tu piel es muy oscura.</span></li>
+            <li><svg class="marca-no" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10.25" fill="none" stroke="#2b1418" stroke-width="1.5"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#2b1418" stroke-width="1.6" stroke-linecap="round"/></svg><span>Estás embarazada o amamantando.</span></li>
+            <li><svg class="marca-no" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10.25" fill="none" stroke="#2b1418" stroke-width="1.5"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#2b1418" stroke-width="1.6" stroke-linecap="round"/></svg><span>Buscás un resultado en una sola sesión.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Es para vos? -->
+  <section class="banda" id="es-para-vos" aria-labelledby="t-test">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">¿Es para vos?</p>
+        <h2 class="h2" id="t-test">Dos preguntas y sabés qué nivel te toca.</h2>
+        <p class="bajada">Con la tabla del fabricante. No guardamos tus respuestas.</p>
+      </div>
+
+      <div class="test">
+        <form id="form-test">
+          <fieldset>
+            <legend>1. Tu tono de piel</legend>
+            <div class="opciones" id="op-tono"></div>
+          </fieldset>
+          <fieldset>
+            <legend>2. El color de tu vello</legend>
+            <div class="opciones" id="op-vello"></div>
+          </fieldset>
+        </form>
+        <div class="resultado" id="resultado" data-estado="falta" aria-live="polite"></div>
+      </div>
+
+      <div class="grafico">
+        <div class="grafico__cabeza">
+          <h3>Nivel según tu tono de piel</h3>
+          <p class="nota">Niveles del 1 (suave) al 5 (fuerte). Siempre se empieza por el 1.</p>
+        </div>
+        <div class="niveles" id="niveles" role="group" aria-label="Rango de niveles por tono de piel, para cuerpo y para rostro"></div>
+        <details class="tabla-ver">
+          <summary>Ver como tabla</summary>
+          <div class="desborde">
+            <table class="tabla" id="tabla-niveles">
+              <thead><tr><th scope="col">Tono de piel</th><th scope="col">Cuerpo</th><th scope="col">Rostro</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué trae -->
+  <section class="banda banda--rosa" id="que-trae" aria-labelledby="t-trae">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Qué trae la caja</p>
+        <h2 class="h2" id="t-trae">Tres piezas y todo lo que hace falta para usarlas.</h2>
+      </div>
+      <div class="trae">
+        <figure class="foto">
+          <figcaption><b>Foto real · kit.jpg</b>El kit completo de arriba, sobre fondo claro, foto cuadrada. Los números de la lista van sobre cada pieza.</figcaption>
+        </figure>
+        <div>
+          <div class="grupo">
+            <span class="rotulo">Las piezas</span>
+            <ol class="piezas">
+              <li><div><b>Depiladora IPL</b><span>Luz pulsada con 5 niveles. Para cuerpo y rostro.</span></div></li>
+              <li><div><b>Depiladora facial</b><span>Cabezal redondo para bozo y mejillas, cabezal fino para cejas.</span></div></li>
+              <li><div><b>Rodillo de hielo</b><span>Para calmar la piel después de cada sesión.</span></div></li>
+            </ol>
+          </div>
+          <div class="grupo">
+            <span class="rotulo">Para usarlas</span>
+            <ol class="piezas piezas--extra" start="4" style="counter-reset: pieza 3">
+              <li><div><b>Anteojos de protección</b><span>Se usan siempre con la depiladora IPL.</span></div></li>
+              <li><div><b>Maquinita de afeitar</b><span>Para rasurar la zona antes de cada sesión.</span></div></li>
+              <li><div><b>Cargador</b><span>De la depiladora IPL.</span></div></li>
+              <li><div><b>Cable USB</b><span>Carga la depiladora facial.</span></div></li>
+              <li><div><b>Tarjeta de uso</b><span>Impresa: paso a paso, tabla de niveles y calendario.</span></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo se usa -->
+  <section class="banda" aria-labelledby="t-pasos">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Cómo se usa</p>
+        <h2 class="h2" id="t-pasos">La depiladora IPL, en seis pasos.</h2>
+      </div>
+
+      <aside class="prueba" aria-labelledby="t-prueba">
+        <p class="prueba__reloj" aria-hidden="true">2 h<small>de espera</small></p>
+        <div>
+          <h3 id="t-prueba">Antes del primer uso, la prueba.</h3>
+          <p>Probala en una zona chica de la cara interna del brazo, en nivel 1. Esperá 2 horas. Si la piel queda bien, podés empezar. Usá siempre los anteojos.</p>
+          <dl>
+            <div><dt>Zona</dt><dd>Cara interna del brazo</dd></div>
+            <div><dt>Nivel</dt><dd>1</dd></div>
+            <div><dt>Espera</dt><dd>2 horas</dd></div>
+          </dl>
+        </div>
+      </aside>
+
+      <ol class="pasos">
+        <li class="paso">
+          <figure class="foto"><figcaption><b>Foto real · paso-1.jpg</b>Rasurando la zona con la maquinita.</figcaption></figure>
+          <div class="paso__fila"><span class="paso__num" aria-hidden="true">1</span><div><h3>Rasurá</h3><p>Rasurá la zona con la maquinita. Dejá la piel limpia y seca.</p></div></div>
+        </li>
+        <li class="paso">
+          <figure class="foto"><figcaption><b>Foto real · paso-2.jpg</b>Enchufando el cargador; se ve la luz verde.</figcaption></figure>
+          <div class="paso__fila"><span class="paso__num" aria-hidden="true">2</span><div><h3>Encendé</h3><p>Enchufá el cargador y mantené el botón 1 segundo. Se prende la luz verde.</p></div></div>
+        </li>
+        <li class="paso">
+          <figure class="foto"><figcaption><b>Foto real · paso-3.jpg</b>El dedo tocando el botón de nivel.</figcaption></figure>
+          <div class="paso__fila"><span class="paso__num" aria-hidden="true">3</span><div><h3>Elegí el nivel</h3><p>Tocá el botón para cambiar de nivel. Empezá por el 1.</p></div></div>
+        </li>
+        <li class="paso">
+          <figure class="foto"><figcaption><b>Foto real · paso-4.jpg</b>La ventana apoyada entera sobre la piel; luz roja.</figcaption></figure>
+          <div class="paso__fila"><span class="paso__num" aria-hidden="true">4</span><div><h3>Apoyá</h3><p>Apoyá la ventana completa sobre la piel. Cuando la luz roja parpadea, está lista.</p></div></div>
+        </li>
+        <li class="paso">
+          <figure class="foto"><figcaption><b>Foto real · paso-5.jpg</b>Disparando un destello y pasando a la zona de al lado.</figcaption></figure>
+          <div class="paso__fila"><span class="paso__num" aria-hidden="true">5</span><div><h3>Dispará y avanzá</h3><p>Dispará un destello y pasá a la zona de al lado. No repitas más de 2 veces en el mismo lugar.</p></div></div>
+        </li>
+        <li class="paso">
+          <figure class="foto"><figcaption><b>Foto real · paso-6.jpg</b>Pasando el rodillo de hielo del kit sobre la piel.</figcaption></figure>
+          <div class="paso__fila"><span class="paso__num" aria-hidden="true">6</span><div><h3>Calmá la piel</h3><p>Pasá el rodillo de hielo. Para apagarla, mantené el botón 3 segundos.</p></div></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Calendario -->
+  <section class="banda banda--rosa" aria-labelledby="t-calendario">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Calendario</p>
+        <h2 class="h2" id="t-calendario">Diez sesiones y después, mantenimiento.</h2>
+        <p class="bajada">La distancia entre los puntos es la distancia entre sesiones.</p>
+      </div>
+      <ol class="calendario">
+        <li class="tramo">
+          <span class="tramo__linea" aria-hidden="true"></span>
+          <ol class="puntos" style="--semanas: 2" aria-label="Sesiones 1 a 6">
+            <li class="punto">1</li><li class="punto">2</li><li class="punto">3</li><li class="punto">4</li><li class="punto">5</li><li class="punto">6</li>
+          </ol>
+          <div><h3>Sesiones 1 a 6</h3><p>Una cada 2 semanas.</p></div>
+        </li>
+        <li class="tramo">
+          <span class="tramo__linea" aria-hidden="true"></span>
+          <ol class="puntos" style="--semanas: 4" aria-label="Sesiones 7 a 10">
+            <li class="punto punto--b">7</li><li class="punto punto--b">8</li><li class="punto punto--b">9</li><li class="punto punto--b">10</li>
+          </ol>
+          <div><h3>Sesiones 7 a 10</h3><p>Una cada 4 semanas.</p></div>
+        </li>
+        <li class="tramo">
+          <span class="tramo__cola" aria-hidden="true"></span>
+          <span class="punto punto--m" aria-hidden="true">+</span>
+          <div><h3>Mantenimiento</h3><p>Una cada 2 o 3 meses.</p></div>
+        </li>
+      </ol>
+      <p class="duracion"><b>Cuánto dura cada sesión:</b> <span data-tiempo>[completar según el fabricante, por zona]</span></p>
+    </div>
+  </section>
+
+  <!-- Cuentas -->
+  <section class="banda" aria-labelledby="t-cuentas">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Hacé la cuenta</p>
+        <h2 class="h2" id="t-cuentas">¿Cuánto gastás hoy en un año?</h2>
+        <p class="bajada">Poné lo que pagás vos por sesión. El número de ejemplo es solo para que veas cómo funciona.</p>
+      </div>
+      <div class="cuentas">
+        <div class="controles">
+          <div class="campo">
+            <label for="calc-precio">Lo que pagás por sesión</label>
+            <div class="entrada"><span>$</span><input id="calc-precio" type="number" inputmode="numeric" min="0" step="500" value="20000"></div>
+            <small>Ejemplo: $20.000. Cambialo por lo tuyo.</small>
+          </div>
+          <div class="campo">
+            <label for="calc-frecuencia">Cada cuánto vas</label>
+            <div class="entrada">
+              <select id="calc-frecuencia">
+                <option value="14">Cada 2 semanas</option>
+                <option value="21">Cada 3 semanas</option>
+                <option value="30" selected>Una vez por mes</option>
+                <option value="42">Cada 6 semanas</option>
+              </select>
+            </div>
+          </div>
+          <div class="total" aria-live="polite">
+            <span class="rotulo">En 12 meses</span>
+            <span class="total__valor" id="total-anio">$240.000</span>
+            <p id="total-detalle">12 sesiones. El kit se paga una sola vez: <b data-precio>$[completar]</b>.</p>
+          </div>
+        </div>
+        <div class="lienzo">
+          <div class="lienzo__cabeza">
+            <h3>Lo que llevás gastado, mes a mes</h3>
+            <ul class="leyenda" id="leyenda-gasto">
+              <li><i aria-hidden="true"></i>Tu gasto hoy</li>
+              <li id="leyenda-kit" hidden><i class="ref" aria-hidden="true"></i>Kit, una vez</li>
+            </ul>
+          </div>
+          <svg id="grafico-gasto" role="img" tabindex="0" aria-label="Gráfico de gasto acumulado en 12 meses"></svg>
+          <details class="tabla-ver">
+            <summary>Ver como tabla</summary>
+            <div class="desborde"><table class="tabla" id="tabla-gasto"><thead><tr><th scope="col">Mes</th><th scope="col">Sesiones</th><th scope="col">Gastado</th></tr></thead><tbody></tbody></table></div>
+          </details>
+        </div>
+      </div>
+      <p class="aclaracion">Esta cuenta compara plata, no resultados. Un centro usa otros equipos y cada piel responde distinto.</p>
+    </div>
+  </section>
+
+  <!-- Las otras dos piezas -->
+  <section class="banda banda--rosa" aria-labelledby="t-piezas">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Las otras dos piezas</p>
+        <h2 class="h2" id="t-piezas">Para la cara, y para después.</h2>
+      </div>
+      <div class="dos">
+        <article>
+          <figure class="foto"><figcaption><b>Foto real · facial-uso.jpg</b>Usando la depiladora facial en el bozo o las cejas, con luz natural.</figcaption></figure>
+          <h3>Depiladora facial</h3>
+          <p>Se usa sobre piel limpia y seca. El cabezal redondo es para bozo y mejillas; el fino, para cejas.</p>
+          <ul><li>Carga: cable USB</li><li>Cabezales: 2</li></ul>
+        </article>
+        <article>
+          <figure class="foto"><figcaption><b>Foto real · rodillo-uso.jpg</b>Pasando el rodillo de hielo por la pierna o el brazo.</figcaption></figure>
+          <h3>Rodillo de hielo</h3>
+          <p>Se llena con agua y va al freezer hasta que se congele. Pasalo suave sobre la piel 1 o 2 minutos.</p>
+          <ul><li>Preparación: freezer</li><li>Uso: 1 a 2 minutos</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seguridad -->
+  <section class="banda" aria-labelledby="t-seguridad">
+    <div class="ancho">
+      <div class="seguridad">
+        <div>
+          <div class="cabeza">
+            <p class="rotulo">Seguridad</p>
+            <h2 class="h2" id="t-seguridad">Cuándo no usarla y cómo cuidarla.</h2>
+          </div>
+          <figure class="foto" style="background: var(--rosa)"><figcaption><b>Foto real · ipl-uso.jpg</b>Usando la depiladora IPL en la pierna, con los anteojos puestos.</figcaption></figure>
+        </div>
+        <div>
+          <div class="cuidados">
+            <section aria-labelledby="t-nousar">
+              <h3 id="t-nousar">No la uses</h3>
+              <ul>
+                <li>Durante el embarazo, la lactancia o la menstruación.</li>
+                <li>Sobre piel bronceada, quemada por el sol o irritada.</li>
+                <li>Sobre tatuajes, lunares, heridas o costras.</li>
+                <li>Cerca de los ojos.</li>
+                <li>Con una enfermedad de la piel: consultá antes al médico.</li>
+              </ul>
+            </section>
+            <section aria-labelledby="t-cuidados">
+              <h3 id="t-cuidados">Cuidados</h3>
+              <ul>
+                <li>No la mojes.</li>
+                <li>Limpiá la ventana con un paño apenas humedecido en alcohol. Nunca con rociador.</li>
+                <li>Guardala fuera del alcance de los chicos.</li>
+              </ul>
+            </section>
+          </div>
+          <p class="porque">¿Por qué no sirve en vello claro? La luz busca el pigmento oscuro del vello. Si el vello es claro, no tiene dónde actuar. Por la misma razón, en piel muy oscura no se usa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quién está detrás + prueba social -->
+  <section class="banda banda--rosa" aria-labelledby="t-detras">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Quién está detrás</p>
+        <h2 class="h2" id="t-detras">Una tienda chica, con nombre y WhatsApp.</h2>
+      </div>
+      <div class="detras">
+        <div class="carta">
+          <p>Alameda no fabrica. Elegimos productos, los probamos y respondemos por ellos.</p>
+          <p>Antes de ofrecer este kit lo probé <span class="completar">[completar: zona, nivel y cuántas semanas]</span>. Lo que vi está en esta página, sin agregarle nada.</p>
+          <p>Si algo no funciona como dice acá, escribime y lo resolvemos.</p>
+          <p class="firma"><b>Alexis</b>Alameda · WhatsApp <span data-whatsapp>[completar]</span></p>
+        </div>
+        <ul class="hechos">
+          <li><b>Lo probamos antes</b><span>Lo usamos antes de venderlo. <span class="completar">[completar: cómo lo probaste]</span></span></li>
+          <li><b>Te responde una persona</b><span>Por WhatsApp, antes y después de comprar.</span></li>
+          <li><b>Pagás con Mercado Pago</b><span>En cuotas, o por transferencia con 10% OFF.</span></li>
+          <li><b>Factura y Data Fiscal</b><span>Tienda registrada. El QR está al pie de la página.</span></li>
+        </ul>
+      </div>
+
+      <div class="opiniones" id="opiniones">
+        <p class="rotulo">Opiniones de clientas</p>
+        <ul class="opiniones__lista">
+          <li class="hueco"><span class="rotulo">Lugar 1 · vista previa</span><p>Acá va la primera opinión real: nombre, ciudad, foto si quiere y su permiso por escrito.</p></li>
+          <li class="hueco"><span class="rotulo">Lugar 2 · vista previa</span><p>Pedila por WhatsApp a las 2 semanas de la entrega, después de la primera o segunda sesión.</p></li>
+          <li class="hueco"><span class="rotulo">Lugar 3 · vista previa</span><p>Este bloque se publica recién con 3 opiniones reales. Hasta entonces, no se muestra.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Garantía y cambios -->
+  <section class="banda" aria-labelledby="t-garantia">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Garantía y cambios</p>
+        <h2 class="h2" id="t-garantia">Si no te sirve o falla, tenés respaldo.</h2>
+      </div>
+      <ul class="garantias">
+        <li><b>6</b><strong>meses de garantía legal</strong><span>Por la Ley 24.240, desde que lo recibís. Garantía del fabricante: <span class="completar">[completar]</span>.</span></li>
+        <li><b>10</b><strong>días para arrepentirte</strong><span>Corridos, desde que lo recibís. Lo pedís con el <a class="enlace" href="#" data-arrepentimiento>botón de arrepentimiento</a>.</span></li>
+        <li><b>Cambios</b><strong>si algo no está bien</strong><span>Escribinos por WhatsApp y lo resolvemos. Plazo de cambio: <span class="completar">[completar]</span>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Preguntas -->
+  <section class="banda banda--rosa" aria-labelledby="t-preguntas">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="rotulo">Preguntas frecuentes</p>
+        <h2 class="h2" id="t-preguntas">Lo que nos preguntan antes de comprar.</h2>
+      </div>
+      <div class="preguntas">
+        <details><summary>¿Para qué color de vello sirve?</summary><p>Para vello castaño o negro. No funciona en vello blanco, gris, pelirrojo o rubio muy claro.</p></details>
+        <details><summary>¿Para qué tono de piel?</summary><p>De piel muy clara a morena, cada una con su nivel. En piel muy oscura no se usa. Hacé el test de arriba para ver tu nivel.</p></details>
+        <details><summary>¿Cada cuánto la uso?</summary><p>Sesiones 1 a 6: una cada 2 semanas. Sesiones 7 a 10: una cada 4 semanas. Después, mantenimiento: una cada 2 o 3 meses.</p></details>
+        <details><summary>¿Cuándo se ven resultados?</summary><p>Según el fabricante: <span class="completar">[completar]</span>.</p></details>
+        <details><summary>¿Qué se siente?</summary><p><span class="completar">[completar con prueba real]</span></p></details>
+        <details><summary>¿La puedo usar en la cara?</summary><p>Sí, con el nivel de rostro y nunca cerca de los ojos. Las cejas, con la depiladora facial.</p></details>
+        <details><summary>¿Embarazada o amamantando?</summary><p>No. Tampoco durante la menstruación.</p></details>
+        <details><summary>¿Cuántos destellos dura?</summary><p><span class="completar">[completar con el dato del fabricante]</span></p></details>
+        <details><summary>¿Cómo se carga?</summary><p>La depiladora IPL va con su cargador: se enchufa antes de encenderla. La depiladora facial se carga con el cable USB. El rodillo no se carga: va al freezer.</p></details>
+        <details><summary>¿Qué pasa si no me sirve?</summary><p>Tenés 10 días corridos desde que lo recibís para arrepentirte de la compra (Ley 24.240, art. 34), con el botón de arrepentimiento. Si falla, tiene 6 meses de garantía legal. Plazo de cambio: <span class="completar">[completar]</span>.</p></details>
+        <details><summary>¿Cómo es el envío y cómo pago?</summary><p>Despachamos en 24 h hábiles. El envío es gratis desde $60.000. Demora: <span class="completar">[completar]</span>. Pagás en cuotas con Mercado Pago, o por transferencia con 10% OFF. Si te suscribís al newsletter de la tienda, tenés 10% OFF en la primera compra.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="banda" aria-labelledby="t-cierre">
+    <div class="ancho">
+      <div class="cierre">
+        <figure class="foto"><figcaption><b>Foto real · caja.jpg</b>La caja del kit, cerrada, con luz natural.</figcaption></figure>
+        <div>
+          <h2 id="t-cierre">Todo en una caja, con la guía paso a paso.</h2>
+          <div class="precio">
+            <p class="precio__monto"><span class="precio__valor" data-precio>$[completar]</span></p>
+            <p class="precio__detalle">Precio final. <b data-precio-transf>$[completar]</b> por transferencia (10% OFF). Cuotas con Mercado Pago.</p>
+          </div>
+          <a class="boton" data-comprar href="#comprar">Comprar el kit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="ancho">
+    <div>
+      <a class="marca" href="#arriba">
+        <svg viewBox="0 0 18 22" aria-hidden="true"><path d="M9 1 C14 6 16 10 16 14 A7 7 0 0 1 2 14 C2 10 4 6 9 1 Z" fill="#c1121f"/><path d="M9 8 V19" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/></svg>
+        alameda
+      </a>
+      <p>Alameda no fabrica: elige, prueba y responde. <span class="completar">[completar con texto de Alexis]</span></p>
+    </div>
+    <nav aria-label="Legales y ayuda">
+      <a class="arrepentimiento" href="#" data-arrepentimiento>Botón de arrepentimiento</a>
+      <ul>
+        <li><a href="#">Cambios y devoluciones</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><span>WhatsApp: <span data-whatsapp>[completar]</span></span></li>
+      </ul>
+    </nav>
+    <a class="qr" href="#" aria-label="Data Fiscal">QR Data Fiscal [completar]</a>
+  </div>
+</footer>
+
+<div class="barra-compra" id="barra-compra" aria-hidden="true">
+  <div class="ancho">
+    <p><b data-precio>$[completar]</b><span data-precio-transf>$[completar]</span> por transferencia</p>
+    <a class="boton" data-comprar href="#comprar" tabindex="-1">Comprar</a>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip" role="presentation" hidden></div>
+
+<script>
+/* ─────────────────────────────────────────────────────────────
+   DATOS DEL KIT. Lo que dice [completar] todavía falta.
+   ───────────────────────────────────────────────────────────── */
+const KIT = {
+  precio: null,            // precio final en pesos, sin puntos. Ej.: 89900
+  precioAnterior: null,    // solo si es un precio anterior REAL
+  descuentoTransferencia: 10,
+  comprarUrl: "",          // link del producto en Tiendanube
+  arrepentimientoUrl: "",
+  whatsapp: "",            // cómo se ve el número
+  tiempoPorSesion: "",
+  anmatConfirmado: false,
+};
+
+const TONOS = [
+  { id: "muy-clara", nombre: "Muy clara", muestra: "#f4dccb", cuerpo: [3, 5], rostro: [3, 4] },
+  { id: "clara-media", nombre: "Clara a media", muestra: "#ddb08c", cuerpo: [2, 4], rostro: [2, 3] },
+  { id: "morena", nombre: "Morena", muestra: "#a8714d", cuerpo: [1, 3], rostro: [1, 2] },
+  { id: "muy-oscura", nombre: "Muy oscura", muestra: "#5b3a28", cuerpo: null, rostro: null },
+];
+const VELLOS = [
+  { id: "castano-negro", nombre: "Castaño o negro", muestra: "#3b2a20", sirve: true },
+  { id: "rubio-claro", nombre: "Rubio claro", muestra: "#e3c98f", sirve: false },
+  { id: "pelirrojo", nombre: "Pelirrojo", muestra: "#b5552b", sirve: false },
+  { id: "blanco-gris", nombre: "Blanco o gris", muestra: "#d9d9d6", sirve: false },
+];
+
+const pesos = (n) => "$" + Math.round(n).toLocaleString("es-AR");
+const rango = (r) => `${r[0]} a ${r[1]}`;
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+function el(tag, attrs = {}, ...hijos) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v;
+    else if (k === "style") n.setAttribute("style", v);
+    else n.setAttribute(k, v);
+  }
+  for (const h of hijos) n.append(h);
+  return n;
+}
+
+/* Precio, links y datos */
+(function cargarDatos() {
+  const transf = KIT.precio === null ? null : KIT.precio * (1 - KIT.descuentoTransferencia / 100);
+  $$("[data-precio]").forEach((n) => (n.textContent = KIT.precio === null ? "$[completar]" : pesos(KIT.precio)));
+  $$("[data-precio-transf]").forEach((n) => (n.textContent = transf === null ? "$[completar]" : pesos(transf)));
+  const ant = $("[data-precio-anterior]");
+  if (KIT.precioAnterior) { ant.hidden = false; ant.textContent = pesos(KIT.precioAnterior); ant.setAttribute("aria-label", "Precio anterior " + pesos(KIT.precioAnterior)); }
+  if (KIT.comprarUrl) $$("[data-comprar]").forEach((a) => (a.href = KIT.comprarUrl));
+  if (KIT.arrepentimientoUrl) $$("[data-arrepentimiento]").forEach((a) => (a.href = KIT.arrepentimientoUrl));
+  if (KIT.whatsapp) $$("[data-whatsapp]").forEach((n) => (n.textContent = KIT.whatsapp));
+  if (KIT.tiempoPorSesion) $("[data-tiempo]").textContent = KIT.tiempoPorSesion;
+
+  const faltan = [];
+  if (KIT.precio === null) faltan.push("Precio");
+  if (!KIT.comprarUrl) faltan.push("Link de compra de Tiendanube");
+  if (!KIT.arrepentimientoUrl) faltan.push("Link al botón de arrepentimiento");
+  faltan.push("Links a cambios, términos y privacidad", "QR de Data Fiscal");
+  if (!KIT.whatsapp) faltan.push("WhatsApp de soporte");
+  if (!KIT.anmatConfirmado) faltan.push("Estado ante ANMAT");
+  faltan.push("Garantía del fabricante", "Plazo de cambio", "Demora del envío");
+  if (!KIT.tiempoPorSesion) faltan.push("Tiempo por sesión según la zona");
+  faltan.push("Cuándo se ven resultados (fabricante)", "Qué se siente (prueba real)", "Cuántos destellos dura (fabricante)", "Tu prueba del kit (nota de Alexis)", "Texto de Quiénes somos", "3 opiniones reales con permiso", "Todas las fotos y el video");
+  const lista = $("#lista-pendientes");
+  faltan.forEach((f) => lista.append(el("li", {}, f)));
+})();
+
+/* Tooltip compartido */
+const tip = $("#tooltip");
+function mostrarTip(x, y, valor, etiqueta) {
+  tip.replaceChildren(el("strong", {}, valor), el("span", {}, etiqueta));
+  tip.hidden = false;
+  const r = tip.getBoundingClientRect();
+  const left = Math.min(Math.max(8, x - r.width / 2), window.innerWidth - r.width - 8);
+  const top = y - r.height - 12 < 8 ? y + 16 : y - r.height - 12;
+  tip.style.left = left + "px";
+  tip.style.top = top + "px";
+}
+function ocultarTip() { tip.hidden = true; }
+
+/* Test ¿Es para vos? */
+const estado = { tono: null, vello: null };
+function opciones(contenedor, nombre, lista) {
+  lista.forEach((o) => {
+    const input = el("input", { type: "radio", name: nombre, value: o.id, id: `${nombre}-${o.id}` });
+    input.addEventListener("change", () => { estado[nombre] = o.id; pintarResultado(); });
+    contenedor.append(el("label", { class: "opcion", for: `${nombre}-${o.id}` }, input, el("span", { class: "muestra", style: `background:${o.muestra}`, "aria-hidden": "true" }), el("span", {}, o.nombre)));
+  });
+}
+opciones($("#op-tono"), "tono", TONOS);
+opciones($("#op-vello"), "vello", VELLOS);
+
+function pintarResultado() {
+  const caja = $("#resultado");
+  const tono = TONOS.find((t) => t.id === estado.tono);
+  const vello = VELLOS.find((v) => v.id === estado.vello);
+  const motivos = [];
+  if (tono && !tono.cuerpo) motivos.push("En piel muy oscura no se usa. Lo indica el fabricante en su tabla de niveles.");
+  if (vello && !vello.sirve) motivos.push("Funciona en vello castaño o negro. No funciona en vello blanco, gris, pelirrojo o rubio muy claro.");
+  caja.replaceChildren();
+  $$(".niveles [data-fila]").forEach((n) => n.classList.toggle("niveles__fila-sel", n.dataset.fila === estado.tono));
+
+  if (motivos.length) {
+    caja.dataset.estado = "no";
+    caja.append(el("p", { class: "resultado__titulo" }, "No te sirve"));
+    motivos.forEach((m) => caja.append(el("p", {}, m)));
+    caja.append(el("p", { class: "nota" }, "Preferimos decírtelo antes de que lo compres."));
+    return;
+  }
+  if (!tono || !vello) {
+    caja.dataset.estado = "falta";
+    caja.append(el("p", { class: "resultado__titulo" }, "Tu resultado"), el("p", { class: "nota" }, "Elegí una opción en cada pregunta. Acá aparece tu nivel para cuerpo y para rostro."));
+    return;
+  }
+  caja.dataset.estado = "si";
+  const dl = el("dl", { class: "resultado__niveles" },
+    el("div", {}, el("dt", {}, "Cuerpo"), el("dd", {}, "Nivel " + rango(tono.cuerpo))),
+    el("div", {}, el("dt", {}, "Rostro"), el("dd", {}, "Nivel " + rango(tono.rostro))));
+  const comprar = el("a", { class: "boton", href: KIT.comprarUrl || "#comprar", "data-comprar": "" }, "Comprar el kit");
+  caja.append(
+    el("p", { class: "resultado__titulo" }, "Sí te sirve"),
+    el("p", { class: "nota" }, `Nivel sugerido para piel ${tono.nombre.toLowerCase()}:`),
+    dl,
+    el("p", {}, "Empezá siempre por el nivel 1, con la prueba en el brazo. Se sube de a un nivel y solo si la piel lo tolera."),
+    comprar);
+}
+pintarResultado();
+
+/* Gráfico de niveles: dos paneles (cuerpo, rostro), escala 1 a 5, una barra por tono */
+(function graficoNiveles() {
+  const g = $("#niveles");
+  g.append(el("div", {}), el("div", { class: "niveles__panel" }, "Cuerpo"), el("div", { class: "niveles__panel" }, "Rostro"));
+  const tbody = $("#tabla-niveles tbody");
+  TONOS.forEach((t) => {
+    g.append(el("div", { class: "niveles__tono", "data-fila": t.id }, el("span", { class: "muestra", style: `background:${t.muestra}`, "aria-hidden": "true" }), el("span", {}, t.nombre)));
+    ["cuerpo", "rostro"].forEach((zona) => {
+      const pista = el("div", { class: "pista", "data-fila": t.id });
+      for (let i = 0; i < 5; i++) pista.append(el("i", { "aria-hidden": "true" }));
+      const r = t[zona];
+      if (!r) {
+        pista.append(el("span", { class: "pista__no" }, el("span", {}, "No usar")));
+      } else {
+        const ancho = 100 / 5;
+        const barra = el("button", {
+          type: "button", class: "barra",
+          style: `left:calc(${(r[0] - 1) * ancho}% + 4px);width:calc(${(r[1] - r[0] + 1) * ancho}% - 8px)`,
+          "aria-label": `${t.nombre}, ${zona}: niveles ${rango(r)}`,
+        });
+        const etiqueta = `${t.nombre} · ${zona === "cuerpo" ? "Cuerpo" : "Rostro"}`;
+        const ver = (e) => { const b = barra.getBoundingClientRect(); mostrarTip(e && e.clientX ? e.clientX : b.left + b.width / 2, b.top, "Niveles " + rango(r), etiqueta); };
+        barra.addEventListener("pointermove", ver);
+        barra.addEventListener("focus", () => ver());
+        barra.addEventListener("pointerleave", ocultarTip);
+        barra.addEventListener("blur", ocultarTip);
+        pista.append(barra);
+      }
+      g.append(pista);
+    });
+    tbody.append(el("tr", {}, el("th", { scope: "row" }, t.nombre), el("td", {}, t.cuerpo ? rango(t.cuerpo) : "No usar"), el("td", {}, t.rostro ? rango(t.rostro) : "No usar")));
+  });
+  const eje = () => { const d = el("div", { class: "eje", "aria-hidden": "true" }); for (let i = 1; i <= 5; i++) d.append(el("span", {}, String(i))); return d; };
+  g.append(el("div", {}), eje(), eje());
+})();
+
+/* Calculadora y gráfico de gasto acumulado */
+const NS = "http://www.w3.org/2000/svg";
+function s(tag, attrs = {}) { const n = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); return n; }
+const svg = $("#grafico-gasto");
+let serie = [];
+let foco = 12;
+
+function calcular() {
+  const precio = Math.max(0, Number($("#calc-precio").value) || 0);
+  const dias = Number($("#calc-frecuencia").value);
+  serie = Array.from({ length: 13 }, (_, m) => {
+    const sesiones = m === 0 ? 0 : Math.floor((m * 365) / 12 / dias + 1e-9);
+    return { mes: m, sesiones, gasto: sesiones * precio };
+  });
+  const fin = serie[12];
+  $("#total-anio").textContent = pesos(fin.gasto);
+  const det = $("#total-detalle");
+  det.replaceChildren(`${fin.sesiones} sesiones a ${pesos(precio)}. El kit se paga una sola vez: `, el("b", {}, KIT.precio === null ? "$[completar]" : pesos(KIT.precio)), ".");
+  const tb = $("#tabla-gasto tbody");
+  tb.replaceChildren(...serie.filter((p) => p.mes > 0 && p.mes % 3 === 0).map((p) => el("tr", {}, el("td", {}, "Mes " + p.mes), el("td", {}, String(p.sesiones)), el("td", {}, pesos(p.gasto)))));
+  // Una sola serie no lleva leyenda: el título ya dice qué se ve.
+  $("#leyenda-gasto").hidden = KIT.precio === null;
+  $("#leyenda-kit").hidden = KIT.precio === null;
+  dibujar();
+}
+
+function pasoLindo(max) {
+  const crudo = max / 4;
+  const pot = Math.pow(10, Math.floor(Math.log10(crudo || 1)));
+  const paso = [1, 2, 2.5, 5, 10].map((m) => m * pot).find((p) => p >= crudo) || pot * 10;
+  return paso;
+}
+const compacto = (n) => n >= 1e6 ? "$" + (n / 1e6).toLocaleString("es-AR", { maximumFractionDigits: 1 }) + " M" : n >= 1000 ? "$" + Math.round(n / 1000) + " mil" : "$" + n;
+
+function dibujar() {
+  if (!serie.length) return;
+  const W = Math.max(280, Math.round(svg.getBoundingClientRect().width) || 600);
+  const H = W < 520 ? 240 : 300;
+  const m = { t: 18, r: W < 520 ? 16 : 24, b: 32, l: 64 };
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("height", H);
+  svg.replaceChildren();
+  const maxDato = Math.max(serie[12].gasto, KIT.precio || 0, 1);
+  const paso = pasoLindo(maxDato);
+  const yMax = Math.ceil(maxDato / paso) * paso;
+  const x = (mes) => m.l + (mes / 12) * (W - m.l - m.r);
+  const y = (v) => H - m.b - (v / yMax) * (H - m.t - m.b);
+
+  // Grilla y eje Y
+  for (let v = 0; v <= yMax + 1e-6; v += paso) {
+    svg.append(s("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: "#efccd3", "stroke-width": 1 }));
+    const t = s("text", { x: m.l - 10, y: y(v) + 4, "text-anchor": "end", fill: "#6b4a50", "font-size": 11.5, "font-family": "IBM Plex Mono, monospace" });
+    t.textContent = compacto(v);
+    svg.append(t);
+  }
+  // Eje X
+  [0, 3, 6, 9, 12].forEach((mes) => {
+    const t = s("text", { x: x(mes), y: H - 10, "text-anchor": mes === 0 ? "start" : mes === 12 ? "end" : "middle", fill: "#6b4a50", "font-size": 11.5, "font-family": "IBM Plex Mono, monospace" });
+    t.textContent = mes === 0 ? "Hoy" : "Mes " + mes;
+    svg.append(t);
+  });
+
+  // Serie escalonada: el gasto sube cuando hay sesión
+  let d = `M${x(0)},${y(0)}`;
+  for (let i = 1; i <= 12; i++) d += ` H${x(i)} V${y(serie[i].gasto)}`;
+  const area = d + ` V${y(0)} Z`;
+  svg.append(s("path", { d: area, fill: "#c1121f", "fill-opacity": 0.1, stroke: "none" }));
+  svg.append(s("path", { d, fill: "none", stroke: "#c1121f", "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }));
+
+  // Línea de referencia del kit (solo con precio cargado)
+  if (KIT.precio !== null) {
+    svg.append(s("line", { x1: m.l, x2: W - m.r, y1: y(KIT.precio), y2: y(KIT.precio), stroke: "#2b1418", "stroke-width": 1.5 }));
+    const t = s("text", { x: m.l + 6, y: y(KIT.precio) - 8, fill: "#2b1418", "font-size": 12.5, "font-weight": 600, "font-family": "Figtree, sans-serif" });
+    t.textContent = "Kit: " + pesos(KIT.precio) + ", una vez";
+    svg.append(t);
+  }
+
+  // Punto y valor al final
+  const fin = serie[12];
+  svg.append(s("circle", { cx: x(12), cy: y(fin.gasto), r: 5, fill: "#c1121f", stroke: "#ffffff", "stroke-width": 2 }));
+  const fv = s("text", { x: x(12) - 10, y: y(fin.gasto) - 12, "text-anchor": "end", fill: "#2b1418", "font-size": 13, "font-weight": 700, "font-family": "Figtree, sans-serif" });
+  fv.textContent = pesos(fin.gasto);
+  svg.append(fv);
+
+  // Capa de lectura (cruz que sigue al dedo o al mouse)
+  const cruz = s("line", { y1: m.t, y2: H - m.b, stroke: "#2b1418", "stroke-width": 1, opacity: 0 });
+  const marca = s("circle", { r: 5, fill: "#c1121f", stroke: "#ffffff", "stroke-width": 2, opacity: 0 });
+  const capa = s("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: "transparent" });
+  svg.append(cruz, marca, capa);
+  const leer = (mes, cx, cy) => {
+    const p = serie[mes];
+    cruz.setAttribute("x1", x(mes)); cruz.setAttribute("x2", x(mes)); cruz.setAttribute("opacity", 0.35);
+    marca.setAttribute("cx", x(mes)); marca.setAttribute("cy", y(p.gasto)); marca.setAttribute("opacity", 1);
+    const extra = KIT.precio !== null ? ` · Kit: ${pesos(KIT.precio)}` : "";
+    mostrarTip(cx, cy, pesos(p.gasto), `${mes === 0 ? "Hoy" : "Mes " + mes} · ${p.sesiones} sesiones${extra}`);
+  };
+  capa.addEventListener("pointermove", (e) => {
+    const r = svg.getBoundingClientRect();
+    const px = ((e.clientX - r.left) / r.width) * W;
+    const mes = Math.max(0, Math.min(12, Math.round(((px - m.l) / (W - m.l - m.r)) * 12)));
+    foco = mes;
+    leer(mes, e.clientX, r.top + (y(serie[mes].gasto) / H) * r.height);
+  });
+  const soltar = () => { cruz.setAttribute("opacity", 0); marca.setAttribute("opacity", 0); ocultarTip(); };
+  capa.addEventListener("pointerleave", soltar);
+  svg.onkeydown = (e) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    foco = Math.max(0, Math.min(12, foco + (e.key === "ArrowRight" ? 1 : -1)));
+    const r = svg.getBoundingClientRect();
+    leer(foco, r.left + (x(foco) / W) * r.width, r.top + (y(serie[foco].gasto) / H) * r.height);
+  };
+  svg.onblur = soltar;
+  svg.setAttribute("aria-label", `Gasto acumulado en 12 meses: ${pesos(fin.gasto)} en ${fin.sesiones} sesiones. Usá las flechas para recorrer los meses.`);
+}
+$("#calc-precio").addEventListener("input", calcular);
+$("#calc-frecuencia").addEventListener("change", calcular);
+new ResizeObserver(() => dibujar()).observe(svg);
+calcular();
+
+/* Barra de compra fija: aparece cuando el botón de la portada sale de pantalla */
+(function barra() {
+  const b = $("#barra-compra");
+  const boton = $("#comprar-portada");
+  const enlace = $("a", b);
+  new IntersectionObserver(([e]) => {
+    const ver = !e.isIntersecting && e.boundingClientRect.top < 0;
+    b.classList.toggle("visible", ver);
+    b.setAttribute("aria-hidden", String(!ver));
+    enlace.tabIndex = ver ? 0 : -1;
+  }).observe(boton);
+})();
+
+/* Los UTM de la visita pasan al link de compra */
+(function utm() {
+  if (!KIT.comprarUrl) return;
+  const params = [...new URLSearchParams(location.search)].filter(([k]) => k.startsWith("utm_") || k === "fbclid");
+  if (!params.length) return;
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-comprar]");
+    if (!a || !/^https?:/.test(a.href)) return;
+    const u = new URL(a.href);
+    params.forEach(([k, v]) => { if (!u.searchParams.has(k)) u.searchParams.set(k, v); });
+    a.href = u.toString();
+  }, true);
+})();
+</script>

@@ -1,0 +1,652 @@
+<title>Plan del Kit Depilación</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: herramienta de trabajo. Resumen de cuatro números arriba, calculadora a la izquierda y lectura a la derecha;
+   después la clienta y el plan de prueba social. Misma marca que la landing; los gráficos usan una paleta validada aparte. */
+:root {
+  color-scheme: light;
+  --blanco: #ffffff;
+  --rosa: #fbe7ea;
+  --rosa-linea: #efccd3;
+  --piel: #f3d7c6;
+  --rojo: #c1121f;
+  --rojo-oscuro: #94101a;
+  --tinta: #2b1418;
+  --tinta-2: #6b4a50;
+  --bien: #0a7a1e;
+
+  /* Paleta de gráficos (validada para daltonismo, orden fijo) */
+  --s1: #257de0;
+  --s2: #f47230;
+  --s3: #00b894;
+  --s4: #f2a600;
+
+  --f-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --f-texto: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-dato: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--blanco); color: var(--tinta); font-family: var(--f-texto); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.08; text-wrap: balance; }
+h1, h2 { font-family: var(--f-display); }
+h3 { font-family: var(--f-texto); font-weight: 700; font-size: 1.0625rem; line-height: 1.3; }
+p { margin: 0; text-wrap: pretty; }
+ul, ol { margin: 0; padding: 0; }
+a { color: var(--rojo); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--rojo); outline-offset: 2px; border-radius: 6px; }
+.ancho { max-width: 1200px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 768px) { .ancho { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+.rotulo { font-family: var(--f-dato); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-2); }
+.ejemplo { font-family: var(--f-dato); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--rojo-oscuro); background: var(--rosa); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }
+.nota { font-size: 14px; color: var(--tinta-2); }
+
+/* Encabezado */
+.encabezado { padding-block: 40px 32px; border-bottom: 1px solid var(--rosa-linea); }
+.encabezado .ancho { display: grid; gap: 12px; }
+.encabezado h1 { font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); }
+.encabezado p { max-width: 46em; color: var(--tinta-2); font-size: 1.0625rem; }
+.indice { display: flex; flex-wrap: wrap; gap: 6px 20px; list-style: none; margin-top: 6px; font-size: 15px; font-weight: 600; }
+
+/* Resumen */
+.resumen { padding-block: 32px; }
+.tiles { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (min-width: 900px) { .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } }
+.tile { border: 1px solid var(--rosa-linea); border-radius: 14px; padding: 18px; display: grid; gap: 6px; align-content: start; }
+.tile__valor { font-size: clamp(1.625rem, 1.2rem + 1.6vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+.tile__dato { font-size: 13.5px; color: var(--tinta-2); }
+.tile[data-estado="mal"] { background: var(--rosa); border-color: var(--rojo); }
+.tile[data-estado="mal"] .tile__valor { color: var(--rojo); }
+.estado { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; }
+.estado::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.estado--bien { color: var(--bien); }
+.estado--mal { color: var(--rojo); }
+.veredicto { margin-top: 16px; padding: 16px 20px; border-radius: 12px; background: var(--rosa); font-size: 15.5px; }
+.veredicto b { font-weight: 700; }
+
+/* Calculadora */
+.calc { padding-block: 24px 64px; }
+.calc__grid { display: grid; gap: 32px; }
+@media (min-width: 960px) { .calc__grid { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 48px; align-items: start; } }
+.calc h2, .bloque h2 { font-size: clamp(1.875rem, 1.4rem + 1.8vw, 2.625rem); margin-bottom: 8px; }
+fieldset { border: 0; margin: 0; padding: 20px 0 4px; min-width: 0; border-top: 1px solid var(--rosa-linea); }
+fieldset + fieldset { margin-top: 8px; }
+legend { padding: 0; font-weight: 700; font-size: 1.0625rem; }
+.campos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; margin-top: 14px; }
+@media (max-width: 480px) { .campos { grid-template-columns: minmax(0, 1fr); } }
+.campo { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.campo label { font-size: 14.5px; font-weight: 600; }
+.entrada { display: flex; align-items: center; min-height: 48px; border: 1.5px solid var(--rosa-linea); border-radius: 10px; padding-inline: 12px; background: var(--blanco); }
+.entrada:focus-within { border-color: var(--rojo); }
+.entrada span { color: var(--tinta-2); font-weight: 600; font-size: 15px; }
+.entrada input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font: inherit; font-size: 16px; color: var(--tinta); padding: 10px 6px; font-variant-numeric: tabular-nums; }
+.campo small { font-size: 12.5px; color: var(--tinta-2); line-height: 1.4; }
+
+.lectura { display: grid; gap: 20px; }
+.panel { border: 1px solid var(--rosa-linea); border-radius: 16px; padding: 20px; min-width: 0; }
+.panel h3 { margin-bottom: 4px; }
+.formula { font-family: var(--f-dato); font-size: 13px; line-height: 1.7; background: var(--rosa); border-radius: 10px; padding: 14px 16px; overflow-x: auto; white-space: nowrap; }
+.formula b { font-weight: 500; color: var(--rojo-oscuro); }
+.cuentas { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 14.5px; margin-top: 10px; }
+.cuentas td { padding: 7px 0; border-bottom: 1px solid var(--rosa-linea); }
+.cuentas td:last-child { text-align: right; white-space: nowrap; padding-left: 12px; }
+.cuentas tr.total td { font-weight: 700; border-bottom: 0; padding-top: 10px; }
+
+/* Barra segmentada: adónde va cada venta */
+.seg { display: flex; height: 28px; gap: 2px; margin-top: 16px; }
+.seg__parte { height: 100%; border-radius: 4px; position: relative; min-width: 0; display: flex; align-items: center; padding-left: 8px; font-size: 12px; font-weight: 600; cursor: default; }
+.seg__parte:focus-visible { outline-offset: 2px; }
+.leyenda { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; font-size: 13px; color: var(--tinta-2); }
+.leyenda li { display: inline-flex; align-items: center; gap: 6px; }
+.leyenda i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.perdida { margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--rojo); }
+
+#grafico-cvr { width: 100%; display: block; touch-action: pan-y; }
+.tooltip { position: fixed; z-index: 60; pointer-events: none; max-width: 240px; background: var(--tinta); color: var(--blanco); border-radius: 8px; padding: 8px 12px; font-size: 13px; line-height: 1.35; }
+.tooltip strong { display: block; font-size: 15px; }
+.tooltip span { color: var(--piel); }
+details.tabla-ver { margin-top: 10px; font-size: 14px; }
+details.tabla-ver summary { cursor: pointer; color: var(--tinta-2); font-weight: 500; }
+.desborde { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.tabla th, .tabla td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--rosa-linea); }
+
+/* Bloques de lectura */
+.bloque { padding-block: 64px; }
+.bloque--rosa { background: var(--rosa); }
+.bloque__cabeza { display: grid; gap: 10px; margin-bottom: 32px; max-width: 760px; }
+.bloque__cabeza p { color: var(--tinta-2); font-size: 1.0625rem; }
+.persona { display: grid; gap: 16px; }
+@media (min-width: 900px) { .persona { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 24px; align-items: start; } }
+.ficha-persona { background: var(--blanco); border-radius: 16px; padding: 28px; display: grid; gap: 18px; }
+.ficha-persona h3 { font-family: var(--f-display); font-weight: 400; font-size: 2rem; }
+.ficha-persona dl { display: grid; grid-template-columns: minmax(0, 7.5em) minmax(0, 1fr); gap: 10px 16px; margin: 0; font-size: 15px; }
+.ficha-persona dt { color: var(--tinta-2); font-family: var(--f-dato); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
+.ficha-persona dd { margin: 0; }
+.cita { font-family: var(--f-display); font-size: 1.375rem; line-height: 1.3; border-left: 0; padding: 0; }
+.objeciones { background: var(--blanco); border-radius: 16px; padding: 8px 20px; }
+.objeciones table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.objeciones th, .objeciones td { text-align: left; vertical-align: top; padding: 12px 8px 12px 0; border-bottom: 1px solid var(--rosa-linea); }
+.objeciones tr:last-child td { border-bottom: 0; }
+.objeciones th { font-family: var(--f-dato); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tinta-2); }
+.objeciones td:first-child { font-weight: 600; width: 42%; }
+.dos-col { display: grid; gap: 16px; margin-top: 16px; }
+@media (min-width: 768px) { .dos-col { grid-template-columns: 1fr 1fr; } }
+.caja { background: var(--blanco); border-radius: 16px; padding: 24px; }
+.caja h3 { margin-bottom: 10px; }
+.caja ul { padding-left: 18px; display: grid; gap: 6px; }
+.caja li::marker { color: var(--rojo); }
+.anuncios { list-style: none; display: grid; gap: 12px; margin-top: 16px; padding: 0; }
+@media (min-width: 900px) { .anuncios { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.anuncio { background: var(--blanco); border-radius: 16px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.anuncio b { font-family: var(--f-display); font-weight: 400; font-size: 1.375rem; line-height: 1.2; }
+.anuncio p { font-size: 15px; }
+.anuncio span { font-size: 13px; color: var(--tinta-2); }
+
+.pasos { list-style: none; counter-reset: paso; display: grid; gap: 0; border-top: 1px solid var(--rosa-linea); }
+.pasos > li { counter-increment: paso; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding-block: 18px; border-bottom: 1px solid var(--rosa-linea); }
+.pasos > li::before { content: counter(paso); font-family: var(--f-display); font-size: 2rem; line-height: 1; color: var(--rojo); }
+.pasos h3 { margin-bottom: 4px; }
+.pasos p { color: var(--tinta-2); }
+.mensaje { margin-top: 10px; background: var(--rosa); border-radius: 12px; padding: 12px 14px; font-size: 14.5px; color: var(--tinta); }
+.mensaje .rotulo { display: block; margin-bottom: 4px; }
+.no-hacer { margin-top: 24px; }
+.fuentes { padding-block: 40px 72px; border-top: 1px solid var(--rosa-linea); font-size: 14px; color: var(--tinta-2); }
+.fuentes ul { list-style: none; display: grid; gap: 6px; margin-top: 12px; }
+</style>
+
+<header class="encabezado">
+  <div class="ancho">
+    <p class="rotulo">Alameda · Kit Depilación en Casa</p>
+    <h1>Plan del Kit Depilación</h1>
+    <p>Cuánto podés pagar por cada clienta, quién es ella y cómo conseguir opiniones reales. Los números marcados <span class="ejemplo">ejemplo</span> son supuestos: cambialos por los tuyos y todo se recalcula.</p>
+    <ul class="indice">
+      <li><a href="#cac">CAC</a></li>
+      <li><a href="#clienta">Buyer persona</a></li>
+      <li><a href="#prueba-social">Prueba social</a></li>
+      <li><a href="#fuentes">Fuentes</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- Resumen -->
+  <section class="resumen" aria-label="Resumen">
+    <div class="ancho">
+      <ul class="tiles">
+        <li class="tile" id="t-cac"><span class="rotulo">CAC estimado</span><span class="tile__valor" id="r-cac">$0</span><span class="tile__dato">Lo que te cuesta en anuncios cada venta.</span></li>
+        <li class="tile" id="t-max"><span class="rotulo">CAC máximo</span><span class="tile__valor" id="r-max">$0</span><span class="tile__dato">Lo que te queda por venta antes de anuncios. Pagar más es perder.</span></li>
+        <li class="tile" id="t-gan"><span class="rotulo">Ganancia por venta</span><span class="tile__valor" id="r-gan">$0</span><span class="tile__dato" id="r-gan-estado"></span></li>
+        <li class="tile" id="t-ventas"><span class="rotulo">Ventas por mes para tu meta</span><span class="tile__valor" id="r-ventas">0</span><span class="tile__dato" id="r-inversion"></span></li>
+      </ul>
+      <p class="veredicto" id="veredicto" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Calculadora -->
+  <section class="calc" id="cac" aria-labelledby="t-calc">
+    <div class="ancho">
+      <div class="calc__grid">
+        <form id="form-cac" novalidate>
+          <h2 id="t-calc">Calculadora del CAC</h2>
+          <p class="nota">CAC es el costo de adquisición de una clienta: lo que gastás en anuncios para conseguir una venta.</p>
+
+          <fieldset>
+            <legend>La venta</legend>
+            <div class="campos">
+              <div class="campo"><label for="precio">Precio final <span class="ejemplo">ejemplo</span></label><div class="entrada"><span>$</span><input id="precio" type="number" inputmode="numeric" min="0" step="100" value="89900"></div><small>Competencia en ML: $42.525 a $113.750 (mayo a julio 2026).</small></div>
+              <div class="campo"><label for="transf">Pagan por transferencia <span class="ejemplo">ejemplo</span></label><div class="entrada"><input id="transf" type="number" inputmode="decimal" min="0" max="100" step="5" value="30"><span>%</span></div><small>Con 10% OFF. El resto paga con Mercado Pago.</small></div>
+              <div class="campo"><label for="desc">Descuento por transferencia</label><div class="entrada"><input id="desc" type="number" inputmode="decimal" min="0" max="100" step="1" value="10"><span>%</span></div><small>Dato de la tienda.</small></div>
+              <div class="campo"><label for="umbral">Envío gratis desde</label><div class="entrada"><span>$</span><input id="umbral" type="number" inputmode="numeric" min="0" step="1000" value="60000"></div><small>Dato de la tienda. Arriba de este precio, el envío lo pagás vos.</small></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Lo que te cuesta cada venta</legend>
+            <div class="campos">
+              <div class="campo"><label for="costo">Costo del kit <span class="ejemplo">ejemplo</span></label><div class="entrada"><span>$</span><input id="costo" type="number" inputmode="numeric" min="0" step="500" value="30000"></div><small>Puesto en tu casa: producto + flete del proveedor.</small></div>
+              <div class="campo"><label for="envio">Envío a la clienta <span class="ejemplo">ejemplo</span></label><div class="entrada"><span>$</span><input id="envio" type="number" inputmode="numeric" min="0" step="500" value="8000"></div><small>Lo que te cobra el correo por paquete.</small></div>
+              <div class="campo"><label for="empaque">Caja, tarjeta y empaque <span class="ejemplo">ejemplo</span></label><div class="entrada"><span>$</span><input id="empaque" type="number" inputmode="numeric" min="0" step="100" value="1500"></div></div>
+              <div class="campo"><label for="mp">Comisión Mercado Pago <span class="ejemplo">ejemplo</span></label><div class="entrada"><input id="mp" type="number" inputmode="decimal" min="0" step="0.01" value="6.49"><span>% + IVA</span></div><small>6,49% con acreditación inmediata; 2,99% a 30 días. Verificá tu tasa.</small></div>
+              <div class="campo"><label for="tn">Comisión Tiendanube <span class="ejemplo">ejemplo</span></label><div class="entrada"><input id="tn" type="number" inputmode="decimal" min="0" step="0.1" value="1"><span>%</span></div><small>Depende de tu plan.</small></div>
+              <div class="campo"><label for="imp">Impuestos sobre la venta <span class="ejemplo">ejemplo</span></label><div class="entrada"><input id="imp" type="number" inputmode="decimal" min="0" step="0.5" value="3"><span>%</span></div><small>Ingresos Brutos y otros. Si sos Responsable Inscripto, sumá el IVA. Consultalo con tu contador.</small></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Los anuncios</legend>
+            <div class="campos">
+              <div class="campo"><label for="cpm">CPM: costo cada 1.000 vistas <span class="ejemplo">ejemplo</span></label><div class="entrada"><span>$</span><input id="cpm" type="number" inputmode="numeric" min="0" step="100" value="7000"></div><small>Referencia: USD 3 a 8 en Argentina. Mirá el tuyo en Ads Manager.</small></div>
+              <div class="campo"><label for="imppauta">Impuestos sobre la pauta</label><div class="entrada"><input id="imppauta" type="number" inputmode="decimal" min="0" step="1" value="21"><span>%</span></div><small>IVA de servicios digitales. Sumá percepciones si tu tarjeta las cobra.</small></div>
+              <div class="campo"><label for="ctr">CTR al link <span class="ejemplo">ejemplo</span></label><div class="entrada"><input id="ctr" type="number" inputmode="decimal" min="0" step="0.1" value="1.2"><span>%</span></div><small>De cada 100 que ven el anuncio, cuántos tocan.</small></div>
+              <div class="campo"><label for="cvr">Conversión de la landing <span class="ejemplo">ejemplo</span></label><div class="entrada"><input id="cvr" type="number" inputmode="decimal" min="0" step="0.1" value="2"><span>%</span></div><small>De cada 100 que entran, cuántas compran. Suele estar entre 1 y 3%.</small></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tu meta</legend>
+            <div class="campos">
+              <div class="campo"><label for="meta">Ganancia por mes que querés <span class="ejemplo">ejemplo</span></label><div class="entrada"><span>$</span><input id="meta" type="number" inputmode="numeric" min="0" step="50000" value="1000000"></div><small>Poné tu sueldo actual: es lo que necesitás para dejar el trabajo.</small></div>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="lectura">
+          <div class="panel">
+            <h3>Cómo sale el CAC</h3>
+            <p class="nota">Con los números de la izquierda:</p>
+            <div class="formula" id="formula"></div>
+          </div>
+
+          <div class="panel">
+            <h3>Adónde va la plata de cada venta</h3>
+            <p class="nota" id="seg-nota"></p>
+            <div class="seg" id="seg" role="img"></div>
+            <ul class="leyenda" id="seg-leyenda"></ul>
+            <p class="perdida" id="seg-perdida" hidden></p>
+            <details class="tabla-ver">
+              <summary>Ver la cuenta completa</summary>
+              <table class="cuentas" id="cuentas"></table>
+            </details>
+          </div>
+
+          <div class="panel">
+            <h3>Ganancia por venta según la conversión</h3>
+            <p class="nota">La palanca que más mueve el número. El punto es tu conversión de hoy.</p>
+            <svg id="grafico-cvr" role="img" tabindex="0" aria-label="Ganancia por venta según la conversión"></svg>
+            <details class="tabla-ver">
+              <summary>Ver como tabla</summary>
+              <div class="desborde"><table class="tabla" id="tabla-cvr"><thead><tr><th scope="col">Conversión</th><th scope="col">CAC</th><th scope="col">Ganancia por venta</th></tr></thead><tbody></tbody></table></div>
+            </details>
+          </div>
+
+          <div class="panel">
+            <h3>Cómo medir el CAC real</h3>
+            <p>Cuando arranquen los anuncios, dejá de estimar. Una vez por semana:</p>
+            <div class="formula" style="margin-top:10px; white-space: normal">CAC real = <b>gasto en Ads Manager (con impuestos)</b> ÷ <b>ventas de Tiendanube con utm_source=meta</b></div>
+            <p class="nota" style="margin-top:10px">La landing ya pasa los UTM al link de compra. Con menos de 10 ventas el número todavía se mueve mucho: no saques conclusiones antes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buyer persona -->
+  <section class="bloque bloque--rosa" id="clienta" aria-labelledby="t-clienta">
+    <div class="ancho">
+      <div class="bloque__cabeza">
+        <p class="rotulo">Buyer persona</p>
+        <h2 id="t-clienta">A quién le vendemos.</h2>
+        <p>Armada con lo que sabemos del producto y de la tienda. Es una hipótesis: confirmala o corregila con las primeras 20 ventas (edad, zona, cómo se depilaba antes, qué la hizo comprar).</p>
+      </div>
+
+      <div class="persona">
+        <article class="ficha-persona">
+          <h3>Caro, 34</h3>
+          <p class="cita">«Quiero resolverlo en casa, cuando tengo un rato, sin sacar turno.»</p>
+          <dl>
+            <dt>Quién es</dt><dd>Mujer de 25 a 55 años, en Argentina. Trabaja o estudia y tiene la semana llena.</dd>
+            <dt>Su vello</dt><dd>Castaño u oscuro. Piel de clara a morena.</dd>
+            <dt>Hoy</dt><dd>Cera, maquinita o centro de estética. Paga cada vez y depende de la agenda de otra persona.</dd>
+            <dt>Quiere</dt><dd>Depilarse en casa, a su ritmo: de noche, un domingo, cuando pueda.</dd>
+            <dt>Compra si</dt><dd>Entiende en un minuto si le sirve, ve que es una tienda real y sabe que tiene a quién escribirle.</dd>
+            <dt>Dónde está</dt><dd>Instagram y Facebook: Reels, historias y feed. Ahí corren los anuncios.</dd>
+            <dt>No es</dt><dd>Vello claro, pelirrojo o canoso; piel muy oscura; embarazada o amamantando. No le vendemos: la landing se lo dice antes.</dd>
+          </dl>
+        </article>
+
+        <div>
+          <div class="objeciones">
+            <table>
+              <thead><tr><th scope="col">Lo que la frena</th><th scope="col">Dónde se lo respondemos</th></tr></thead>
+              <tbody>
+                <tr><td>¿Me sirve a mí?</td><td>Test «¿Es para vos?» con su tono de piel y su vello, y el gráfico de niveles.</td></tr>
+                <tr><td>¿Es seguro?</td><td>Prueba de 2 horas en el brazo, anteojos, «Cuándo no usarla».</td></tr>
+                <tr><td>¿Duele? ¿Qué se siente?</td><td>Preguntas frecuentes. Falta tu prueba real: es la respuesta que más va a pesar.</td></tr>
+                <tr><td>¿Cuándo veo resultados?</td><td>Calendario de 10 sesiones. Falta el dato del fabricante.</td></tr>
+                <tr><td>¿Y si no funciona o se rompe?</td><td>10 días para arrepentirse, 6 meses de garantía legal, WhatsApp.</td></tr>
+                <tr><td>¿Es una tienda trucha?</td><td>Nota firmada por vos, WhatsApp visible, Data Fiscal, pago con Mercado Pago.</td></tr>
+                <tr><td>¿Vale la plata?</td><td>«¿Cuánto gastás hoy en un año?»: la cuenta la hace ella, con sus números.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="dos-col">
+            <div class="caja">
+              <h3>Qué decirle</h3>
+              <ul>
+                <li>Lo que gana: en casa, a su ritmo, sin turnos.</li>
+                <li>Para quién sirve y para quién no, de entrada.</li>
+                <li>Datos: 5 niveles, 10 sesiones, prueba de 2 h.</li>
+              </ul>
+            </div>
+            <div class="caja">
+              <h3>Qué no decirle</h3>
+              <ul>
+                <li>Nada sobre su cuerpo o sus defectos: Meta rechaza esos anuncios.</li>
+                <li>«Definitiva», «permanente», «sin dolor», «aprobado por ANMAT» sin registro.</li>
+                <li>Porcentajes de resultado sin fuente.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:40px; font-family: var(--f-display); font-weight: 400; font-size: 1.75rem;">Tres ángulos para los primeros anuncios</h3>
+      <ul class="anuncios">
+        <li class="anuncio"><span class="rotulo">Ángulo 1 · tiempo</span><b>Depilate en casa, a tu ritmo.</b><p>Depiladora IPL, facial y rodillo de hielo. Sin turnos. Con guía paso a paso.</p><span>Para: la que va a un centro.</span></li>
+        <li class="anuncio"><span class="rotulo">Ángulo 2 · el test</span><b>¿Te sirve? Fijate en dos preguntas.</b><p>Tu tono de piel y el color de tu vello. Te decimos tu nivel, o te decimos que no.</p><span>Para: la que duda. Baja devoluciones.</span></li>
+        <li class="anuncio"><span class="rotulo">Ángulo 3 · la cuenta</span><b>¿Cuánto gastás por año en depilarte?</b><p>Hacé la cuenta con lo que pagás hoy. El kit se paga una vez.</p><span>Para: la que compara precios.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Prueba social -->
+  <section class="bloque" id="prueba-social" aria-labelledby="t-prueba">
+    <div class="ancho">
+      <div class="bloque__cabeza">
+        <p class="rotulo">Prueba social</p>
+        <h2 id="t-prueba">Opiniones reales, en cinco pasos.</h2>
+        <p>Hoy no hay opiniones del kit, y no se inventan. Una opinión falsa se nota, puede ser publicidad engañosa (Ley 24.240) y es la forma más rápida de perder la confianza que querés construir. Esto es lo que sí se puede hacer desde la semana 1.</p>
+      </div>
+
+      <ol class="pasos">
+        <li>
+          <div>
+            <h3>Probalo vos primero y contalo</h3>
+            <p>Zona, nivel, qué sentiste, cuántas semanas. Con fotos tuyas reales. Llena la nota firmada de la landing y la pregunta «¿Qué se siente?».</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Mostrá lo que ya es verdad</h3>
+            <p>Tu nombre y WhatsApp, Data Fiscal, garantía legal, 10 días para arrepentirse, pago con Mercado Pago. Ya está en la landing.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Seguí a las primeras 10 clientas por WhatsApp</h3>
+            <p>Tres mensajes: llegada, primera sesión y seguimiento. Sirven para que no lo abandone y para aprender qué le pasa.</p>
+            <div class="mensaje"><span class="rotulo">Día 2 · llegada</span>Hola [nombre], soy Alexis de Alameda. ¿Te llegó bien el kit? Antes de la primera sesión hacé la prueba en el brazo, en nivel 1, y esperá 2 horas. Cualquier duda, escribime por acá.</div>
+            <div class="mensaje"><span class="rotulo">Día 16 · después de la primera o segunda sesión</span>Hola [nombre], ¿cómo te fue con las primeras sesiones? ¿Qué nivel estás usando? Si te sirvió, ¿me dejarías una opinión corta para la página? Solo la publico con tu permiso.</div>
+            <div class="mensaje"><span class="rotulo">Día 45 · seguimiento</span>Hola [nombre], ya vas por la sesión 4 o 5. ¿Cómo lo ves? Si querés mandarme una foto o un video corto usándolo, me ayuda un montón. Es opcional.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Pedí permiso por escrito</h3>
+            <p>Para publicar nombre, ciudad y foto. Guardá la captura del «sí». Publicá la opinión como la escribió, sin retocarla.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Publicá recién con 3</h3>
+            <p>Con 3 opiniones reales, pasá <code>mostrarOpiniones</code> a <code>true</code>. Si sumás creadoras de contenido con el producto, que el posteo diga que es una colaboración.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="dos-col no-hacer">
+        <div class="caja" style="background: var(--rosa)">
+          <h3>Sí suma confianza</h3>
+          <ul>
+            <li>Una persona real que firma y responde.</li>
+            <li>Decir para quién no sirve.</li>
+            <li>Fotos y videos reales, con luz natural.</li>
+            <li>Opiniones con nombre, ciudad y permiso.</li>
+          </ul>
+        </div>
+        <div class="caja" style="background: var(--rosa)">
+          <h3>Resta confianza (y no se hace)</h3>
+          <ul>
+            <li>Opiniones, estrellas o «+1.000 vendidos» inventados.</li>
+            <li>Contadores de «quedan 3» o «12 personas mirando».</li>
+            <li>Fotos de antes y después que no son tuyas.</li>
+            <li>Precio tachado que nunca existió.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fuentes" id="fuentes" aria-labelledby="t-fuentes">
+    <div class="ancho">
+      <p class="rotulo" id="t-fuentes">Fuentes de los ejemplos (consultadas el 25/11/2026)</p>
+      <ul>
+        <li>Precios de depiladoras IPL en Mercado Libre, mayo a julio 2026: <a href="https://mejorescompras.com.ar/precio/categoria/depiladoras-definitivas" target="_blank" rel="noopener">MejoresCompras</a>.</li>
+        <li>Comisiones de Mercado Pago para venta online (6,49% inmediata, 2,99% a 30 días; nota sin fecha): <a href="https://mercado.com.ar/protagonistas/mercado-pago-amplia-las-opciones-de-cobro-para-los-vendedores-online" target="_blank" rel="noopener">Mercado</a>. Contexto 2026: <a href="https://www.iprofesional.com/tecnologia/386153-mercado-pago-que-debes-saber-sobre-comisiones-plazos-y-montos" target="_blank" rel="noopener">iProfesional</a>.</li>
+        <li>CPM de Meta en Argentina (USD 3 a 8; mediana USD 3,62 y pico de USD 16,79 en julio 2026): <a href="https://www.superads.ai/facebook-ads-costs/cpm-cost-per-mille/argentina" target="_blank" rel="noopener">SuperAds</a>, <a href="https://hacecuentas.com/calculadora-cpm-costo-por-mil-impresiones" target="_blank" rel="noopener">Hacé Cuentas</a>.</li>
+        <li>Datos de la tienda (envío gratis desde $60.000, 10% por transferencia, despacho en 24 h) y del producto: brief del kit.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<div class="tooltip" id="tooltip" role="presentation" hidden></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const pesos = (n) => (n < 0 ? "−$" : "$") + Math.abs(Math.round(n)).toLocaleString("es-AR");
+const pct = (n, d = 1) => n.toLocaleString("es-AR", { maximumFractionDigits: d }) + "%";
+const v = (id) => { const n = Number(document.getElementById(id).value); return Number.isFinite(n) ? n : 0; };
+function el(tag, attrs = {}, ...hijos) {
+  const n = document.createElement(tag);
+  for (const [k, val] of Object.entries(attrs)) { if (k === "class") n.className = val; else if (k === "style") n.setAttribute("style", val); else n.setAttribute(k, val); }
+  for (const h of hijos) n.append(h);
+  return n;
+}
+const tip = $("#tooltip");
+function mostrarTip(x, y, valor, etiqueta) {
+  tip.replaceChildren(el("strong", {}, valor), el("span", {}, etiqueta));
+  tip.hidden = false;
+  const r = tip.getBoundingClientRect();
+  tip.style.left = Math.min(Math.max(8, x - r.width / 2), innerWidth - r.width - 8) + "px";
+  tip.style.top = (y - r.height - 12 < 8 ? y + 16 : y - r.height - 12) + "px";
+}
+const ocultarTip = () => (tip.hidden = true);
+
+/* Modelo: una venta */
+function modelo(cvrPct) {
+  const precio = v("precio"), pT = v("transf") / 100, desc = v("desc") / 100;
+  const ingreso = precio * ((1 - pT) + pT * (1 - desc));
+  const cobro = precio * (1 - pT) * (v("mp") / 100) * 1.21;
+  const tn = ingreso * (v("tn") / 100);
+  const imp = ingreso * (v("imp") / 100);
+  const envio = precio >= v("umbral") ? v("envio") : 0;
+  const producto = v("costo") + envio + v("empaque");
+  const margen = ingreso - cobro - tn - imp - producto;
+  const cpm = v("cpm") * (1 + v("imppauta") / 100);
+  const ctr = v("ctr") / 100;
+  const cvr = (cvrPct ?? v("cvr")) / 100;
+  const cpc = ctr > 0 ? cpm / (1000 * ctr) : Infinity;
+  const cac = cvr > 0 ? cpc / cvr : Infinity;
+  return { precio, ingreso, cobro, tn, imp, envio, producto, margen, cpm, ctr, cvr, cpc, cac, ganancia: margen - cac };
+}
+
+function estadoTile(id, malo) { document.getElementById(id).dataset.estado = malo ? "mal" : ""; }
+
+function actualizar() {
+  const m = modelo();
+  const meta = v("meta");
+  const finito = Number.isFinite(m.cac);
+  $("#r-cac").textContent = finito ? pesos(m.cac) : "—";
+  $("#r-max").textContent = pesos(Math.max(0, m.margen));
+  $("#r-gan").textContent = finito ? pesos(m.ganancia) : "—";
+  const gana = finito && m.ganancia > 0;
+  const est = $("#r-gan-estado");
+  est.replaceChildren(el("span", { class: "estado " + (gana ? "estado--bien" : "estado--mal") }, gana ? "Cada venta deja plata" : "Cada venta pierde plata"));
+  estadoTile("t-gan", !gana);
+  estadoTile("t-cac", finito && m.cac > m.margen);
+
+  if (gana) {
+    const ventas = Math.ceil(meta / m.ganancia);
+    $("#r-ventas").textContent = ventas.toLocaleString("es-AR");
+    $("#r-inversion").textContent = `≈ ${Math.ceil(ventas / 30).toLocaleString("es-AR")} por día. Pauta: ${pesos(ventas * m.cac)} por mes.`;
+    estadoTile("t-ventas", false);
+  } else {
+    $("#r-ventas").textContent = "—";
+    $("#r-inversion").textContent = "Con pérdida por venta, vender más es perder más.";
+    estadoTile("t-ventas", true);
+  }
+
+  // Veredicto en una frase
+  const ver = $("#veredicto");
+  const cvrEq = m.margen > 0 && Number.isFinite(m.cpc) ? (m.cpc / m.margen) * 100 : null;
+  ver.replaceChildren();
+  if (!finito) ver.append("Completá el CTR y la conversión para calcular el CAC.");
+  else if (gana) ver.append(el("b", {}, `Con estos números, cada venta te deja ${pesos(m.ganancia)}. `), cvrEq ? `Para no perder, la landing tiene que convertir más de ${pct(cvrEq, 2)}. ` : "", `Necesitás un ROAS de ${(m.ingreso / m.margen).toLocaleString("es-AR", { maximumFractionDigits: 2 })} o más en Ads Manager.`);
+  else ver.append(el("b", {}, `Con estos números, cada venta pierde ${pesos(-m.ganancia)}. `), cvrEq ? `Para empatar, la landing tiene que convertir ${pct(cvrEq, 2)} o más, o tenés que bajar el costo o subir el precio.` : "El margen no alcanza ni sin anuncios: revisá precio y costos.");
+
+  // Fórmula con números
+  const f = $("#formula");
+  f.replaceChildren();
+  const linea = (...partes) => { const d = el("div"); partes.forEach((p) => d.append(p)); f.append(d); };
+  linea("CPC = CPM ÷ (1.000 × CTR) = ", el("b", {}, pesos(m.cpm)), " ÷ (1.000 × ", el("b", {}, pct(m.ctr * 100)), ") = ", el("b", {}, Number.isFinite(m.cpc) ? pesos(m.cpc) : "—"));
+  linea("CAC = CPC ÷ conversión = ", el("b", {}, Number.isFinite(m.cpc) ? pesos(m.cpc) : "—"), " ÷ ", el("b", {}, pct(m.cvr * 100)), " = ", el("b", {}, finito ? pesos(m.cac) : "—"));
+  linea("Visitas para una venta: ", el("b", {}, m.cvr > 0 ? Math.round(1 / m.cvr).toLocaleString("es-AR") : "—"));
+  linea("CPM con impuestos: ", el("b", {}, pesos(m.cpm)), ` (${pesos(v("cpm"))} + ${pct(v("imppauta"), 0)})`);
+
+  barra(m);
+  cuentas(m);
+  graficoCvr();
+}
+
+/* Barra segmentada: adónde va el ingreso de una venta */
+const PARTES = [
+  { clave: "producto", nombre: "Kit, envío y empaque", color: "var(--s1)", tinta: "#ffffff" },
+  { clave: "comisiones", nombre: "Comisiones e impuestos", color: "var(--s2)", tinta: "#2b1418" },
+  { clave: "anuncios", nombre: "Anuncios (CAC)", color: "var(--s3)", tinta: "#2b1418" },
+  { clave: "ganancia", nombre: "Ganancia", color: "var(--s4)", tinta: "#2b1418" },
+];
+function barra(m) {
+  const cac = Number.isFinite(m.cac) ? m.cac : 0;
+  const valores = { producto: m.producto, comisiones: m.cobro + m.tn + m.imp, anuncios: cac, ganancia: Math.max(0, m.ingreso - m.producto - m.cobro - m.tn - m.imp - cac) };
+  const total = Math.max(m.ingreso, m.producto + valores.comisiones + cac);
+  const seg = $("#seg");
+  seg.replaceChildren();
+  $("#seg-nota").textContent = `Ingreso promedio por venta: ${pesos(m.ingreso)} (precio menos el descuento de quien paga por transferencia).`;
+  const nombres = [];
+  PARTES.forEach((p) => {
+    const val = valores[p.clave];
+    if (val <= 0) return;
+    const share = (val / total) * 100;
+    const parte = el("div", { class: "seg__parte", tabindex: "0", style: `flex:${val} 1 0;background:${p.color};color:${p.tinta}`, "aria-label": `${p.nombre}: ${pesos(val)}, ${pct(share, 0)}` });
+    const txt = pct(share, 0);
+    parte.textContent = txt;
+    seg.append(parte);
+    // Si no entra el texto, no se muestra: queda en la leyenda, el tooltip y la tabla
+    requestAnimationFrame(() => { if (parte.clientWidth < 44) parte.textContent = ""; });
+    const ver = (e) => { const r = parte.getBoundingClientRect(); mostrarTip(e && e.clientX ? e.clientX : r.left + r.width / 2, r.top, pesos(val), `${p.nombre} · ${txt}`); };
+    parte.addEventListener("pointermove", ver); parte.addEventListener("focus", () => ver());
+    parte.addEventListener("pointerleave", ocultarTip); parte.addEventListener("blur", ocultarTip);
+    nombres.push(`${p.nombre} ${txt}`);
+  });
+  seg.setAttribute("aria-label", "Reparto de cada venta: " + nombres.join(", "));
+  const ley = $("#seg-leyenda");
+  ley.replaceChildren(...PARTES.filter((p) => valores[p.clave] > 0).map((p) => el("li", {}, el("i", { style: `background:${p.color}`, "aria-hidden": "true" }), p.nombre)));
+  const perdida = m.ingreso - m.producto - valores.comisiones - cac;
+  const pp = $("#seg-perdida");
+  pp.hidden = perdida >= 0;
+  if (perdida < 0) pp.textContent = `Los costos superan lo que cobrás: faltan ${pesos(-perdida)} por venta.`;
+}
+
+function cuentas(m) {
+  const t = $("#cuentas");
+  const filas = [
+    ["Precio final", m.precio],
+    ["Descuento por transferencia (promedio)", -(m.precio - m.ingreso)],
+    ["Comisión Mercado Pago (con IVA)", -m.cobro],
+    ["Comisión Tiendanube", -m.tn],
+    ["Impuestos sobre la venta", -m.imp],
+    ["Costo del kit", -v("costo")],
+    [m.envio ? "Envío (lo pagás vos)" : "Envío (lo paga la clienta)", -m.envio],
+    ["Caja, tarjeta y empaque", -v("empaque")],
+  ];
+  t.replaceChildren(...filas.map(([a, b]) => el("tr", {}, el("td", {}, a), el("td", {}, pesos(b)))),
+    el("tr", { class: "total" }, el("td", {}, "Te queda antes de anuncios (CAC máximo)"), el("td", {}, pesos(m.margen))),
+    el("tr", {}, el("td", {}, "Anuncios (CAC)"), el("td", {}, Number.isFinite(m.cac) ? pesos(-m.cac) : "—")),
+    el("tr", { class: "total" }, el("td", {}, "Ganancia por venta"), el("td", {}, Number.isFinite(m.cac) ? pesos(m.ganancia) : "—")));
+}
+
+/* Gráfico: ganancia por venta según la conversión (una sola serie) */
+const NS = "http://www.w3.org/2000/svg";
+const s = (tag, a = {}) => { const n = document.createElementNS(NS, tag); for (const [k, val] of Object.entries(a)) n.setAttribute(k, val); return n; };
+const svg = $("#grafico-cvr");
+let focoCvr = null;
+function graficoCvr() {
+  const actual = v("cvr");
+  const xs = []; for (let c = 0.5; c <= 4.0001; c += 0.1) xs.push(Math.round(c * 10) / 10);
+  const puntos = xs.map((c) => ({ c, ...modelo(c) })).filter((p) => Number.isFinite(p.ganancia));
+  const tb = $("#tabla-cvr tbody");
+  tb.replaceChildren(...puntos.filter((p) => Math.abs((p.c * 2) % 1) < 1e-9).map((p) => el("tr", {}, el("td", {}, pct(p.c)), el("td", {}, pesos(p.cac)), el("td", {}, pesos(p.ganancia)))));
+  svg.replaceChildren();
+  if (!puntos.length) return;
+  const W = Math.max(280, Math.round(svg.getBoundingClientRect().width) || 560);
+  const H = W < 480 ? 230 : 260;
+  const mg = { t: 16, r: 16, b: 32, l: 72 };
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("height", H);
+  const ys = puntos.map((p) => p.ganancia);
+  let yMin = Math.min(0, ...ys), yMax = Math.max(0, ...ys);
+  const crudo = (yMax - yMin) / 4 || 1;
+  const pot = Math.pow(10, Math.floor(Math.log10(crudo)));
+  const paso = [1, 2, 2.5, 5, 10].map((k) => k * pot).find((p) => p >= crudo);
+  yMin = Math.floor(yMin / paso) * paso; yMax = Math.ceil(yMax / paso) * paso;
+  const x = (c) => mg.l + ((c - 0.5) / 3.5) * (W - mg.l - mg.r);
+  const y = (g) => mg.t + ((yMax - g) / (yMax - yMin)) * (H - mg.t - mg.b);
+  const compacto = (n) => { const a = Math.abs(n); const sgn = n < 0 ? "−" : ""; return a >= 1e6 ? `${sgn}$${(a / 1e6).toLocaleString("es-AR", { maximumFractionDigits: 1 })} M` : a >= 1000 ? `${sgn}$${Math.round(a / 1000)} mil` : `${sgn}$${Math.round(a)}`; };
+  for (let g = yMin; g <= yMax + 1e-6; g += paso) {
+    const cero = Math.abs(g) < 1e-6;
+    svg.append(s("line", { x1: mg.l, x2: W - mg.r, y1: y(g), y2: y(g), stroke: cero ? "#2b1418" : "#efccd3", "stroke-width": cero ? 1.5 : 1 }));
+    const t = s("text", { x: mg.l - 10, y: y(g) + 4, "text-anchor": "end", fill: "#6b4a50", "font-size": 11.5, "font-family": "IBM Plex Mono, monospace" }); t.textContent = compacto(g); svg.append(t);
+  }
+  [0.5, 1, 2, 3, 4].forEach((c) => { const t = s("text", { x: x(c), y: H - 10, "text-anchor": c === 0.5 ? "start" : c === 4 ? "end" : "middle", fill: "#6b4a50", "font-size": 11.5, "font-family": "IBM Plex Mono, monospace" }); t.textContent = pct(c); svg.append(t); });
+  const d = puntos.map((p, i) => `${i ? "L" : "M"}${x(p.c).toFixed(1)},${y(p.ganancia).toFixed(1)}`).join(" ");
+  svg.append(s("path", { d, fill: "none", stroke: "#c1121f", "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }));
+  // Punto de hoy
+  const hoy = modelo(actual);
+  if (actual >= 0.5 && actual <= 4 && Number.isFinite(hoy.ganancia)) {
+    svg.append(s("circle", { cx: x(actual), cy: y(hoy.ganancia), r: 5, fill: "#c1121f", stroke: "#ffffff", "stroke-width": 2 }));
+    const t = s("text", { x: x(actual) + (actual > 3 ? -10 : 10), y: y(hoy.ganancia) - 10, "text-anchor": actual > 3 ? "end" : "start", fill: "#2b1418", "font-size": 12.5, "font-weight": 700, "font-family": "Figtree, sans-serif", stroke: "#ffffff", "stroke-width": 4, "paint-order": "stroke", "stroke-linejoin": "round" });
+    t.setAttribute("y", y(hoy.ganancia) + (hoy.ganancia >= 0 ? 22 : -12));
+    t.textContent = `Hoy: ${pesos(hoy.ganancia)}`; svg.append(t);
+  }
+  // Lectura
+  const cruz = s("line", { y1: mg.t, y2: H - mg.b, stroke: "#2b1418", "stroke-width": 1, opacity: 0 });
+  const marca = s("circle", { r: 5, fill: "#c1121f", stroke: "#ffffff", "stroke-width": 2, opacity: 0 });
+  const capa = s("rect", { x: mg.l, y: mg.t, width: W - mg.l - mg.r, height: H - mg.t - mg.b, fill: "transparent" });
+  svg.append(cruz, marca, capa);
+  const leer = (i, cx, cy) => {
+    const p = puntos[i];
+    cruz.setAttribute("x1", x(p.c)); cruz.setAttribute("x2", x(p.c)); cruz.setAttribute("opacity", 0.35);
+    marca.setAttribute("cx", x(p.c)); marca.setAttribute("cy", y(p.ganancia)); marca.setAttribute("opacity", 1);
+    mostrarTip(cx, cy, pesos(p.ganancia), `Conversión ${pct(p.c)} · CAC ${pesos(p.cac)}`);
+  };
+  capa.addEventListener("pointermove", (e) => {
+    const r = svg.getBoundingClientRect();
+    const px = ((e.clientX - r.left) / r.width) * W;
+    const c = 0.5 + ((px - mg.l) / (W - mg.l - mg.r)) * 3.5;
+    const i = Math.max(0, Math.min(puntos.length - 1, Math.round((c - 0.5) * 10)));
+    focoCvr = i;
+    leer(i, e.clientX, r.top + (y(puntos[i].ganancia) / H) * r.height);
+  });
+  const soltar = () => { cruz.setAttribute("opacity", 0); marca.setAttribute("opacity", 0); ocultarTip(); };
+  capa.addEventListener("pointerleave", soltar);
+  svg.onkeydown = (e) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    if (focoCvr === null) focoCvr = Math.max(0, Math.min(puntos.length - 1, Math.round((actual - 0.5) * 10)));
+    focoCvr = Math.max(0, Math.min(puntos.length - 1, focoCvr + (e.key === "ArrowRight" ? 1 : -1)));
+    const r = svg.getBoundingClientRect();
+    leer(focoCvr, r.left + (x(puntos[focoCvr].c) / W) * r.width, r.top + (y(puntos[focoCvr].ganancia) / H) * r.height);
+  };
+  svg.onblur = soltar;
+  svg.setAttribute("aria-label", `Ganancia por venta según la conversión, de 0,5% a 4%. Con tu conversión de ${pct(actual)}: ${Number.isFinite(hoy.ganancia) ? pesos(hoy.ganancia) : "sin dato"}. Usá las flechas para recorrerlo.`);
+}
+
+document.getElementById("form-cac").addEventListener("input", actualizar);
+document.getElementById("form-cac").addEventListener("submit", (e) => e.preventDefault());
+new ResizeObserver(() => graficoCvr()).observe(svg);
+actualizar();
+</script>
