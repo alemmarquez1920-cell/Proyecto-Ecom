@@ -1,0 +1,11 @@
+Poné acá tus fotos y videos REALES con estos nombres exactos:
+
+hero.mp4     video vertical (9:16) para la portada, en loop, sin sonido, menos de 4 MB
+antes.jpg    pelo antes de usar el kit (misma luz y ángulo que despues.jpg)
+despues.jpg  pelo después de soltarlo a la mañana
+kit.jpg      el kit completo sobre fondo claro, foto cuadrada
+paso-1.jpg   enrollando el pelo
+paso-2.jpg   con la cofia puesta, lista para dormir
+paso-3.jpg   soltando las ondas a la mañana
+
+Mientras falte un archivo, la página muestra un lugar reservado con su nombre.
