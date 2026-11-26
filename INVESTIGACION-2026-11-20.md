@@ -222,3 +222,15 @@ Público: hombre o mujer de 20 a 45, CABA, perro en departamento, paseos y cuida
 | Arnés antitirones | 12 | — | 128 | AR: Bark Argentina, Core Dogware |
 
 Marca modelo en EE.UU.: Reggie (enriquecimiento: alfombra olfativa, comedero lento, "Keep them busy indoors", "Want a calmer dog?").
+
+## Proveedores y precios de referencia (26/11/2026)
+
+No hay mayoristas de Once indexados en internet para estos productos. Instagram no se puede buscar desde la sesión y Mercado Libre bloquea la lectura directa: los datos salen de resultados de búsqueda.
+
+Pistas para pedir precio por mayor (mensaje por Mercado Libre):
+- Open Pet Distribuidora (manta fría 65×50 "verano súper premium"; +7.500 seguidores).
+- Marotta Correas y Collares (packs mayoristas de collares y arneses x25 y x100).
+- Majestic (importador directo; peluquería canina: cepillos, cortaúñas).
+- Centro Pet (bolsitas mayorista x500), Piantoni Supermayorista (sección mascotas), Mascopado (mantas).
+
+Precios al público de referencia: quitapelos reutilizable $5.105 a $9.999 (ML); bebedero portátil 500 ml $3.990 (Easy, Pet's Fun); pelota dispensadora Beepaw $20.999 (mínimo $6.000 en 82 días); comedero plástico común $2.490 (Easy). Importación: Chilat (China) muestra cortaúñas desde USD 0,12.
