@@ -188,3 +188,17 @@ Biblioteca de anuncios de Meta, anuncios **activos** por palabra clave, 25/11/20
 
 Mercado Libre: hay varios vendedores con kits de ondas sin calor + funda + cofia de satén. No competir por precio: vender el regalo armado (caja + tarjeta) y el video de la transformación.
 Once: no encontré mayorista online de rulos sin calor. Hay que preguntar en persona en locales de accesorios para el pelo.
+
+---
+
+# Quinta búsqueda (26/11/2026): 3 agentes en paralelo, mismos filtros
+
+Biblioteca de anuncios de Meta (activos) + resultados de búsqueda de Mercado Libre. Ningún costo de Once confirmado. La red de la sesión bloquea mercadolibre.com.ar y mejorescompras.com.ar: los precios salen de resultados de búsqueda.
+
+| Rubro | Mejor candidato | AR | Afuera | ML Argentina | Problema |
+| --- | --- | --- | --- | --- | --- |
+| Hogar y cocina | **Tabla de picar de acero inoxidable doble cara** | 2 tiendas (Kaut Home, anuncios del 25/11; Carbono) | EE.UU. muchas tiendas (ZomiTrends, Okura, Tibo Kitchen); BR 56 (25/11) | $38.999 a $58.999 | Falta costo en Once (Shein AR: $10.874) |
+| Belleza | Moño postizo despeinado | 0 | EE.UU. 316 a 3.176 (inflado) | ~$15.000 | Tono de pelo: cambios. Ticket bajo |
+| Bienestar | Ducha con filtro | 3 marcas (Varek, AURAL, Aqualyva) | EE.UU. 7.056; MX 287 | $8.000 a $116.000 | Hueco parcial. Promesas de pelo y piel |
+
+Otros medidos y descartados: bolsas al vacío (AR 87, Mybags.ar), alfombra absorbente (Dreams Lift), mosquitero magnético, escurridor enrollable, afilador (AR 80), limpiavidrios magnético, gorro de microfibra, alfombra para lavar pies, cepillo definidor de rulos, masajeador capilar, depilador de cristal, dermaplaning, collar refrigerante, tabla de flexiones, rueda abdominal (AR 11), rueda de yoga, hula hoop inteligente, bandas de suspensión, tabla de pilates plegable, vaso granizador, sillón inflable, botella motivacional, alfombra de diatomea.
