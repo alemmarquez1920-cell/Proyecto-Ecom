@@ -202,3 +202,23 @@ Biblioteca de anuncios de Meta (activos) + resultados de búsqueda de Mercado Li
 | Bienestar | Ducha con filtro | 3 marcas (Varek, AURAL, Aqualyva) | EE.UU. 7.056; MX 287 | $8.000 a $116.000 | Hueco parcial. Promesas de pelo y piel |
 
 Otros medidos y descartados: bolsas al vacío (AR 87, Mybags.ar), alfombra absorbente (Dreams Lift), mosquitero magnético, escurridor enrollable, afilador (AR 80), limpiavidrios magnético, gorro de microfibra, alfombra para lavar pies, cepillo definidor de rulos, masajeador capilar, depilador de cristal, dermaplaning, collar refrigerante, tabla de flexiones, rueda abdominal (AR 11), rueda de yoga, hula hoop inteligente, bandas de suspensión, tabla de pilates plegable, vaso granizador, sillón inflable, botella motivacional, alfombra de diatomea.
+
+---
+
+# Sexta búsqueda (26/11/2026): perros de departamento en CABA, sin químicos
+
+Público: hombre o mujer de 20 a 45, CABA, perro en departamento, paseos y cuidado. Biblioteca de anuncios de Meta, activos, con ruido.
+
+| Producto | AR | EE.UU. | España | Quién lo corre |
+| --- | --- | --- | --- | --- |
+| Antideslizante para patas | 32 | 160 | 6 (calcetines) | AR: 4patitas, Pulguitas.srl. EE.UU.: Pet & Home (2x1) |
+| Manta refrigerante | 5 | 242 (ruido) | 1 | AR: Superpets (40×50 cm), Tricas |
+| Bebedero / botella portátil | 4 | 15.207 (ruido) | — | AR: Laudopet. EE.UU.: Pawdy (USD 10) |
+| Pelota dispensadora de comida | **0** | 9 | — | EE.UU.: Reggie (Snuffle Ball), Gentle pet home |
+| Alfombra olfativa | 3 | 130 | 3 | EE.UU.: **Reggie, 98 anuncios** (Black Friday 40% OFF) |
+| Alfombra para lamer | **0** | 543 (ruido) | — | EE.UU.: Pawdy |
+| Comedero lento | 5 | 710 (ruido) | — | AR: Frentalo Shop. EE.UU.: Reggie |
+| Limpiapatas (vaso) | 10 (ruido) | 1.495 (ruido) | 1 | EE.UU.: Pawdy (USD 17), PAWS WASH. ES: Leo de Noche (24,95 €) |
+| Arnés antitirones | 12 | — | 128 | AR: Bark Argentina, Core Dogware |
+
+Marca modelo en EE.UU.: Reggie (enriquecimiento: alfombra olfativa, comedero lento, "Keep them busy indoors", "Want a calmer dog?").
