@@ -1,14 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Rastreador de Anuncios (Alameda)",
-  "version": "0.1.0",
-  "description": "Lee la Biblioteca de anuncios de Meta: anuncios activos por marca, cuántos arrancaron en los últimos 90 días e historial de cada marca.",
-  "permissions": ["storage"],
+  "name": "Rastreador de Anuncios",
+  "version": "1.0.0",
+  "description": "Encontrá marcas que están escalando en la Biblioteca de anuncios de Meta: activos por marca, nuevos en 90 días y su historial.",
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://*.facebook.com/ads/library*"],
-      "js": ["content.js"],
-      "css": ["panel.css"],
+      "matches": [
+        "https://*.facebook.com/ads/library*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
@@ -16,5 +21,6 @@
     "16": "icono-16.png",
     "48": "icono-48.png",
     "128": "icono-128.png"
-  }
+  },
+  "short_name": "Rastreador"
 }
