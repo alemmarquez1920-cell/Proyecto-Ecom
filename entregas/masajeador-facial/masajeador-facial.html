@@ -1,0 +1,946 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Alameda Masajeador Facial</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: misma tienda Alameda (blanco, piel, rojo y verde), ahora con el masajeador facial como protagonista. */
+:root{
+  --bg:#FFFFFF; --ink:#141212; --muted:#5F5955; --line:#ECE5DF;
+  --skin:#EBD6C8; --skin-soft:#F8F0EA; --skin-deep:#C99E86;
+  --red:#B3121C; --red-dark:#8E0D15; --gold:#C8A25B; --ok:#1F6B47;
+  --jade:#2F6B57; --jade-deep:#1E4A3C; --jade-soft:#E3EFE8; --jade-mist:#F2F8F4;
+  --rainbow:linear-gradient(90deg,#FF2E63,#FF8A00,#FFE100,#2BE38B,#19C3FF,#7B5CFF,#FF2ED1,#FF2E63);
+  --f-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --f-body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+@property --spin{syntax:"<angle>";inherits:false;initial-value:0deg}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.04;letter-spacing:-.018em;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+::selection{background:var(--jade-soft);color:var(--ink)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-weight:800;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.eyebrow.jade{color:var(--jade)}
+.serif-i{font-family:var(--f-display);font-style:normal;font-weight:600;color:var(--jade)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;border-radius:999px;padding:16px 30px;font-weight:800;font-size:.95rem;letter-spacing:.02em;text-decoration:none;transition-property:background-color, color, transform, box-shadow;transition-duration:.2s;transition-timing-function:cubic-bezier(.2,0,0,1)}
+.btn:active{transform:scale(.96)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 1px 2px rgba(142,13,21,.25), 0 6px 16px -6px rgba(179,18,28,.45)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-1px);box-shadow:0 2px 4px rgba(142,13,21,.25), 0 12px 28px -10px rgba(179,18,28,.55)}
+.btn-red:active{transform:translateY(0) scale(.96);box-shadow:0 1px 2px rgba(142,13,21,.3)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-block{width:100%}
+.btn svg{width:18px;height:18px}
+
+/* Black Friday: barra que corre */
+.ticker{background:var(--ink);color:#fff;overflow:hidden;position:relative;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.ticker-track{display:flex;width:max-content;animation:marquee 32s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{display:inline-flex;align-items:center;gap:18px;padding:10px 18px;font-weight:800;font-size:.8rem;letter-spacing:.14em;white-space:nowrap}
+.ticker span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--rainbow);background-size:400% 100%;animation:flow 6s linear infinite}
+.rb-text{background:var(--rainbow);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes flow{to{background-position:300% 0}}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding-block:14px}
+.nav{display:flex;gap:24px;font-weight:700;font-size:.9rem}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--red)}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;justify-self:center}
+.logo-mark{width:36px;height:36px;display:block;flex:none}
+.logo-word{font-weight:800;font-size:1.6rem;letter-spacing:-.04em;line-height:1}
+.tools{justify-self:end;display:flex;gap:6px;align-items:center}
+.icon-btn{position:relative;width:42px;height:42px;border-radius:50%;border:0;background:transparent;display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{background:var(--skin-soft)}
+.icon-btn svg{width:22px;height:22px}
+.badge{position:absolute;top:2px;right:2px;min-width:19px;height:19px;border-radius:999px;background:var(--red);color:#fff;font-size:.7rem;font-weight:800;display:grid;place-items:center;padding:0 5px}
+@media (max-width:760px){.nav{display:none}.top .wrap{grid-template-columns:auto 1fr auto}.logo{justify-self:start}}
+
+/* Hero */
+.hero{padding-block:34px 64px;background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 60%,var(--jade-mist) 100%)}
+.hero-grid{display:grid;gap:34px;align-items:center}
+@media (min-width:920px){.hero-grid{grid-template-columns:1fr 1.05fr}}
+.hero-copy{display:grid;gap:22px;max-width:580px}
+.chip{justify-self:start;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 8px;font-size:.8rem;font-weight:700;background:var(--bg)}
+.chip i{width:22px;height:22px;border-radius:50%;background:var(--jade);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.7rem}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.1rem)}
+.hero h1 em{color:var(--jade)}
+.hero p.sub{font-size:1.12rem;color:var(--muted);max-width:46ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-mini{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.88rem;color:var(--muted);font-weight:600}
+.hero-mini span{display:flex;align-items:center;gap:6px}
+.hero-mini span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red)}
+.hero-art{position:relative;max-width:100%}
+.hero-frame{position:relative;border-radius:200px 200px 28px 28px;overflow:hidden;aspect-ratio:4/5;max-width:520px;margin-inline:auto;background:var(--jade-soft);box-shadow:0 40px 80px -40px rgba(30,74,60,.55)}
+.hero-frame img{width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.hero-frame img,.g-main img,.g-thumbs img{outline:1px solid rgba(0,0,0,.1);outline-offset:-1px}
+.credit{position:absolute;left:14px;bottom:12px;font-size:.74rem;color:#fff;background:rgba(20,18,18,.68);padding:3px 9px;border-radius:999px;backdrop-filter:blur(4px)}
+.float{position:absolute;background:var(--bg);border-radius:16px;padding:10px 14px;box-shadow:0 18px 40px -18px rgba(20,18,18,.35);font-size:.8rem;font-weight:700;display:flex;gap:10px;align-items:center}
+.float b{display:block;font-size:.95rem}
+.float.f1{left:0;top:16%}
+.float.f2{right:0;bottom:16%}
+.float .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--jade-soft);color:var(--jade)}
+.float .ic svg{width:20px;height:20px}
+.bf-sticker{position:absolute;top:2%;right:4%;width:118px;height:118px;border-radius:50%;padding:3px;background:var(--rainbow);background-size:300% 100%;animation:flow 6s linear infinite;transform:rotate(10deg)}
+.bf-sticker div{width:100%;height:100%;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;text-align:center;font-weight:800;font-size:.72rem;letter-spacing:.1em;line-height:1.15}
+.bf-sticker b{display:block;font-family:var(--f-display);font-weight:600;font-size:2rem;letter-spacing:0}
+@keyframes wobble{50%{transform:rotate(-4deg) scale(1.04)}}
+@media (max-width:520px){.float.f1{top:6%}.float{font-size:.72rem;padding:8px 10px}.bf-sticker{width:96px;height:96px}.bf-sticker b{font-size:1.6rem}}
+
+/* Beneficios */
+.perks{border-block:1px solid var(--line);background:var(--bg)}
+.perks .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;padding-block:18px}
+.perk{display:flex;gap:10px;align-items:center;font-size:.86rem;color:var(--muted)}
+.perk b{display:block;color:var(--ink);font-size:.9rem}
+.perk svg{width:26px;height:26px;flex:none;color:var(--jade)}
+
+section.block{padding-block:72px}
+.head-row{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.head-row h2{font-size:clamp(2.1rem,4.2vw,3.1rem)}
+.link-u{font-weight:800;font-size:.9rem;text-underline-offset:4px}
+
+/* Banner Black Friday */
+.bf{position:relative;border-radius:32px;padding:3px;background:conic-gradient(from var(--spin),#FF2E63,#FF8A00,#FFE100,#2BE38B,#19C3FF,#7B5CFF,#FF2ED1,#FF2E63);animation:spin 5s linear infinite}
+@keyframes spin{to{--spin:360deg}}
+.bf-in{border-radius:29px;background:radial-gradient(120% 140% at 100% 0%,#2a1630 0%,var(--ink) 55%);color:#fff;padding:40px 26px;display:grid;gap:26px;overflow:hidden;position:relative}
+@media (min-width:920px){.bf-in{grid-template-columns:1.3fr 1fr;align-items:center;padding:52px}}
+.bf-kicker{font-weight:800;letter-spacing:.2em;font-size:.78rem;color:#cfc7c3}
+.bf h2{font-family:var(--f-body);font-weight:800;font-size:clamp(2.4rem,7vw,4.8rem);letter-spacing:-.03em;line-height:.95;text-transform:uppercase}
+.bf .glow{filter:drop-shadow(0 0 18px rgba(255,46,209,.35))}
+.bf p.deal{font-size:1.15rem;color:#e9e2df;max-width:40ch}
+.bf p.deal b{color:#fff}
+.clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.clock div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 6px;text-align:center}
+.clock b{display:block;font-family:var(--f-body);font-weight:800;font-size:clamp(1.8rem,5vw,2.6rem);font-variant-numeric:tabular-nums;line-height:1}
+.clock span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#cfc7c3}
+.bf-side{display:grid;gap:14px}
+.bf-side small{color:#cfc7c3;font-size:.8rem}
+
+/* Ficha */
+.pdp{background:var(--skin-soft)}
+.pdp-grid{display:grid;gap:34px;align-items:start}
+@media (min-width:920px){.pdp-grid{grid-template-columns:1.05fr 1fr}.gallery{position:sticky;top:96px}}
+.gallery{display:grid;gap:12px;min-width:0}
+.g-main{position:relative;background:var(--bg);border-radius:24px;aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;overflow:hidden}
+.g-main img{width:100%;height:100%;object-fit:cover}
+.g-main svg{width:90%;height:auto}
+.g-ph{padding:30px;text-align:center;color:var(--muted);display:grid;gap:8px;place-items:center}
+.g-ph svg{width:46px;height:46px;color:var(--red)}
+.g-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.g-thumbs button{background:var(--bg);border:1.5px solid var(--line);border-radius:14px;aspect-ratio:1/1;padding:0;cursor:pointer;display:grid;place-items:center;font-size:.66rem;color:var(--muted);text-align:center;line-height:1.25;overflow:hidden}
+.g-thumbs button[aria-pressed="true"]{border-color:var(--ink)}
+.g-thumbs svg{width:92%;height:auto}
+.g-thumbs img{width:100%;height:100%;object-fit:cover}
+.buy{display:grid;gap:18px;min-width:0}
+.buy h2{font-size:clamp(2.2rem,4.4vw,3.1rem)}
+.buy h2 em{color:var(--jade)}
+.lead{color:var(--muted);font-size:1.04rem;max-width:56ch}
+.bul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.bul li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:.96rem}
+.bul svg{width:18px;height:18px;color:var(--jade);margin-top:3px}
+.inbox{font-size:.9rem;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.countdown{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px;font-size:.92rem;position:relative;overflow:hidden}
+.countdown::before{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--red)}
+.countdown b{font-weight:800}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;background:rgba(255,255,255,.12);padding:2px 10px;border-radius:8px;color:var(--skin)}
+.opts{display:grid;gap:10px;border:0;padding:0;margin:0}
+.opts legend{font-weight:800;margin-bottom:6px}
+.opt{position:relative;display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:center;background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:16px;cursor:pointer;box-shadow:0 1px 2px rgba(20,18,18,.04);transition-property:border-color, box-shadow, transform;transition-duration:.2s;transition-timing-function:cubic-bezier(.2,0,0,1)}
+.opt:hover{border-color:var(--skin-deep);box-shadow:0 1px 2px rgba(20,18,18,.05), 0 8px 20px -12px rgba(20,18,18,.22)}
+.opt:active{transform:scale(.99)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center}
+.dot::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--red);transform:scale(0);transition:transform .15s}
+.opt:has(input:checked){border-color:var(--ink);box-shadow:0 0 0 3px var(--skin)}
+.opt:has(input:checked) .dot{border-color:var(--red)}
+.opt:has(input:checked) .dot::after{transform:scale(1)}
+.opt:has(input:focus-visible){outline:2px solid var(--red);outline-offset:3px}
+.opt .flag{position:absolute;top:-11px;right:16px;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--ink);color:#fff}
+.o-name{font-weight:800;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.o-sub{font-size:.84rem;color:var(--muted)}
+.pill{font-size:.74rem;font-weight:800;letter-spacing:.05em;padding:3px 8px;border-radius:6px;background:var(--red);color:#fff}
+.pill.jade{background:var(--jade)}
+.pill.skin{background:var(--skin);color:var(--ink)}
+.o-price{text-align:right;font-variant-numeric:tabular-nums}
+.o-price b{display:block;font-size:1.14rem}
+.o-price s{font-size:.82rem;color:var(--muted)}
+.o-price em{display:block;font-style:normal;font-size:.76rem;font-weight:800;color:var(--ok)}
+.bump{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:center;border:1.5px dashed var(--red);background:var(--bg);border-radius:18px;padding:13px 16px;cursor:pointer;transition-property:background-color, box-shadow;transition-duration:.2s;transition-timing-function:cubic-bezier(.2,0,0,1)}
+.bump:hover{background:#FFF6F5;box-shadow:0 8px 20px -14px rgba(179,18,28,.45)}
+.bump input{width:18px;height:18px;margin:0;accent-color:var(--red)}
+.bump small{display:block;color:var(--muted);font-size:.82rem}
+.bump .p{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.total{display:grid;gap:6px;background:var(--bg);border-radius:18px;padding:14px 16px;font-variant-numeric:tabular-nums}
+.total .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.total .big{font-family:var(--f-display);font-size:1.9rem;font-weight:600}
+.total .xfer{color:var(--ok);font-weight:800}
+.ship{display:grid;gap:7px}
+.track{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.fill{height:100%;width:0;background:var(--red);border-radius:999px;transition:width .4s ease}
+.ship p{font-size:.88rem;color:var(--muted)}
+.ship p b{color:var(--ink)}
+.gift-note{display:flex;gap:10px;align-items:center;font-size:.9rem;border-top:1px solid var(--line);padding-top:14px}
+.gift-note svg{width:20px;height:20px;color:var(--red);flex:none}
+.giftbox{display:grid;grid-template-columns:20px 1fr 24px;gap:12px;align-items:center;background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:13px 16px;cursor:pointer;transition-property:border-color, box-shadow;transition-duration:.2s;transition-timing-function:cubic-bezier(.2,0,0,1)}
+.giftbox:hover{border-color:var(--skin-deep);box-shadow:0 8px 20px -14px rgba(20,18,18,.25)}
+.giftbox:has(input:checked){border-color:var(--ink)}
+.giftbox input{width:18px;height:18px;margin:0;accent-color:var(--red)}
+.giftbox small{display:block;color:var(--muted);font-size:.82rem}
+.giftbox svg{width:22px;height:22px;color:var(--red)}
+.trust{display:grid;gap:8px;font-size:.84rem;color:var(--muted)}
+.trust span{display:grid;grid-template-columns:18px 1fr;gap:9px;align-items:start}
+.trust svg{width:17px;height:17px;color:var(--jade);margin-top:2px}
+.wa{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:54;display:flex;align-items:center;gap:8px;background:#12803F;color:#fff;text-decoration:none;font-weight:800;font-size:.86rem;padding:12px 16px 12px 12px;border-radius:999px;box-shadow:0 14px 30px -12px rgba(20,18,18,.45)}
+.wa svg{width:22px;height:22px}
+@media (max-width:760px){.wa{bottom:calc(84px + env(safe-area-inset-bottom,0px));padding:12px}.wa span{display:none}}
+@media (max-width:520px){.opt{grid-template-columns:20px 1fr}.o-price{grid-column:2;text-align:left;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.o-price em{display:inline}}
+
+/* Día y noche */
+.dn{display:grid;gap:16px}
+@media (min-width:900px){.dn{grid-template-columns:1fr 1fr}}
+.dn-card{border-radius:28px;padding:34px 28px;display:grid;gap:16px;align-content:space-between;min-height:420px;position:relative;overflow:hidden}
+.dn-card.night{background:var(--skin)}
+.dn-card.day{background:var(--jade-soft)}
+.dn-card time{font-family:var(--f-display);font-size:3rem;font-weight:500;font-variant-numeric:tabular-nums;line-height:1}
+.dn-card.night time{color:var(--red)}
+.dn-card.day time{color:var(--jade)}
+.dn-card h3{font-size:clamp(1.8rem,3vw,2.4rem)}
+.dn-card p{color:#4a3f38;max-width:42ch}
+.dn-card.day p{color:#2c463b}
+.dn-art{width:min(300px,70%);justify-self:end;margin-top:-10px}
+.dn-card a{font-weight:800;text-underline-offset:4px}
+
+/* Productos */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.card{display:grid;gap:12px;align-content:start}
+.card-img{position:relative;background:#F4F2F1;border-radius:20px;aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;overflow:hidden;cursor:pointer;box-shadow:0 1px 2px rgba(20,18,18,.04);transition-property:transform, box-shadow;transition-duration:.25s;transition-timing-function:cubic-bezier(.2,0,0,1)}
+.card-img:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(20,18,18,.04), 0 18px 36px -18px rgba(30,74,60,.35)}
+.card-img:active{transform:translateY(-1px) scale(.99)}
+.card-img.g{background:var(--jade-mist)}
+.card-img svg{width:92%;height:auto}
+.tag{position:absolute;top:12px;left:12px;background:var(--bg);border:1px solid var(--line);border-radius:999px;font-size:.72rem;font-weight:800;padding:4px 10px;letter-spacing:.03em}
+.tag.red{background:var(--red);color:#fff;border-color:var(--red)}
+.tag.jade{background:var(--jade);color:#fff;border-color:var(--jade)}
+.card h3{font-family:var(--f-body);font-weight:700;font-size:1rem;line-height:1.3}
+.card .sub{font-size:.84rem;color:var(--muted)}
+.stars{font-size:.8rem;color:var(--muted)}
+.stars i{font-style:normal;color:var(--ink);letter-spacing:1px}
+.price{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.price b{font-size:1.06rem}
+.price s{color:var(--muted);font-size:.86rem}
+.price em{font-style:normal;font-size:.8rem;color:var(--red);font-weight:800}
+.card .btn{padding:12px 18px;font-size:.88rem}
+
+/* Pasos */
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.step{border-top:2px solid var(--jade);padding-top:16px;display:grid;gap:8px}
+.step .n{font-family:var(--f-display);font-size:2.4rem;font-weight:500;color:var(--jade);line-height:1}
+.step h3{font-family:var(--f-body);font-weight:800;font-size:1.05rem}
+.step p{color:var(--muted);font-size:.94rem}
+
+/* Videos */
+.videos{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.vid{aspect-ratio:9/16;max-width:100%;border-radius:22px;background:linear-gradient(160deg,var(--jade-soft),var(--skin-soft));border:1.5px dashed var(--skin-deep);display:grid;place-items:center;text-align:center;padding:18px;color:var(--muted);font-size:.86rem;position:relative}
+.vid .play{width:58px;height:58px;border-radius:50%;background:var(--bg);display:grid;place-items:center;box-shadow:0 10px 24px -12px rgba(20,18,18,.4);margin-bottom:10px}
+.vid .play svg{width:22px;height:22px;color:var(--red);margin-left:3px}
+.vid b{display:block;color:var(--ink);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+
+/* Comparación */
+.cmp-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px}
+table.cmp{width:100%;border-collapse:collapse;min-width:560px;font-size:.94rem}
+.cmp th,.cmp td{padding:14px 16px;text-align:center;border-bottom:1px solid var(--line)}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp thead th{font-weight:800}
+.cmp thead th.us{background:var(--jade);color:#fff}
+.cmp td.us{background:var(--jade-mist);font-weight:800}
+.cmp tbody tr:last-child td,.cmp tbody tr:last-child th{border-bottom:0}
+.yes{color:var(--ok);font-weight:800}
+.no{color:var(--muted)}
+
+/* Opiniones */
+.reviews{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,340px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.review{scroll-snap-align:start;border:1px dashed var(--skin-deep);border-radius:20px;padding:20px;display:grid;gap:10px;align-content:start;background:var(--bg)}
+.review .ex{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.review q{font-family:var(--f-display);font-size:1.12rem;line-height:1.35}
+.review .who{font-size:.86rem;color:var(--muted)}
+
+/* Garantía (verde) */
+.promise{background:var(--jade);color:#fff}
+.promise .wrap{display:grid;gap:22px;padding-block:44px}
+@media (min-width:900px){.promise .wrap{grid-template-columns:1.2fr 2fr;align-items:center}}
+.promise h2{font-size:clamp(2rem,4vw,2.8rem)}
+.promise h2 em{color:#CFE7DA}
+.p-items{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.p-items div{border-top:1.5px solid rgba(255,255,255,.4);padding-top:12px}
+.p-items b{display:block;font-family:var(--f-display);font-size:2.2rem;font-weight:500;line-height:1}
+.p-items span{font-size:.88rem;color:#DCEDE3}
+
+/* Historia */
+.story{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.story{grid-template-columns:1fr 1fr}}
+.story h2{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+.story p{color:var(--muted);font-size:1.04rem;max-width:56ch}
+.story .ph{aspect-ratio:4/3;max-width:100%;border:1.5px dashed var(--skin-deep);border-radius:24px;background:var(--skin-soft);display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted);font-size:.9rem}
+
+/* FAQ */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:2px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding-block:14px;font-weight:800}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red);font-size:1.3rem;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--muted);padding-bottom:14px;max-width:66ch}
+.todo{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);border-radius:6px;padding:1px 6px;margin-right:6px}
+
+/* Cierre: regalo */
+.gift{border-radius:32px;overflow:hidden;display:grid;background:var(--skin)}
+@media (min-width:900px){.gift{grid-template-columns:1fr 1fr}}
+.gift-copy{padding:44px 30px;display:grid;gap:18px;align-content:center}
+.gift-copy h2{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+.gift-copy p{color:#4a3f38;max-width:44ch}
+.gift-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-weight:700}
+.gift-list li{display:flex;gap:10px;align-items:center}
+.gift-list li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
+.gift-art{background:var(--jade-soft);display:grid;place-items:center;padding:24px;min-height:320px}
+.gift-art svg{width:min(460px,100%);height:auto}
+
+/* Newsletter */
+.news{background:var(--ink);color:#fff;border-radius:28px;padding:40px 28px;display:grid;gap:20px;align-items:center;position:relative;overflow:hidden}
+.news::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--jade)}
+@media (min-width:900px){.news{grid-template-columns:1.1fr 1fr;padding:48px}}
+.news h2{font-size:clamp(2rem,4vw,2.8rem)}
+.news p{color:#d9d1cd}
+.news form{display:grid;gap:10px}
+.news .row{display:flex;gap:8px;flex-wrap:wrap}
+.news input[type="email"]{flex:1;min-width:0;font:inherit;padding:14px 18px;border-radius:999px;border:1.5px solid #fff;background:#fff;color:var(--ink)}
+.consent{display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:.82rem;color:#d9d1cd;cursor:pointer}
+.consent input{margin:3px 0 0;accent-color:var(--red)}
+.msg{font-size:.88rem;font-weight:700;min-height:1.2em}
+.msg.ok{color:#8FE0B5} .msg.err{color:#FF9AA0}
+
+footer{border-top:1px solid var(--line);margin-top:72px;padding-block:40px 28px;font-size:.88rem;color:var(--muted)}
+footer .wrap{display:grid;gap:22px}
+.f-cols{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.f-cols b{display:block;color:var(--ink);margin-bottom:8px}
+.f-cols a{display:block;text-decoration:none;padding-block:3px}
+.f-cols a:hover{color:var(--red)}
+.legal{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:18px}
+.legal-btn{border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;font-weight:800;color:var(--ink);text-decoration:none;font-size:.8rem}
+
+/* Barra fija en el celu */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--bg);border-top:1px solid var(--line);display:none;gap:12px;align-items:center;justify-content:space-between;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));box-shadow:0 -10px 30px -18px rgba(20,18,18,.35)}
+.mbar small{display:block;color:var(--muted);font-size:.74rem}
+.mbar b{font-variant-numeric:tabular-nums}
+.mbar .btn{padding:12px 20px;font-size:.88rem}
+@media (max-width:760px){.mbar{display:flex}body{padding-bottom:76px}}
+
+/* Carrito */
+.overlay{position:fixed;inset:0;background:rgba(20,18,18,.45);z-index:70}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg);z-index:75;display:grid;grid-template-rows:auto auto 1fr auto;box-shadow:-20px 0 50px rgba(0,0,0,.18);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.d-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.d-head h3{font-size:1.5rem}
+.d-ship{padding:14px 20px;background:var(--skin-soft);display:grid;gap:7px}
+.d-ship p{font-size:.86rem}
+.d-items{overflow-y:auto;padding:8px 20px;display:grid;align-content:start;gap:4px}
+.item{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding-block:12px;border-bottom:1px solid var(--line)}
+.item .thumb{width:72px;height:72px;border-radius:12px;background:#F4F2F1;display:grid;place-items:center;overflow:hidden}
+.item .thumb svg{width:100%;height:auto}
+.item b{font-size:.92rem;display:block}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;margin-top:6px}
+.qty button{border:0;background:transparent;width:28px;height:28px;cursor:pointer;font-weight:800}
+.qty span{min-width:20px;text-align:center;font-size:.86rem;font-variant-numeric:tabular-nums}
+.item .ip{font-weight:800;font-variant-numeric:tabular-nums;text-align:right}
+.empty{padding:30px 0;text-align:center;color:var(--muted)}
+.upsell{padding:14px 0 6px;display:grid;gap:8px}
+.upsell b{font-size:.85rem}
+.up{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:8px 10px}
+.up .thumb{width:52px;height:52px;border-radius:10px;background:var(--jade-mist);overflow:hidden;display:grid;place-items:center}
+.up .thumb svg{width:100%;height:auto}
+.up small{display:block;color:var(--muted);font-size:.78rem}
+.up button{border:1.5px solid var(--red);color:var(--red);background:transparent;border-radius:999px;padding:6px 12px;font-weight:800;font-size:.8rem;cursor:pointer}
+.d-foot{padding:16px 20px;border-top:1px solid var(--line);display:grid;gap:10px}
+.d-foot .row{display:flex;justify-content:space-between;font-weight:800;font-variant-numeric:tabular-nums}
+.d-foot small{color:var(--muted);font-size:.8rem}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:.9rem;max-width:min(92vw,460px);opacity:0;pointer-events:none;transition:opacity .2s, transform .2s;z-index:90;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+<style>
+.hero-frame.art{display:grid;place-items:center;background:radial-gradient(90% 70% at 50% 40%,#FBEFF1 0%,var(--skin) 100%)}
+.hero-frame.art svg{width:86%;height:auto}
+.g-main img{object-fit:contain;background:#fff}
+.preventa{display:flex;gap:10px;align-items:flex-start;background:#FFF6F5;border:1.5px solid var(--red);border-radius:14px;padding:12px 14px;font-size:.92rem}
+.preventa b{color:var(--red)}
+.preventa svg{width:20px;height:20px;color:var(--red);flex:none;margin-top:2px}
+</style>
+<!-- Logo: A mayúscula hecha copa de árbol (se usa en el header y el pie) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs><clipPath id="logo-a-clip"><path clip-rule="evenodd" d="M32 4Q26.94 7.32 27.67 13.33Q22.6 16.66 23.33 22.67Q18.27 25.99 19 32Q13.94 35.32 14.67 41.33Q9.6 44.66 10.33 50.67Q5.27 53.99 6 60L20 60L24.8 44L39.2 44L44 60L58 60Q58.73 53.99 53.67 50.67Q54.4 44.66 49.33 41.33Q50.06 35.32 45 32Q45.73 25.99 40.67 22.67Q41.4 16.66 36.33 13.33Q37.06 7.32 32 4ZM32 20L26.9 37L37.1 37Z"/></clipPath></defs>
+  <symbol id="logo-a" viewBox="0 0 64 64">
+    <g clip-path="url(#logo-a-clip)"><rect width="64" height="64" fill="#2F6B57"/><rect x="32" width="32" height="64" fill="#3E8A6C"/></g>
+    <g fill="#9CCF8A">
+      <path transform="translate(16.5 47) rotate(-30)" d="M0 -4C2.2 -2 2.2 2 0 4C-2.2 2 -2.2 -2 0 -4Z"/>
+      <path transform="translate(23 30.5) rotate(-30)" d="M0 -4C2.2 -2 2.2 2 0 4C-2.2 2 -2.2 -2 0 -4Z"/>
+      <path transform="translate(47.5 47) rotate(30)" d="M0 -4C2.2 -2 2.2 2 0 4C-2.2 2 -2.2 -2 0 -4Z"/>
+      <path transform="translate(41 30.5) rotate(30)" d="M0 -4C2.2 -2 2.2 2 0 4C-2.2 2 -2.2 -2 0 -4Z"/>
+      <path transform="translate(32 11.5)" d="M0 -3.4C1.9 -1.7 1.9 1.7 0 3.4C-1.9 1.7 -1.9 -1.7 0 -3.4Z"/>
+      <path transform="translate(32 40.5) rotate(90)" d="M0 -4C2 -2 2 2 0 4C-2 2 -2 -2 0 -4Z"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- BLACK FRIDAY: barra que corre -->
+<div class="ticker" aria-label="Black Friday: 2 masajeadores a $149.000 hasta el lunes 30/11">
+  <div class="ticker-track" aria-hidden="true" id="ticker"></div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Principal">
+      <a href="#ficha" data-pick="uno">Masajeador</a><a href="#ficha" data-pick="dos">Para regalar</a><a href="#faq">Preguntas</a>
+    </nav>
+    <a class="logo" href="#top" aria-label="Alameda, inicio"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-a"/></svg><span class="logo-word">alameda</span></a>
+    <div class="tools">
+      <a class="icon-btn" href="#faq" aria-label="Ayuda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></svg></a>
+      <button class="icon-btn" type="button" id="open-cart" aria-label="Abrir carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="badge" id="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="chip"><i>✦</i>Nuevo · Preventa</span>
+        <h1>Tu masaje facial <em class="serif-i">en 5 minutos, en casa.</em></h1>
+        <p class="sub">Masajeador facial con calor suave, luz LED y vibración. Cinco modos, intensidad regulable y carga por USB. Lo usás a la noche, antes de tu crema, sin turnos ni sesiones. Elegido por Alameda, con 6 meses de garantía.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-red" href="#ficha">Reservar el mío</a>
+          <a class="btn btn-line" href="#uso">Cómo se usa</a>
+        </div>
+        <div class="hero-mini"><span>Carga por USB</span><span>10% OFF por transferencia</span><span>Envío gratis</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-frame art" id="hero-art"></div>
+        <div class="float f1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><span><b>5 modos</b>Calor, luz y vibración</span></div>
+        <div class="float f2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><span><b>6 meses</b>de garantía Alameda</span></div>
+        <div class="bf-sticker"><div><span><b>2x</b>$149.000<br>BLACK FRIDAY</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="perks"><div class="wrap">
+    <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span><b>Envío gratis</b>A todo el país, con seguimiento</span></div>
+    <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span><b>Pagá como quieras</b>Cuotas o 10% OFF por transferencia</span></div>
+    <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>6 meses de garantía</b>La pone Alameda</span></div>
+    <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13M12 8c-2-4-6-4-6-1.5S9 8 12 8zm0 0c2-4 6-4 6-1.5S15 8 12 8z"/></svg><span><b>Listo para regalar</b>Y si no le gusta, se cambia</span></div>
+  </div></div>
+
+  <!-- BANNER BLACK FRIDAY -->
+  <section class="block" style="padding-bottom:0" aria-labelledby="bf-title">
+    <div class="wrap">
+      <div class="bf">
+        <div class="bf-in">
+          <div style="display:grid;gap:16px">
+            <span class="bf-kicker">ALAMEDA · DEL VIERNES 27 AL LUNES 30/11</span>
+            <h2 id="bf-title"><span class="rb-text glow">Black Friday</span><br>Cyber Monday</h2>
+            <p class="deal"><b>2 masajeadores a $149.000:</b> el segundo te sale $60.000. Uno para vos y otro para regalar.</p>
+          </div>
+          <div class="bf-side">
+            <div class="clock" role="timer" aria-label="Tiempo que falta para que termine la promo">
+              <div><b id="c-d">0</b><span>Días</span></div>
+              <div><b id="c-h">00</b><span>Horas</span></div>
+              <div><b id="c-m">00</b><span>Min</span></div>
+              <div><b id="c-s">00</b><span>Seg</span></div>
+            </div>
+            <a class="btn btn-red btn-block" href="#ficha" data-pick="dos">Quiero los 2</a>
+            <small>Termina el lunes 30/11 a las 23:59. No se reinicia.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FICHA -->
+  <section class="block pdp" id="ficha" style="margin-top:72px">
+    <div class="wrap pdp-grid">
+      <div class="gallery">
+        <div class="g-main" id="g-main"></div>
+        <div class="g-thumbs" id="g-thumbs"></div>
+      </div>
+      <div class="buy">
+        <span class="eyebrow jade" id="pdp-eye">Preventa · Cuidado facial</span>
+        <h2 id="pdp-title">Masajeador <em class="serif-i">facial</em></h2>
+        <p class="stars"><i>☆☆☆☆☆</i> Nuevo en Alameda · Sé la primera en opinar</p>
+        <p class="lead" id="pdp-lead"></p>
+        <ul class="bul" id="pdp-bul"></ul>
+        <p class="inbox" id="inbox"></p>
+        <div class="preventa" role="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b>Preventa.</b> Lo reservás hoy y se despacha desde el <b id="f-despacho"></b>. Te avisamos por WhatsApp cuando sale, con el número de seguimiento.</span></div>
+        <div class="countdown" role="status"><b>La promo de 2 a $149.000 termina el lunes 30/11 a las 23:59</b><span>Faltan <span class="timer" id="timer">--:--:--</span></span></div>
+
+        <fieldset class="opts">
+          <legend>Elegí cuántos</legend>
+          <label class="opt"><input type="radio" name="offer" value="uno" checked><span class="dot"></span>
+            <span><span class="o-name">1 masajeador</span><span class="o-sub">Para vos</span></span>
+            <span class="o-price"><b>$89.000</b><em>Envío gratis</em></span></label>
+          <label class="opt"><span class="flag">Black Friday</span><input type="radio" name="offer" value="dos"><span class="dot"></span>
+            <span><span class="o-name">2 masajeadores <span class="pill">Ahorrás $29.000</span></span><span class="o-sub">Uno para vos y otro para regalar</span></span>
+            <span class="o-price"><b>$149.000</b><s>$178.000</s><em>Hasta el 30/11</em></span></label>
+        </fieldset>
+
+        <label class="bump" for="bump" id="bump-box"><input type="checkbox" id="bump"><span><b>Sumá la vincha de toalla</b><small>Te saca el pelo de la cara mientras hacés la rutina. Precio especial con tu masajeador.</small></span><span class="p">+ $9.900</span></label>
+
+        <div class="total" aria-live="polite">
+          <div class="row"><span>Total</span><span class="big" id="t-total">$89.000</span></div>
+          <div class="row"><span>Por transferencia (10% OFF)</span><span class="xfer" id="t-xfer">$80.100</span></div>
+          <div class="row"><span>En 3 cuotas</span><span id="t-cuotas">$29.667</span></div>
+        </div>
+        <label class="giftbox" for="gift"><input type="checkbox" id="gift"><span><b>Es para regalar</b><small>Va con tarjeta y sin el precio adentro. Si no le gusta, se cambia.</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13M12 8c-2-4-6-4-6-1.5S9 8 12 8zm0 0c2-4 6-4 6-1.5S15 8 12 8z"/></svg></label>
+        <button class="btn btn-red btn-block" type="button" id="pdp-add">Reservar · $89.000</button>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pagás con tarjeta en cuotas, Mercado Pago o transferencia. Compra protegida.</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>Si cambiás de idea antes de que salga, te devolvemos todo. Y después tenés 10 días para arrepentirte, por ley.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAÑANA Y NOCHE -->
+  <section class="block" id="regalos">
+    <div class="wrap">
+      <div class="head-row"><h2>Tu rutina, <em class="serif-i">a tu hora</em></h2><a class="link-u" href="#ficha">Reservar</a></div>
+      <div class="dn">
+        <article class="dn-card night">
+          <div style="display:grid;gap:10px"><time>22:30</time><h3>De noche, calor y luz</h3><p>Cara limpia, tu crema o gel, y 5 minutos de masaje con calor suave y luz LED roja. Mientras mirás una serie.</p><a href="#ficha">Ver el masajeador</a></div>
+          <div class="dn-art" id="art-night"></div>
+        </article>
+        <article class="dn-card day">
+          <div style="display:grid;gap:10px"><time>07:00</time><h3>A la mañana, vibración</h3><p>Dos minutos de vibración del centro hacia afuera antes de maquillarte. Rápido y sin mojar nada.</p><a href="#ficha">Ver el masajeador</a></div>
+          <div class="dn-art" id="art-day"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA -->
+  <section class="block" id="tienda" style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row"><h2>Elegí el tuyo</h2><span class="eyebrow">Precios de Black Friday</span></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- PASOS -->
+  <section class="block" id="uso" style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row"><h2>Así se usa, <em class="serif-i">sin vueltas</em></h2></div>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><h3>Cara limpia y tu crema</h3><p>Lavate la cara y poné tu crema o un gel neutro. El cabezal tiene que deslizar, nunca en seco.</p></div>
+        <div class="step"><span class="n">2</span><h3>Elegí el modo</h3><p>Prendelo, elegí uno de los 5 modos y empezá con la intensidad más baja. La pantalla te muestra en cuál estás.</p></div>
+        <div class="step"><span class="n">3</span><h3>Del centro hacia afuera</h3><p>Movimientos lentos desde el centro hacia las orejas: frente, pómulos, mandíbula y cuello. Cinco minutos alcanzan.</p></div>
+        <div class="step"><span class="n">4</span><h3>Limpialo y cargalo</h3><p>Pasale un algodón por el cabezal y cargalo con el cable USB cuando la pantalla lo pida.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row"><h2>Miralo en acción</h2><span class="eyebrow">Acá van tus videos reales</span></div>
+      <div class="videos">
+        <div class="vid"><div><div class="play" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><b>Video real 1</b>Lo prende, elige el modo y se lo pasa por el pómulo.</div></div>
+        <div class="vid"><div><div class="play" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><b>Video real 2</b>Primer plano de la luz LED y la pantalla cambiando de modo.</div></div>
+        <div class="vid"><div><div class="play" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><b>Video real 3</b>Abre la caja como regalo.</div></div>
+        <div class="vid"><div><div class="play" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><b>Video real 4</b>Una clienta contándolo con sus palabras.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARACIÓN -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row"><h2>Por qué un masajeador y no solo las manos</h2></div>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <thead><tr><th scope="col"></th><th scope="col" class="us">Masajeador Alameda</th><th scope="col">Con las manos</th><th scope="col">Turno en un centro</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Lo usás cuando querés, en casa</th><td class="us yes">Sí</td><td class="yes">Sí</td><td class="no">Con turno</td></tr>
+            <tr><th scope="row">Calor suave, luz LED y vibración</th><td class="us yes">Sí</td><td class="no">No</td><td class="no">Depende</td></tr>
+            <tr><th scope="row">Intensidad que vos regulás</th><td class="us yes">Sí</td><td class="no">—</td><td class="no">No</td></tr>
+            <tr><th scope="row">Pagás una vez</th><td class="us yes">Sí</td><td class="yes">Sí</td><td class="no">Cada sesión</td></tr>
+            <tr><th scope="row">Garantía de 6 meses</th><td class="us yes">Sí</td><td class="no">—</td><td class="no">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row"><h2>Lo que dicen las que ya lo usan</h2><span class="eyebrow">Acá van las reseñas reales</span></div>
+      <div class="reviews">
+        <article class="review"><span class="ex">Ejemplo · reemplazar</span><q>Lo uso a la noche mirando una serie. Cinco minutos y me voy a dormir.</q><span class="who">Nombre, ciudad</span></article>
+        <article class="review"><span class="ex">Ejemplo · reemplazar</span><q>Me llevé los dos y le regalé uno a mi hermana para el cumple.</q><span class="who">Nombre, ciudad</span></article>
+        <article class="review"><span class="ex">Ejemplo · reemplazar</span><q>Lo que más me gusta es el calor. Arranqué en la intensidad más baja.</q><span class="who">Nombre, ciudad</span></article>
+        <article class="review"><span class="ex">Ejemplo · reemplazar</span><q>La batería me dura toda la semana.</q><span class="who">Nombre, ciudad</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTÍA -->
+  <section class="promise" aria-label="Nuestra promesa">
+    <div class="wrap">
+      <h2>Lo probamos antes. <em class="serif-i">Lo garantizamos después.</em></h2>
+      <div class="p-items">
+        <div><b>6 meses</b><span>de garantía Alameda en el masajeador</span></div>
+        <div><b>10 días</b><span>para arrepentirte, por ley</span></div>
+        <div><b>100%</b><span>de devolución si cancelás la preventa antes del envío</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="block">
+    <div class="wrap story">
+      <div style="display:grid;gap:16px">
+        <h2>No lo fabricamos. <em class="serif-i">Lo elegimos.</em></h2>
+        <p>Alameda nació en Chacabuco con una idea simple: probar lo que vendemos antes de vendértelo. Elegimos cada producto, lo usamos nosotros y le ponemos 6 meses de garantía. Si algo falla, lo resolvemos.</p>
+      </div>
+      <div class="ph">Foto real: Alexis probando el masajeador y armando las cajas en casa</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row"><h2>Preguntas antes de comprar</h2></div>
+      <div class="faq">
+        <details open><summary>¿Qué es la preventa?</summary><p>Lo reservás hoy con el precio de lanzamiento y se despacha desde el <span class="f-despacho-txt"></span>. Te avisamos por WhatsApp cuando sale, con el seguimiento. Si cambiás de idea antes del envío, te devolvemos todo.</p></details>
+        <details><summary>¿Qué hace cada modo?</summary><p><span class="todo">Completar</span>Copiar los 5 modos tal cual los describe el manual del proveedor (calor, luz LED, vibración, etc.). No prometer resultados médicos.</p></details>
+        <details><summary>¿Duele o quema?</summary><p>No. El calor es suave y empezás en la intensidad más baja. Siempre se usa con crema o gel, nunca en seco. Si sentís molestia, bajá la intensidad o paralo.</p></details>
+        <details><summary>¿Quién no lo debería usar?</summary><p>Si estás embarazada, tenés marcapasos, implantes metálicos en la cara, o la piel lastimada o irritada, no lo uses y consultá con tu médico. <span class="todo">Completar</span>Copiar las contraindicaciones del manual.</p></details>
+        <details><summary>¿Tiene registro ANMAT?</summary><p><span class="todo">Completar</span>Pedirle al proveedor o importador el número de registro ANMAT del equipo y ponerlo acá. Sin ese número no publicar.</p></details>
+        <details><summary>¿Cuánto dura la batería?</summary><p><span class="todo">Completar</span>Dato del manual: horas de uso por carga y tiempo de carga.</p></details>
+        <details><summary>¿Qué pasa si no me gusta o es un regalo?</summary><p>Tenés 10 días desde que lo recibís para arrepentirte, por ley. Si es un regalo y no le gusta, se cambia. El masajeador tiene 6 meses de garantía Alameda.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE: REGALO -->
+  <section class="wrap" aria-labelledby="gift-title">
+    <div class="gift">
+      <div class="gift-copy">
+        <h2 id="gift-title">El regalo que se usa <em class="serif-i">todas las noches.</em></h2>
+        <p>Una caja linda, algo que se prende y se nota en el momento, y un mensaje claro: "esto es para que te cuides". Si no le gusta, se cambia.</p>
+        <ul class="gift-list"><li>Caja lista para regalar</li><li>Llega con tarjeta</li><li>Se cambia sin vueltas</li></ul>
+        <div><a class="btn btn-red" href="#ficha" data-pick="dos">Llevar 2 a $149.000</a></div>
+      </div>
+      <div class="gift-art" id="art-gift"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="wrap" aria-label="Suscripción" style="margin-top:72px">
+    <div class="news">
+      <div>
+        <h2>10% OFF en tu primera compra</h2>
+        <p style="margin-top:10px">Dejá tu email y te mandamos el código y la guía de la rutina de 5 minutos en PDF.</p>
+      </div>
+      <form id="news-form" novalidate>
+        <div class="row"><input type="email" id="n-email" placeholder="tu@email.com" autocomplete="email" aria-label="Tu email"><button class="btn btn-red" type="submit">Quiero mi 10%</button></div>
+        <label class="consent" for="n-consent"><input type="checkbox" id="n-consent"><span>Acepto recibir novedades de Alameda. Me puedo dar de baja cuando quiera.</span></label>
+        <p class="msg" id="n-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-cols">
+      <div><a class="logo" href="#top" style="justify-self:start" aria-label="Alameda"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-a"/></svg><span class="logo-word">alameda</span></a><p style="margin-top:10px">Belleza y cuidado personal. Elegido y probado por nosotros.</p></div>
+      <div><b>Tienda</b><a href="#ficha" data-pick="uno">Masajeador facial</a><a href="#ficha" data-pick="dos">2 para regalar</a></div>
+      <div><b>Ayuda</b><a href="#faq">Preventa y envíos</a><a href="#faq">Cambios y devoluciones</a><a href="#faq">Garantía</a></div>
+      <div><b>Seguinos</b><span>Instagram: @alameda (completar)</span></div>
+    </div>
+    <div class="legal"><span>© 2026 Alameda · Chacabuco, Buenos Aires</span><a class="legal-btn" href="#faq">Botón de arrepentimiento</a></div>
+  </div>
+</footer>
+
+<a class="wa" id="wa" href="#" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 2.2 2.3 4.2 4.5 4.5l1-1.2 1.8.8-.4 1.6c-3.4.4-7.2-3.4-6.8-6.8l1.6-.4.8 1.8z" fill="currentColor" stroke="none"/></svg><span>¿Dudas? Escribinos</span></a>
+<div class="mbar" id="mbar"><div><small>Preventa · envío gratis</small><b>Masajeador facial · $89.000</b></div><a class="btn btn-red" href="#ficha">Reservar</a></div>
+
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="d-title">
+  <div class="d-head"><h3 id="d-title">Tu carrito</h3><button class="icon-btn" type="button" id="close-cart" aria-label="Cerrar carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="d-ship"><p><b>Envío gratis</b> · Preventa: se despacha desde el <span class="f-despacho-txt"></span>.</p></div>
+  <div class="d-items" id="d-items"></div>
+  <div class="d-foot">
+    <div class="row"><span>Subtotal</span><span id="d-sub">$0</span></div>
+    <small id="d-xfer">Por transferencia: $0</small>
+    <small>Las cuotas las ves en el próximo paso, antes de pagar.</small>
+    <button class="btn btn-red btn-block" type="button" id="checkout">Finalizar compra</button>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  // despacho: fecha de salida de la preventa. Completar con la fecha real que confirme el proveedor.
+  const CONFIG={addOn:9900, transferOff:0.10, cuotas:3, deadline:"2026-11-30T23:59:59-03:00", despacho:"[completar fecha]", checkoutUrl:"", whatsapp:""};
+  const fmt=n=>"$"+Math.round(n).toLocaleString("es-AR");
+  const $=id=>document.getElementById(id);
+  $("f-despacho").textContent=CONFIG.despacho;
+  document.querySelectorAll(".f-despacho-txt").forEach(e=>e.textContent=CONFIG.despacho);
+
+  // ---------- Barra Black Friday ----------
+  const TK=["BLACK FRIDAY","2 MASAJEADORES A $149.000","PREVENTA","ENVÍO GRATIS","10% OFF POR TRANSFERENCIA","HASTA EL LUNES 30/11"];
+  const tkHtml=TK.map((t,i)=>`<span>${i%2===0?`<em class="rb-text" style="font-style:normal">${t}</em>`:t}</span>`).join("");
+  $("ticker").innerHTML=tkHtml+tkHtml;
+
+  // ---------- Dibujos (maqueta, reemplazar por fotos reales) ----------
+  const C={skin:"#EBD6C8",skinD:"#D9BBA8",ink:"#141212",red:"#B3121C",gold:"#C8A25B",cream:"#F6E9E2",pink:"#F4C6CD",pinkL:"#FBE3E7",pinkD:"#E3A2AD",metal:"#D7D7DC",metalD:"#B9B9C0",led:"#FF4D5E",towel:"#F7F1EC"};
+  // Masajeador (centro en 0,0; alto ~360)
+  function device(glow){return `
+    ${glow?`<circle cx="0" cy="-118" r="70" fill="${C.led}" opacity=".18"/><circle cx="0" cy="-118" r="50" fill="${C.led}" opacity=".18"/>`:""}
+    <rect x="-40" y="-170" width="80" height="330" rx="40" fill="${C.pink}"/>
+    <rect x="-28" y="-150" width="12" height="280" rx="6" fill="${C.pinkL}" opacity=".9"/>
+    <circle cx="0" cy="-118" r="38" fill="${C.metalD}"/><circle cx="0" cy="-118" r="31" fill="${C.metal}"/>
+    <circle cx="0" cy="-118" r="16" fill="${C.led}" opacity=".85"/>
+    <circle cx="0" cy="-118" r="38" fill="none" stroke="${C.gold}" stroke-width="4"/>
+    <rect x="-20" y="-50" width="40" height="26" rx="6" fill="#2A2A2E"/><text x="0" y="-32" text-anchor="middle" font-family="Manrope,Arial" font-weight="800" font-size="14" fill="${C.led}">3</text>
+    <circle cx="0" cy="10" r="11" fill="#fff" stroke="${C.pinkD}" stroke-width="3"/>
+    <circle cx="0" cy="44" r="8" fill="#fff" stroke="${C.pinkD}" stroke-width="3"/>
+    <circle cx="0" cy="72" r="8" fill="#fff" stroke="${C.pinkD}" stroke-width="3"/>`;}
+  function band(){return `<path d="M-90 0 C-90 -70 90 -70 90 0 C90 30 60 40 0 40 C-60 40 -90 30 -90 0Z" fill="${C.towel}" stroke="${C.skinD}" stroke-width="4"/><path d="M-30 -48 q30 30 60 0" fill="none" stroke="${C.skinD}" stroke-width="6"/><circle cx="-30" cy="-58" r="22" fill="${C.towel}" stroke="${C.skinD}" stroke-width="4"/><circle cx="30" cy="-58" r="22" fill="${C.towel}" stroke="${C.skinD}" stroke-width="4"/>`;}
+  function box(x,y,w,h,name,cat,n){
+    return `<g>
+      <rect x="${x+6}" y="${y+6}" width="${w}" height="${h}" rx="6" fill="${C.skinD}"/>
+      <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="${C.skin}"/>
+      <rect x="${x+w*0.12}" y="${y+h*0.08}" width="${w*0.76}" height="${h*0.4}" rx="${w*0.38}" fill="${C.pinkL}"/>
+      <g transform="translate(${x+w/2} ${y+h*0.28}) rotate(-28) scale(${h*0.38/360})">${device()}</g>
+      <text x="${x+w/2}" y="${y+h*0.62}" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-weight="800" font-size="${w*0.15}" letter-spacing="-1" fill="${C.red}">alameda</text>
+      <text x="${x+w/2}" y="${y+h*0.7}" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-weight="700" font-size="${w*0.05}" letter-spacing="1.5" fill="${C.ink}" opacity=".7">${cat}</text>
+      <text x="${x+w/2}" y="${y+h*0.8}" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="${w*0.09}" fill="${C.ink}">${name[0]}</text>
+      <text x="${x+w/2}" y="${y+h*0.88}" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="${w*0.09}" fill="${C.ink}">${name[1]}</text>
+    </g>`;}
+  function svgUno(){return `<svg viewBox="0 0 520 520" role="img" aria-label="Masajeador facial Alameda con su caja">
+      ${box(40,70,200,370,["Masajeador","facial"],"CALOR · LED · VIBRACIÓN")}
+      <g transform="translate(370 270) rotate(14) scale(.9)">${device(true)}</g>
+      <rect x="150" y="462" width="220" height="40" rx="20" fill="${C.red}"/>
+      <text x="260" y="488" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="1" fill="#fff">5 MODOS · USB</text></svg>`;}
+  function svgDos(){return `<svg viewBox="0 0 520 520" role="img" aria-label="Dos masajeadores faciales Alameda con sus cajas">
+      ${box(30,90,180,340,["Masajeador","facial"],"PARA VOS")}
+      ${box(220,60,180,360,["Masajeador","facial"],"PARA REGALAR")}
+      <g transform="translate(450 290) rotate(12) scale(.62)">${device(true)}</g>
+      <rect x="140" y="448" width="240" height="44" rx="22" fill="${C.red}"/>
+      <text x="260" y="476" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-weight="800" font-size="18" letter-spacing="1" fill="#fff">2 A $149.000</text></svg>`;}
+  function svgVincha(){return `<svg viewBox="0 0 520 520" role="img" aria-label="Vincha de toalla para la rutina"><g transform="translate(260 290) scale(1.6)">${band()}</g></svg>`;}
+  function svgNoche(){return `<svg viewBox="0 0 520 440" role="img" aria-label="Masajeador con la luz LED roja encendida"><g transform="translate(260 240) rotate(-20) scale(.95)">${device(true)}</g></svg>`;}
+  function svgDia(){return `<svg viewBox="0 0 520 440" role="img" aria-label="Masajeador y vincha de toalla"><g transform="translate(190 230) rotate(-18) scale(.9)">${device()}</g><g transform="translate(390 300) scale(.9)">${band()}</g></svg>`;}
+  const ART={uno:svgUno,dos:svgDos,vincha:svgVincha};
+  $("hero-art").innerHTML=svgNoche().replace('viewBox="0 0 520 440"','viewBox="0 0 520 520"');
+  $("art-night").innerHTML=svgNoche();
+  $("art-day").innerHTML=svgDia();
+  $("art-gift").innerHTML=svgDos();
+
+  // ---------- Productos ----------
+  const P={
+    uno:{name:"Masajeador facial",sub:"Calor suave, luz LED y vibración · 5 modos · USB",price:89000,tag:"Preventa",cls:"red",note:"Envío gratis"},
+    dos:{name:"2 masajeadores",sub:"Uno para vos y otro para regalar",price:149000,ref:178000,tag:"Black Friday",cls:"",note:"Hasta el 30/11"},
+    vincha:{name:"Vincha de toalla",sub:"Para hacer la rutina sin el pelo en la cara",price:9900,tag:"Con tu masajeador",cls:"jade",note:"Solo con el masajeador"}
+  };
+  const ORDER=["uno","dos","vincha"];
+  const TICK=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>`;
+  $("grid").innerHTML=ORDER.map(k=>{const p=P[k];return `<article class="card">
+    <div class="card-img" data-go="${k}" role="link" tabindex="0" aria-label="Ver ${p.name}"><span class="tag ${p.cls}">${p.tag}</span>${ART[k]()}</div>
+    <div><h3>${p.name}</h3><p class="sub">${p.sub}</p></div>
+    <p class="stars"><i>☆☆☆☆☆</i> Sé la primera en opinar</p>
+    <p class="price"><b>${fmt(p.price)}</b>${p.ref?`<s>${fmt(p.ref)}</s>`:""}${p.note?`<em>${p.note}</em>`:""}</p>
+    <button class="btn btn-red" type="button" data-add="${k}">${k==="vincha"?"Sumar a mi masajeador":"Elegir"}</button>
+  </article>`}).join("");
+
+  // ---------- Galería ----------
+  const GAL=[{img:"img/rf-uso.jpg",alt:"Mujer usando el masajeador facial",label:"En uso"},{img:"img/rf-funciones.jpg",alt:"Masajeador facial con sus partes señaladas",label:"Partes"},{k:"uno",label:"Caja"},{vid:"Video real: la rutina de 5 minutos"}];
+  function slide(g){
+    if(g.img)return `<img src="${g.img}" alt="${g.alt}"><span class="credit">Foto de referencia · reemplazar por la tuya</span>`;
+    if(g.k)return ART[g.k]();
+    return `<div class="g-ph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span>${g.vid}</span></div>`;
+  }
+  function showGal(i){$("g-main").innerHTML=slide(GAL[i]);[...$("g-thumbs").children].forEach((b,j)=>b.setAttribute("aria-pressed",j===i));}
+  $("g-thumbs").innerHTML=GAL.map((g,i)=>`<button type="button" aria-pressed="${i===0}" aria-label="${g.label||g.vid}">${g.img?`<img src="${g.img}" alt="">`:g.k?ART[g.k]():"Video"}</button>`).join("");
+  [...$("g-thumbs").children].forEach((b,i)=>b.addEventListener("click",()=>showGal(i)));
+  showGal(0);
+
+  // ---------- Carrito ----------
+  let cart=[];
+  const hasDevice=()=>cart.some(i=>i.key.startsWith("uno")||i.key.startsWith("dos"));
+  function addItem(key,label,price,qty){qty=qty||1;const f=cart.find(i=>i.key===key);if(f){f.qty+=qty;}else{cart.push({key,label,price,qty});}renderCart();}
+  function subtotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0);}
+  function artFor(key){const k=key.split("-")[0];return ART[k]?ART[k]():"";}
+  function renderCart(){
+    const before=cart.length;
+    if(!hasDevice())cart=cart.filter(i=>i.key!=="vincha");
+    if(cart.length<before)toast("Sacamos la vincha: el precio especial va con el masajeador.");
+    const s=subtotal(), count=cart.reduce((n,i)=>n+i.qty,0);
+    $("cart-count").textContent=count;
+    $("d-sub").textContent=fmt(s);
+    $("d-xfer").textContent="Por transferencia: "+fmt(s*(1-CONFIG.transferOff));
+    const items=cart.length?cart.map((i,idx)=>`<div class="item"><div class="thumb">${artFor(i.key)}</div><div><b>${i.label}</b><div class="qty"><button type="button" data-q="${idx}" data-d="-1" aria-label="Quitar uno">−</button><span>${i.qty}</span><button type="button" data-q="${idx}" data-d="1" aria-label="Sumar uno">+</button></div></div><div class="ip">${fmt(i.price*i.qty)}</div></div>`).join(""):`<p class="empty">Tu carrito está vacío.</p>`;
+    let upHtml="";
+    if(hasDevice()&&!cart.some(i=>i.key==="vincha"))upHtml=`<div class="upsell"><b>Precio especial con tu masajeador</b><div class="up"><div class="thumb">${ART.vincha()}</div><div><b style="font-size:.86rem">Vincha de toalla</b><small>${fmt(CONFIG.addOn)} · para la rutina</small></div><button type="button" data-up="vincha">Sumar</button></div></div>`;
+    $("d-items").innerHTML=items+upHtml;
+  }
+  $("d-items").addEventListener("click",e=>{
+    const q=e.target.closest("[data-q]");
+    if(q){const i=cart[+q.dataset.q];i.qty+=+q.dataset.d;if(i.qty<=0)cart.splice(+q.dataset.q,1);renderCart();return;}
+    if(e.target.closest("[data-up]")){addItem("vincha","Vincha de toalla · precio especial",CONFIG.addOn);toast("Sumaste la vincha.");}
+  });
+  function openCart(){$("overlay").hidden=false;$("drawer").hidden=false;$("mbar").style.visibility="hidden";$("wa").style.visibility="hidden";setTimeout(()=>$("close-cart").focus(),30);}
+  function closeCart(){$("overlay").hidden=true;$("drawer").hidden=true;$("mbar").style.visibility="";$("wa").style.visibility="";}
+  if(CONFIG.whatsapp){$("wa").href="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent("Hola Alameda, tengo una duda sobre el masajeador facial");$("wa").target="_blank";$("wa").rel="noopener";}
+  else{$("wa").addEventListener("click",e=>{e.preventDefault();toast("Falta cargar el número de WhatsApp de Alameda.");});}
+  $("open-cart").addEventListener("click",openCart);
+  $("close-cart").addEventListener("click",closeCart);
+  $("overlay").addEventListener("click",closeCart);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("drawer").hidden)closeCart();});
+  $("checkout").addEventListener("click",()=>{
+    if(!cart.length){toast("Tu carrito está vacío.");return;}
+    if(CONFIG.checkoutUrl){window.location.href=CONFIG.checkoutUrl;return;}
+    toast("Total "+fmt(subtotal())+". Acá sigue el checkout de Tiendanube (todavía no conectado).");
+  });
+  $("grid").addEventListener("click",e=>{
+    const a=e.target.closest("[data-add]"), g=e.target.closest("[data-go]");
+    const k=a?a.dataset.add:g?g.dataset.go:null;
+    if(!k)return;
+    if(k==="vincha"){if(!hasDevice()){toast("La vincha va con el masajeador: elegí uno primero.");pick("uno");return;}addItem("vincha","Vincha de toalla · precio especial",CONFIG.addOn);openCart();return;}
+    pick(k);
+  });
+  $("grid").addEventListener("keydown",e=>{const g=e.target.closest("[data-go]");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();g.click();}});
+
+  // ---------- Ficha ----------
+  const OFF={
+    uno:{label:"Masajeador facial (preventa)",key:"uno",price:89000,gal:0,
+      lead:"Cinco minutos a la noche, con tu crema: calor suave, luz LED y vibración, del centro de la cara hacia afuera. Una rutina que te hacés vos, en casa, sin turnos.",
+      bul:["5 modos: calor suave, luz LED y vibración","Intensidad regulable y pantalla que te muestra el modo","Carga por USB: sin pilas","Liviano, entra en el neceser"],
+      inbox:"<b>En la caja:</b> masajeador facial, cable USB y guía de uso en castellano."},
+    dos:{label:"2 masajeadores (preventa)",key:"dos",price:149000,gal:2,
+      lead:"Uno para vos y otro para regalar. Precio de Black Friday hasta el lunes 30/11: el segundo te sale $60.000.",
+      bul:["2 masajeadores, cada uno en su caja","5 modos: calor suave, luz LED y vibración","Envío gratis a una sola dirección","Si es regalo, va con tarjeta y sin precio"],
+      inbox:"<b>En la caja:</b> 2 masajeadores faciales, cada uno con su cable USB y guía de uso en castellano."}
+  };
+  function cur(){const c=document.querySelector('input[name="offer"]:checked');return OFF[c?c.value:"uno"];}
+  function setupOffer(){
+    const o=cur();
+    $("pdp-lead").textContent=o.lead;
+    $("pdp-bul").innerHTML=o.bul.map(t=>`<li>${TICK}<span>${t}</span></li>`).join("");
+    $("inbox").innerHTML=o.inbox;
+  }
+  function changeOffer(){setupOffer();renderOffer();showGal(cur().gal);}
+  function pick(v){
+    const r=document.querySelector('input[name="offer"][value="'+v+'"]');
+    if(r){r.checked=true;changeOffer();}
+    $("ficha").scrollIntoView({behavior:"smooth"});
+  }
+  document.querySelectorAll("[data-pick]").forEach(l=>l.addEventListener("click",e=>{e.preventDefault();pick(l.dataset.pick);}));
+  function renderOffer(){
+    const o=cur(), t=o.price+($("bump").checked?CONFIG.addOn:0);
+    $("t-total").textContent=fmt(t);
+    $("t-xfer").textContent=fmt(t*(1-CONFIG.transferOff));
+    $("t-cuotas").textContent=CONFIG.cuotas+" de "+fmt(t/CONFIG.cuotas);
+    $("pdp-add").textContent="Reservar · "+fmt(t);
+  }
+  document.querySelectorAll('input[name="offer"]').forEach(r=>r.addEventListener("change",changeOffer));
+  $("bump").addEventListener("change",renderOffer);
+  $("pdp-add").addEventListener("click",()=>{
+    const o=cur(), g=$("gift").checked;
+    addItem(o.key+(g?"-regalo":""),o.label+(g?" · para regalar, sin precio":""),o.price);
+    if($("bump").checked)addItem("vincha","Vincha de toalla · precio especial",CONFIG.addOn);
+    openCart();
+  });
+
+  // ---------- Cuenta regresiva real (no se reinicia) ----------
+  const end=new Date(CONFIG.deadline).getTime();
+  const pad=n=>String(n).padStart(2,"0");
+  function tick(){
+    let ms=end-Date.now();
+    if(ms<=0){$("timer").textContent="terminó";["c-d","c-h","c-m","c-s"].forEach(id=>$(id).textContent="0");return;}
+    const d=Math.floor(ms/864e5);ms-=d*864e5;const h=Math.floor(ms/36e5);ms-=h*36e5;const m=Math.floor(ms/6e4);const s=Math.floor((ms-m*6e4)/1e3);
+    $("timer").textContent=(d?d+"d ":"")+pad(h)+":"+pad(m)+":"+pad(s);
+    $("c-d").textContent=d;$("c-h").textContent=pad(h);$("c-m").textContent=pad(m);$("c-s").textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
+
+  // ---------- Newsletter ----------
+  $("news-form").addEventListener("submit",e=>{
+    e.preventDefault();const v=$("n-email").value.trim(),m=$("n-msg");
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){m.textContent="Revisá el email: le falta algo, por ejemplo la @.";m.className="msg err";return;}
+    if(!$("n-consent").checked){m.textContent="Marcá la casilla para recibir el código.";m.className="msg err";return;}
+    m.textContent="Listo. Te mandamos el código a "+v+".";m.className="msg ok";
+    toast("Modo prueba: el formulario todavía no está conectado a la herramienta de email.");
+  });
+
+  let tt;function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3200);}
+  setupOffer();renderOffer();renderCart();
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* Animaciones al bajar. Si GSAP no carga o la persona pidió menos movimiento, la página queda quieta y completa. */
+(function(){
+  if(!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const ease = "expo.out";
+  gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+    // El momento principal: la imagen del masajeador se abre y después baja más lento que la página
+    gsap.fromTo(".hero-frame",
+      {clipPath: "inset(10% 10% 10% 10% round 200px 200px 28px 28px)"},
+      {clipPath: "inset(0% 0% 0% 0% round 200px 200px 28px 28px)", duration: 1.4, ease});
+    gsap.from(".hero-copy > *", {y: 18, opacity: 0, duration: .9, ease, stagger: .08});
+    gsap.to(".hero-frame img", {yPercent: 8, ease: "none",
+      scrollTrigger: {trigger: ".hero", start: "top top", end: "bottom top", scrub: true}});
+
+    // El banner de Black Friday se acerca un poco al entrar
+    gsap.from(".bf", {scale: .96, opacity: 0, duration: 1, ease,
+      scrollTrigger: {trigger: ".bf", start: "top 85%", once: true}});
+
+    // Títulos de cada sección
+    gsap.utils.toArray(".head-row h2, .story h2, .gift-copy h2, .promise h2, .buy h2").forEach((h) => {
+      gsap.from(h, {y: 24, opacity: 0, duration: .9, ease,
+        scrollTrigger: {trigger: h, start: "top 88%", once: true}});
+    });
+
+    // Las tarjetas entran en tanda, una detrás de otra
+    [".grid .card", ".steps .step", ".p-items > div", ".videos .vid", ".reviews .review"].forEach((sel) => {
+      const els = gsap.utils.toArray(sel);
+      if (!els.length) return;
+      gsap.from(els, {y: 28, opacity: 0, duration: .8, ease, stagger: .08,
+        scrollTrigger: {trigger: els[0], start: "top 88%", once: true}});
+    });
+
+    // Noche y día entran desde lados opuestos
+    gsap.utils.toArray(".dn .dn-card").forEach((card, i) => {
+      gsap.from(card, {x: i === 0 ? -32 : 32, opacity: 0, duration: 1, ease,
+        scrollTrigger: {trigger: card, start: "top 85%", once: true}});
+    });
+  });
+})();
+</script>
+
+</body></html>
